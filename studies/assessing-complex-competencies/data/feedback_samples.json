@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "description": "Selected feedback samples from ETS essays at score levels 1, 3, and 6",
+    "total_samples": 3
+  },
+  "samples": [
+    {
+      "id": "arg_score6",
+      "ets_score": 6,
+      "essay_preview": "While it may be true that the Mason City government ought to devote more money to riverside recreational facilities, this author's argument does not make a cogent case for increased resources based on...",
+      "pro_assessment": {
+        "score": 5,
+        "justification": "The essay clearly identifies and thoughtfully examines key assumptions in the argument, such as the validity of the survey, the causal link between the river's current state and its lack of use, and the feasibility of the proposed clean-up. Ideas are developed logically with appropriate transitions and supported by clever examples, such as the possibility of natural sulfur deposits causing the smell. The writer demonstrates strong control of language and conventions, despite a few minor errors (e.g., \"resident's\", \"afffected\"), aligning perfectly with the criteria for a strong score of 5.",
+        "feedback": {
+          "strengths": [
+            "Deconstruction of the survey's validity: You effectively challenge the assumption that the survey accurately represents the broader Mason City population. By providing specific hypothetical scenarios\u00e2\u20ac\u201dsuch as leading questions or a skewed sample of only riverside residents\u00e2\u20ac\u201dyou clearly demonstrate how a flawed survey would undermine the argument's foundational premise.",
+            "Interrogating causal relationships: You do an excellent job questioning the assumed causal link between the river's water quality/smell and its lack of use. Your point in paragraph three that the complaints might stem from a vocal minority ('one or two individuals') rather than a widespread consensus is a sharp analytical move that highlights a significant gap in the author's evidence.",
+            "Creative evaluation of the proposed solution: Your analysis in the fourth paragraph regarding the nature of the river's smell (anthropogenic pollution vs. natural mineral deposits) is highly insightful. This demonstrates strong critical thinking by questioning not just whether the clean-up will happen, but whether the specific problem is even capable of being 'cleaned.'"
+          ],
+          "areas_for_improvement": [
+            "Address the temporal assumption regarding the budget: The argument specifically recommends allocating more money 'in this year's budget' based on the state's 'recently announced plans.' You missed an opportunity to question the timeline. State clean-up projects often take years; if the clean-up isn't finished this year, allocating funds for facilities right now would be premature. Exploring this would strengthen your critique of the conclusion.",
+            "Examine the necessity of riverside facilities: The argument assumes that an increase in water sports inherently requires an increase in funding for *riverside recreational facilities*. You could deepen your analysis by questioning this link. Do swimming and fishing require maintained city facilities, or do residents just need the water to be clean? Furthermore, the argument assumes the current budget is inadequate; perhaps current funding is perfectly fine for the projected use.",
+            "Explicitly connect unwarranted assumptions to the implications: The prompt specifically asks you to explain 'what the implications are if the assumptions prove unwarranted.' While you do this implicitly, you can elevate your essay by explicitly stating the consequences for the city. For example, conclude your paragraphs by noting that if an assumption fails, the city risks wasting taxpayer money on unused facilities, directly tying your critique back to the author's final recommendation."
+          ]
+        },
+        "next_step": {
+          "task_title": "Beyond the Survey: Uncovering Structural Assumptions",
+          "task_description": "Re-read the Mason City argument and identify two major assumptions that have nothing to do with the survey's validity or the number of complaints (e.g., the timeline of the state clean-up vs. 'this year's' city budget, or the logical leap from 'water sports' to needing 'riverside facilities'). Write one new body paragraph (150-200 words) analyzing one of these specific structural assumptions, explaining how the argument depends on it and what happens if it proves unwarranted.",
+          "target_skill": "Identifying and analyzing argument-specific structural assumptions (e.g., timeline mismatches, scope shifts) rather than relying on generic methodological critiques."
+        }
+      },
+      "flash_assessment": {
+        "score": 5,
+        "justification": "The essay provides a strong and thoughtful critique of the argument, identifying key assumptions regarding survey validity, the causal link between water quality and usage, and the potential effectiveness of the cleanup. The analysis is logically organized and features insightful points, such as the distinction between man-made pollution and natural odors (e.g., sulfur). The writing is clear and fluent with good sentence variety, though it lacks the exhaustive development and rhetorical sophistication required for a score of 6.",
+        "feedback": {
+          "strengths": [
+            "You effectively scrutinized the 'survey' evidence by questioning its methodology, specifically highlighting potential issues with sample representativeness and leading questions. This demonstrates a strong understanding of how to challenge the reliability of data used to support a claim.",
+            "Your analysis of the 'smell' and 'water quality' is particularly nuanced. By distinguishing between man-made pollution (remediable) and natural causes like sulfur or mineral deposits (non-remediable), you successfully identified a critical flaw in the assumption that a 'clean-up' will automatically lead to a more pleasant environment.",
+            "You correctly identified the potential for a 'vocal minority' bias regarding the complaints. Questioning whether the complaints represent the general population or just a few individuals is a sophisticated analytical move that challenges the perceived urgency of the problem."
+          ],
+          "areas_for_improvement": [
+            "You could strengthen your analysis by examining the logical leap between a clean river and the need for 'facilities.' Even if the river becomes clean and popular, the argument assumes the current facilities are inadequate. You might ask: what if the existing docks and parks are already sufficient to handle increased traffic?",
+            "Consider the 'timing' of the budget proposal. The argument concludes that money should be allocated 'this year,' but the state has only 'recently announced' plans. You could analyze the assumption that the cleanup will be completed quickly enough to justify an immediate increase in the city's recreational budget.",
+            "Explore alternative reasons for the lack of river usage that a cleanup wouldn't solve. For instance, the argument assumes the water quality is the *only* barrier, but factors like dangerous currents, lack of public access points, or the river's depth might prevent boating and swimming regardless of how clean or clear the water is."
+          ]
+        },
+        "next_step": {
+          "task_title": "The Counter-Explanation Table",
+          "task_description": "Identify three physical or logistical reasons\u00e2\u20ac\u201dentirely unrelated to water quality or smell\u00e2\u20ac\u201dwhy the river might currently be unused (e.g., dangerous currents, inconsistent water depth, or lack of public access points). For each reason, write a three-sentence analysis explaining why the state's clean-up would fail to increase usage if this factor were present, and what specific evidence the city would need to collect to rule it out.",
+          "target_skill": "Identifying alternative explanations and the specific evidence needed to evaluate them."
+        }
+      }
+    },
+    {
+      "id": "arg_score3",
+      "ets_score": 3,
+      "essay_preview": "Surveys are created to speak for the people; however, surveys do not always speak for the whole community. A survey completed by Mason City residents concluded that the residents enjoy water sports as...",
+      "pro_assessment": {
+        "score": 2,
+        "justification": "The essay receives a score of 2 because it largely fails to present a critique based on logical analysis, instead offering the writer's own speculative views on the subject (e.g., residents complaining about other ignored issues). It demonstrates a misunderstanding of the argument by confusing the state's plan to clean the river with the city's budget for recreational facilities. Furthermore, the response is poorly organised into a single, disjointed paragraph and lacks meaningful development or support for its claims.",
+        "feedback": {
+          "strengths": [
+            "You successfully identified one of the most critical logical leaps in the prompt: the assumption that a desire for a clean river equates to a desire to swim or boat in it. Pointing out that residents might simply want 'a more pleasant smell and a more pleasant sight' is an excellent analytical move that directly challenges the author's conclusion.",
+            "You rightly questioned the validity of the survey at the beginning of your essay. Recognizing that 'surveys do not always speak for the whole community' shows strong critical thinking about the evidence provided, as the argument heavily relies on this survey to justify future budget allocations.",
+            "You made a smart observation about the timeline of the cleanup by noting that 'it might take years for the smell to go away.' This effectively challenges the argument's assumption that the city needs to allocate money in *this year's* budget, showing a good grasp of the practical implications of the argument's timeline."
+          ],
+          "areas_for_improvement": [
+            "While you identify good assumptions, you can strengthen your analysis by explicitly connecting them back to the prompt's conclusion as requested by the task instructions. When you mention the survey might not represent the whole community, expand on the implications: if the survey is biased, then the prediction that water sports will increase is unfounded, meaning the proposed budget increase is logically unjustified.",
+            "Be careful not to drift into arguing against the policy using outside information. Your points about opportunity costs (e.g., taking money from other city maintenance) are valid real-world concerns, but the GRE task asks you to evaluate the *logical soundness* of the author's argument based on the text provided, not to offer alternative financial advice to the government. Keep your focus strictly on whether the author's evidence proves their specific conclusion.",
+            "To make your analytical reasoning clearer and more impactful, organize your essay into distinct paragraphs. Try using an introduction that states your thesis about the argument's flaws, followed by separate body paragraphs for each major assumption (e.g., one for the survey, one for the true motivation behind the complaints, one for the timeline), and a brief conclusion. This structural shift will help you develop each logical critique more fully."
+          ]
+        },
+        "next_step": {
+          "task_title": "Mapping Logical Gaps: Identifying Unstated Assumptions",
+          "task_description": "Reread the Mason River argument and identify its main conclusion and the evidence provided. Then, write down three unstated assumptions the author makes to connect the evidence to the conclusion, using this exact template: 'The author assumes that [X], but it is possible that [Y].' Focus strictly on the logical gaps in the author's reasoning (e.g., assuming the river's smell is the only reason people don't swim in it), rather than arguing your own opinions about city budgets or government roles.",
+          "target_skill": "Distinguishing between analyzing an argument's logical flaws and debating the merits of a proposed policy."
+        }
+      },
+      "flash_assessment": {
+        "score": 3,
+        "justification": "The essay identifies some relevant assumptions, such as the potential unreliability of the survey and the fact that cleaning the river may not immediately lead to increased usage. However, the analysis is limited and often wanders into tangential territory, such as discussing the opportunity costs of the budget and the general role of government, rather than focusing on the logical flaws of the argument. The development of ideas is thin, and the writing contains several mechanical errors and awkward phrasing that reflect a limited control of language.",
+        "feedback": {
+          "strengths": [
+            "You correctly identified a foundational flaw regarding the survey's reliability, questioning whether the preferences of a subset of residents can be generalized to the entire population of Mason City.",
+            "You made a perceptive observation regarding the timeline of the cleanup, noting that a reduction in pollution does not immediately equate to a pleasant environment (e.g., the lingering smell), which challenges the assumption of immediate increased usage.",
+            "You effectively introduced the concept of 'opportunity cost' by arguing that the city government must consider what other services might suffer if the budget is redirected toward riverside facilities."
+          ],
+          "areas_for_improvement": [
+            "To strengthen your analytical depth, try to explicitly explain the 'if/then' relationship required by the prompt. For example, if the assumption that 'clean water leads to increased use' is false, explain exactly how that invalidates the recommendation to spend more money this year.",
+            "Look for 'hidden' physical or geographic assumptions. Even if the water is clean and smells better, the argument assumes the river is physically suitable for sports (e.g., depth, current speed, or accessibility). Challenging these physical factors would broaden your critique beyond just water quality.",
+            "Focus on the distinction between the state's actions and the city's budget. The argument assumes that because the state is cleaning the river, the city is responsible for the facilities; you could investigate whether there is evidence that a lack of facilities\u00e2\u20ac\u201drather than just the pollution\u00e2\u20ac\u201dis what currently prevents residents from using the river."
+          ]
+        },
+        "next_step": {
+          "task_title": "The 'Why Not?' Alternative Explanation Challenge",
+          "task_description": "Identify the specific claim that 'use of the river... is sure to increase' and brainstorm three distinct reasons why residents might still avoid the river even if the water is clean (e.g., dangerous currents, lack of access points). For each reason, write one sentence explaining why this makes the city's plan to increase the budget for facilities a risky or potentially wasteful decision.",
+          "target_skill": "Identifying unstated assumptions and generating alternative explanations."
+        }
+      }
+    },
+    {
+      "id": "arg_score1",
+      "ets_score": 1,
+      "essay_preview": "The statement assumes that everyone in Mason City enjoys some sort of recreational activity, which may not be necessarily true. The statement also assumes that if the state cleans up the river, the us...",
+      "pro_assessment": {
+        "score": 1,
+        "justification": "This essay receives a score of 1 because it is extremely brief and lacks development entirely. While the writer identifies two assumptions, there is no attempt to examine them, explain how the argument depends on them, or discuss the implications if they prove unwarranted. The response provides little to no evidence of the ability to develop an organized, analytical critique as required by the prompt.",
+        "feedback": {
+          "strengths": [
+            "You successfully identified a major causal assumption in the argument: the idea that cleaning the river will automatically result in increased use for water sports. This shows a strong ability to spot where the author conflates a proposed solution with a guaranteed outcome.",
+            "Your instinct to question the scope of the survey data in your first sentence is a great analytical move. Scrutinizing the evidence provided and questioning who it actually applies to is a core skill for the GRE argument task.",
+            "You adopted a direct, analytical tone right away. Instead of wasting time summarizing the prompt, you immediately began breaking down the author's underlying premises."
+          ],
+          "areas_for_improvement": [
+            "Develop the implications of the assumptions you find. The prompt explicitly requires you to explain what happens if the assumptions are unwarranted. For your second point, brainstorm *why* river use might not increase even if it is clean (e.g., dangerous currents, lack of access, preference for a nearby lake) and explain how these alternatives would invalidate the author's conclusion.",
+            "Refine your analysis of the survey data. The argument doesn't necessarily assume *everyone* enjoys recreation, but it does assume the survey accurately represents the city's willingness to use the Mason River. Question whether 'ranking water sports highly' actually translates to a desire to swim or boat in this specific river.",
+            "Expand your analysis to uncover additional logical gaps, particularly regarding the timeline and the proposed solution. For instance, the author assumes the state's cleanup will be completed quickly enough to justify increasing the city's budget *this year*. Exploring this gap will significantly broaden the scope of your critique."
+          ]
+        },
+        "next_step": {
+          "task_title": "The 'What If' Expansion: Developing an Assumption",
+          "task_description": "Take the second assumption you identified: 'if the state cleans up the river, water sports will definitely increase.' First, brainstorm three specific reasons why residents might STILL avoid the river even if the water is clean (e.g., the water is too shallow, or they prefer existing swimming pools). Next, write one complete body paragraph (5-7 sentences) explaining how these alternative scenarios prove the assumption is unwarranted and how this ultimately destroys the author's conclusion that the city must increase its budget for riverside facilities.",
+          "target_skill": "Elaborating on assumptions by generating alternative explanations and explaining their implications for the argument's conclusion."
+        }
+      },
+      "flash_assessment": {
+        "score": 1,
+        "justification": "The essay is fundamentally deficient because it is extremely brief and lacks any development of the identified points. It fails to address the specific task instructions to explain how the argument depends on the assumptions or what the implications are if the assumptions prove unwarranted. As a result, it provides no evidence of the ability to organize a response or provide a logical analysis.",
+        "feedback": {
+          "strengths": [
+            "You successfully identified the core causal assumption of the argument: the link between the state's cleanup efforts and the guaranteed increase in river usage.",
+            "You correctly adopted the analytical stance required by the GRE prompt by focusing on 'assumptions' rather than simply agreeing or disagreeing with the conclusion.",
+            "Your second point targets the most vulnerable part of the argument's logic\u00e2\u20ac\u201dthe 'certainty' of the outcome\u00e2\u20ac\u201dwhich shows you are beginning to look for gaps in necessity and sufficiency."
+          ],
+          "areas_for_improvement": [
+            "To meet the task requirements, you need to explain the 'implications' of these assumptions. For example, if the river is too shallow for boating regardless of how clean it is, how does that undermine the city's justification for spending more money?",
+            "Try to look deeper into the survey data. You mention that not everyone may enjoy recreation, but a more critical analytical move would be to question if 'ranking water sports as a favorite' actually translates to 'a desire to use the Mason River specifically.' Residents might prefer swimming in pools or boating at a nearby lake instead.",
+            "Consider the leap from 'increased use' to 'increased budget.' Even if usage increases, does it automatically follow that the city *should* spend more money this year? You could strengthen your analysis by questioning if the current facilities are already adequate or if there are other factors (like safety or accessibility) that cleaning the water alone won't fix."
+          ]
+        },
+        "next_step": {
+          "task_title": "The 'What If?' Chain Reaction",
+          "task_description": "Select the student's second point (that cleaning the river will increase usage) and write a three-sentence 'implication chain': First, explain why the argument's conclusion fails if this assumption is wrong. Second, brainstorm two alternative reasons why residents might still avoid the river even if it is clean (e.g., lack of physical access or dangerous currents). Third, conclude by stating how these alternative factors would make the proposed budget increase a waste of city resources.",
+          "target_skill": "Analyzing the implications of unwarranted assumptions"
+        }
+      }
+    }
+  ]
+}

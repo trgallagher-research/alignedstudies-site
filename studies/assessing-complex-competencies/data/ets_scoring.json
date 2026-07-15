@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "corpus": "ETS GRE Analyse an Argument",
+    "total_essays": 6,
+    "score_range": "1-6",
+    "rubric": "ETS GRE Analytical Writing 6-point holistic"
+  },
+  "essays": [
+    {
+      "id": "arg_score6",
+      "ets_score": 6,
+      "pro_score": 5,
+      "flash_score": 5,
+      "pro_exact": false,
+      "pro_within_one": true,
+      "flash_exact": false,
+      "flash_within_one": true
+    },
+    {
+      "id": "arg_score5",
+      "ets_score": 5,
+      "pro_score": 6,
+      "flash_score": 6,
+      "pro_exact": false,
+      "pro_within_one": true,
+      "flash_exact": false,
+      "flash_within_one": true
+    },
+    {
+      "id": "arg_score4",
+      "ets_score": 4,
+      "pro_score": 3,
+      "flash_score": 4,
+      "pro_exact": false,
+      "pro_within_one": true,
+      "flash_exact": true,
+      "flash_within_one": true
+    },
+    {
+      "id": "arg_score3",
+      "ets_score": 3,
+      "pro_score": 2,
+      "flash_score": 3,
+      "pro_exact": false,
+      "pro_within_one": true,
+      "flash_exact": true,
+      "flash_within_one": true
+    },
+    {
+      "id": "arg_score2",
+      "ets_score": 2,
+      "pro_score": 2,
+      "flash_score": 2,
+      "pro_exact": true,
+      "pro_within_one": true,
+      "flash_exact": true,
+      "flash_within_one": true
+    },
+    {
+      "id": "arg_score1",
+      "ets_score": 1,
+      "pro_score": 1,
+      "flash_score": 1,
+      "pro_exact": true,
+      "pro_within_one": true,
+      "flash_exact": true,
+      "flash_within_one": true
+    }
+  ],
+  "summary": {
+    "pro": {
+      "exact_match": 2,
+      "within_one": 6,
+      "total": 6,
+      "exact_rate": 0.333,
+      "within_one_rate": 1.0
+    },
+    "flash": {
+      "exact_match": 4,
+      "within_one": 6,
+      "total": 6,
+      "exact_rate": 0.667,
+      "within_one_rate": 1.0
+    }
+  }
+}

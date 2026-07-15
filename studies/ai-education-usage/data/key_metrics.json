@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "title": "Key Metrics Summary",
+    "source": "Anthropic Economic Index V4 (release_2026_01_15)",
+    "period": "Nov 13-20, 2025"
+  },
+  "results": {
+    "data_source": "Anthropic Economic Index V4 (release_2026_01_15)",
+    "data_period": "Nov 13-20, 2025",
+    "total_conversations": 1000000,
+    "education_conversations": 152088,
+    "total_tasks": 3170,
+    "education_tasks": 266,
+    "education_volume_pct": 15.21,
+    "education_success_rate": 76.0,
+    "all_tasks_success_rate": 67.7,
+    "education_autonomy_mean": 3.34,
+    "coursework_pct": 59.53,
+    "work_pct": 21.27,
+    "personal_pct": 19.20
+  }
+}

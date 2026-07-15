@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction — AlignED Report 2</title>
+  <meta name="description" content="From classification to assessment: why data contamination matters for AI essay scoring research.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/assessing-complex-competencies/introduction.html">
+</head>
+<body data-page="introduction">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html" class="active">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>1. Introduction</h1>
+        <p class="subtitle">From classification to assessment</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="prose">
+
+          <h2>From classification to assessment</h2>
+          <p><a href="/studies/benchmarking-ai-for-teaching/" target="_blank">AlignED Report 1</a> benchmarked 32 AI models on tasks related to professional teaching knowledge: identifying neuromyths, diagnosing classroom scenarios, answering teacher certification questions, and comparing student work against curriculum standards. Those tasks asked models to classify, select, or rank. They did not ask models to read a student's work and produce a score, feedback, and a learning recommendation.</p>
+          <p>This report takes that next step. We gave two Gemini models real student essays and a real scoring rubric, then asked them to do what a human rater does: assign a holistic score, explain why, identify strengths and weaknesses, and suggest a concrete next learning step.</p>
+
+          <h2>The promise and concern of AI essay scoring</h2>
+          <p>Automated essay scoring (AES) has a long research history, from e-rater in the late 1990s to neural approaches in the 2010s. Large language models add a new dimension: they can score <em>and</em> explain, producing the kind of formative feedback that was previously the exclusive domain of human teachers. If LLMs can reliably assess student writing, the implications for feedback at scale are significant.</p>
+          <p>But reliability is the question. When a model scores an essay correctly, is it applying the rubric to the text? Or is it recalling the score from training data?</p>
+
+          <h2>Data contamination in LLM evaluation</h2>
+          <p>Data contamination occurs when evaluation data appears in a model's training corpus. The model has "seen the answers" before being tested. This is a known problem in LLM benchmarking: Sainz et al. (2023) demonstrated that GPT models showed inflated performance on datasets that existed before their training cutoff, and Jacovi et al. (2023) argued that contamination makes many reported benchmark scores unreliable.</p>
+          <p>For essay scoring, the risk is specific. The ETS publishes sample essays with scores and rater commentary for their GRE writing tasks. These samples are widely reproduced in test preparation materials. Any model trained on web data has almost certainly encountered them. If a model recalls that a particular essay received a score of 5, it does not need to apply the rubric at all.</p>
+          <p>We distinguish two forms of contamination:</p>
+          <ul>
+            <li><strong>Verbatim recall:</strong> Can the model reproduce the essay text from memory? This would indicate direct memorisation of the text.</li>
+            <li><strong>Score recall:</strong> Can the model guess the published score without seeing the rubric? This would indicate memorisation of the score-essay association, even without memorising the text itself.</li>
+          </ul>
+          <p>Score recall is the more concerning form for assessment research. A model that cannot reproduce an essay but can recall its published score will appear to be a competent assessor when tested on that essay.</p>
+
+          <p>In measurement theory, this is a threat to construct validity (Messick, 1989). A valid assessment score should reflect the construct it claims to measure: in this case, the ability to apply a rubric to student writing. If the score instead reflects a memorised association between an essay and its published rating, it measures something else entirely. Score memorisation is a form of construct-irrelevant variance that inflates observed agreement between model and human scores without reflecting genuine assessment capability.</p>
+
+          <h2>What this report tests</h2>
+          <p>We tested two Gemini models on two corpora:</p>
+          <ul>
+            <li><strong>ETS sample essays (6 essays):</strong> Published by ETS with scores and commentary. High contamination risk.</li>
+            <li><strong>PERSUADE 2.0 essays (12 essays):</strong> From a research corpus published in 2024 by Crossley et al. Lower contamination risk, though not provably absent from training data.</li>
+          </ul>
+          <p>Each corpus was scored using a rubric matched to its genre: the ETS rubric for ETS essays and the PERSUADE/ASAP rubric for PERSUADE essays. Because the rubrics differ, raw scoring accuracy cannot be directly compared across corpora. The contamination comparison instead relies on a score recall test that does not involve the rubric at all. If models recall published scores at a higher rate for the likely-contaminated corpus, this is consistent with score memorisation.</p>
+          <p>We also ran two contamination tests: a verbatim recall test (can the model reproduce the essay text?) and a score recall test (can the model guess the published score without the rubric?).</p>
+
+          <div class="note">
+            <strong>Scope.</strong> This is a proof-of-concept with 2 models and 18 essays. The findings are consistent with a contamination effect but do not constitute definitive evidence. See the <a href="discussion.html">Discussion</a> for what we claim and what we do not.
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Report</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="/studies/" target="_blank">All Reports</a></li>
+            <li><a href="https://github.com/trgallagher-research" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Report 2.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

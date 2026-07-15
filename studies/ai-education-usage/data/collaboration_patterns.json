@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "title": "Education vs All Tasks: Collaboration Patterns",
+    "source": "Anthropic Economic Index V4 (release_2026_01_15)",
+    "period": "Nov 13-20, 2025",
+    "notes": "Volume-weighted, renormalised (excluding not_classified and none)"
+  },
+  "results": [
+    { "pattern": "Directive", "all_tasks": 33.21, "education": 34.56, "difference": 1.35 },
+    { "pattern": "Task Iteration", "all_tasks": 28.04, "education": 33.03, "difference": 4.99 },
+    { "pattern": "Learning", "all_tasks": 20.69, "education": 23.70, "difference": 3.01 },
+    { "pattern": "Validation", "all_tasks": 4.26, "education": 7.12, "difference": 2.86 },
+    { "pattern": "Feedback Loop", "all_tasks": 13.79, "education": 1.59, "difference": -12.21 }
+  ]
+}

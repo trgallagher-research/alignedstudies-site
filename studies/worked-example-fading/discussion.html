@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discussion — AlignED Report 4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/worked-example-fading/discussion.html">
+</head>
+<body data-page="discussion">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html" class="active">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>4. Discussion</h1>
+        <p class="subtitle">What the pilot found, what it means for teachers, and what comes next</p>
+      </div>
+
+      <div class="prose content-section">
+
+        <h2>The knowledge-application gap</h2>
+
+        <p>The central finding of this pilot is a gap between what models know and what they do. All six models retrieved CLT-related knowledge in their Condition B reasoning traces. The closed-source models (Claude, both Geminis) explicitly named fading or the worked example effect but did not implement it. The open-weight models (DeepSeek R1, Qwen3-235B) engaged with CLT load types without reaching the specific principle of fading. None of the six applied fading in their output.</p>
+
+        <p>This is not an absence of knowledge. It is a failure to select and correctly apply the right principle from a set of known principles. When the prompt said "apply cognitive load theory," all models activated CLT-related knowledge, but defaulted to:</p>
+
+        <ul>
+          <li>Clear formatting (extraneous load reduction)</li>
+          <li>Consistent structure (schema building)</li>
+          <li>Complete solutions (worked example effect)</li>
+          <li>Difficulty progression (element interactivity)</li>
+        </ul>
+
+        <p>Fading did not make the cut. This pattern suggests that in training data, CLT is most frequently associated with presentation clarity and complete worked examples, not with scaffolding removal.</p>
+
+        <h2>What "apply CLT" activates</h2>
+
+        <p>The Condition B results reveal what these models treat as the default interpretation of "apply cognitive load theory." All six prioritised reducing extraneous load (formatting, annotations, consistency) and providing complete worked examples. These are valid CLT applications. But they are incomplete. A CLT-informed worked example sequence should include fading. The models treated CLT as a presentation framework rather than a design framework that governs the structure of the sequence itself.</p>
+
+        <p>For teachers, this means that prompting "use cognitive load theory" is likely to produce better-formatted examples, not pedagogically restructured sequences. The prompt activates surface features of CLT, not its deeper design implications.</p>
+
+        <h2>The difficulty-fading confusion</h2>
+
+        <p>All six models, when given no pedagogical instruction, equated "progression" with "harder equations." Gemini 3.1 Pro in Condition B went further, explicitly equating "fading" with "increasing complexity." This is the most common near-miss in the dataset.</p>
+
+        <p>The confusion is understandable. In everyday teaching language, "scaffold" can mean either "support a student through a difficult task" or "provide a structure that is gradually removed." The first sense is about difficulty; the second is about transfer of responsibility. Fading is about the second sense. The models default to the first.</p>
+
+        <h2>Implications for teachers</h2>
+
+        <p>Three practical implications emerge from this pilot, stated cautiously given the sample size:</p>
+
+        <ol>
+          <li><strong>Do not assume AI applies best practice without specific instruction.</strong> If a teacher asks for worked examples without specifying pedagogical principles, the output is likely to be four complete examples that vary in difficulty but not in scaffolding structure.</li>
+          <li><strong>"Apply CLT" is not enough.</strong> The prompt activates CLT vocabulary but does not reliably activate the specific principle (fading) that governs how worked example sequences should be structured.</li>
+          <li><strong>Specific prompts produce correct outputs.</strong> When the prompt named and defined fading, all six models implemented it correctly. The more specific the instruction, the better the pedagogical quality of the output.</li>
+        </ol>
+
+        <p>The teacher's role, then, is not eliminated by the model. It is shifted. The teacher needs to know what good instructional design looks like in order to prompt for it specifically, or to recognise when it is missing from the output.</p>
+
+        <h2>Limitations</h2>
+
+        <p>These limitations constrain what can be claimed from this pilot. They are not caveats to be skimmed. They define the boundaries of the findings.</p>
+
+        <ul>
+          <li><strong>Six models, one task, one principle.</strong> The knowledge-application gap was observed across all six models, which strengthens the finding relative to the original two-model pilot. However, all six were tested on the same task (two-step linear equations) and the same CLT principle (fading). The pattern may not generalise to other educational tasks or other CLT principles.</li>
+          <li><strong>One run per condition.</strong> Claude's thinking mode blocks temperature control; Gemini models were run at default temperature. Without multiple runs, we cannot distinguish a stable model behaviour from a single-sample artefact.</li>
+          <li><strong>One CLT principle.</strong> Fading is one of many CLT principles. The knowledge-application gap observed here may or may not generalise to other principles (e.g., the expertise reversal effect, the redundancy principle).</li>
+          <li><strong>No human baseline.</strong> We do not know what percentage of human teachers would apply fading when asked to create worked examples. Without this comparison, we cannot say whether the models are better or worse than typical human practice.</li>
+          <li><strong>Pilot, not confirmatory.</strong> This study tested a methodology. The findings are descriptive and exploratory. No inferential statistics are appropriate for n = 18.</li>
+        </ul>
+
+        <h2>What a larger study should test</h2>
+
+        <p>If the methodology proves useful, a larger study could address the pilot's limitations:</p>
+
+        <ul>
+          <li><strong>More runs per model:</strong> 3&ndash;5 runs per condition per model to assess consistency, now that six models have shown the same pattern.</li>
+          <li><strong>More CLT principles:</strong> Test fading alongside the expertise reversal effect, the redundancy principle, and the split-attention effect. Does the gap appear for all principles or only some?</li>
+          <li><strong>Multiple runs:</strong> 3&ndash;5 runs per condition per model to assess consistency.</li>
+          <li><strong>Human baseline:</strong> Administer the same prompts to qualified teachers and instructional designers. How often do humans apply fading without specific instruction?</li>
+          <li><strong>Cross-model scoring with reliability metrics:</strong> Formal inter-rater reliability computation across multiple independent LLM judges.</li>
+          <li><strong>Multi-turn prompting:</strong> Test whether models apply fading when given follow-up prompts (e.g., "Can you restructure these to gradually remove scaffolding?").</li>
+        </ul>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="appendices.html#citation">Citation</a></li>
+            <li><a href="/studies/">All Reports</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report-4" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Last updated: March 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

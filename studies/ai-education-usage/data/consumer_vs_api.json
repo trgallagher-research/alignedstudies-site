@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "title": "Claude.ai vs API: Education Collaboration Patterns",
+    "source": "Anthropic Economic Index V4 (release_2026_01_15)",
+    "period": "Nov 13-20, 2025",
+    "notes": "Claude.ai = consumer conversations; API = first-party developer-built tools"
+  },
+  "results": [
+    { "pattern": "Directive", "claude_ai": 34.56, "api": 66.19 },
+    { "pattern": "Task Iteration", "claude_ai": 33.03, "api": 7.94 },
+    { "pattern": "Learning", "claude_ai": 23.70, "api": 14.05 },
+    { "pattern": "Validation", "claude_ai": 7.12, "api": 10.68 },
+    { "pattern": "Feedback Loop", "claude_ai": 1.59, "api": 1.13 }
+  ]
+}

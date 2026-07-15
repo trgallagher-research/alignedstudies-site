@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methods — AlignED Report 2</title>
+  <meta name="description" content="Two models, two corpora, three assessment dimensions, and two contamination tests.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/assessing-complex-competencies/methods.html">
+</head>
+<body data-page="methods">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html" class="active">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>2. Methods</h1>
+        <p class="subtitle">Design, materials, and procedures</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="prose">
+
+          <!-- Jump Links -->
+          <div class="jump-links">
+            <h3>On this page</h3>
+            <ul>
+              <li><a href="#overview">Overview</a></li>
+              <li><a href="#models">Models</a></li>
+              <li><a href="#corpora">Essay corpora</a></li>
+              <li><a href="#prompts">Assessment prompts</a></li>
+              <li><a href="#contamination">Contamination tests</a></li>
+              <li><a href="#metrics">Scoring and analysis</a></li>
+            </ul>
+          </div>
+
+          <h2 id="overview">Overview</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Models</td><td>Gemini 3.1 Pro, Gemini 3 Flash</td></tr>
+              <tr><td>Essay corpora</td><td>ETS GRE samples (6 essays), PERSUADE 2.0 (12 essays)</td></tr>
+              <tr><td>Rubrics</td><td>ETS GRE 6-point holistic (for ETS essays), PERSUADE/ASAP 6-point holistic (for PERSUADE essays)</td></tr>
+              <tr><td>Assessment dimensions</td><td>Scoring (holistic score + justification), Feedback (strengths + areas for improvement), Next step (targeted learning task)</td></tr>
+              <tr><td>Contamination tests</td><td>Verbatim recall (text reproduction), Score recall (score guessing without rubric)</td></tr>
+              <tr><td>Temperature</td><td>0 (deterministic)</td></tr>
+              <tr><td>Output format</td><td>Structured JSON</td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="models">Models</h2>
+          <p>We tested two Gemini models from Google:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Model ID</th>
+                <th>Tier</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Gemini 3.1 Pro</td><td>gemini-3.1-pro-preview</td><td>Frontier</td></tr>
+              <tr><td>Gemini 3 Flash</td><td>gemini-3-flash-preview</td><td>Lightweight</td></tr>
+            </tbody>
+          </table>
+          <p>Only two models were tested. We chose Gemini models because the google-genai SDK supports structured JSON output, which reduced the need for output parsing. Extending this approach to other model families (Claude, GPT, open-weight models) is a natural next step.</p>
+
+          <h2 id="corpora">Essay corpora</h2>
+          <h3>ETS GRE sample essays (high contamination risk)</h3>
+          <p>Six essays from the ETS "Analyse an Argument" task, one at each score level (1 through 6). These essays are published on the ETS website with scores and detailed rater commentary. They appear widely in GRE preparation materials and are almost certainly present in the training data of any model trained on web-scale corpora.</p>
+          <p>All six essays respond to the same argument prompt about Mason City's riverside recreational facilities. ETS provides one sample response at each score level with official rater commentary.</p>
+
+          <h3>PERSUADE 2.0 essays (lower contamination risk)</h3>
+          <p>Twelve essays from the PERSUADE 2.0 corpus (Crossley et al., 2024), two at each score level (1 through 6). PERSUADE 2.0 is a research dataset of student persuasive writing, published for automated essay scoring research. While the corpus is publicly available, its essays are less likely to appear in general web training data than the widely-reproduced ETS samples.</p>
+          <p>The PERSUADE essays respond to a different prompt ("Seeking multiple opinions") and were scored by trained human raters on the PERSUADE/ASAP 6-point holistic scale.</p>
+
+          <h3>Rubrics</h3>
+          <p>Each corpus was scored using its own rubric. The ETS essays were scored against the ETS GRE "Analyse an Argument" rubric, which emphasises identification and examination of assumptions, logical organisation, and language control. The PERSUADE essays were scored against the PERSUADE/ASAP holistic rubric, which emphasises development of a point of view, critical thinking, use of evidence, and persuasive writing conventions. Both rubrics use a 6-point scale, but the criteria differ to match the genre and task. Full rubric text for both scales is in the <a href="appendices.html#rubric">Appendices</a>.</p>
+
+          <div class="note">
+            <strong>Corpus comparability.</strong> The two corpora differ in prompt, genre, student population, and rubric. Scoring accuracy cannot be directly compared across corpora because the rubrics assess different writing competencies. The contamination comparison relies on the <em>score recall</em> test (which does not involve the rubric at all) rather than on raw accuracy differences.
+          </div>
+
+          <h2 id="prompts">Assessment prompts</h2>
+          <p>Each essay was assessed using three separate prompts, run sequentially. Separating prompts prevents the score from anchoring the feedback. The prompt structure was identical for both corpora, but the rubric and task framing were adapted to match each corpus. Full prompt text is in the <a href="appendices.html#prompts">Appendices</a>.</p>
+
+          <details>
+            <summary>Prompt 1: Scoring</summary>
+            <div class="details-content">
+              <p>The model receives the essay, the writing prompt, and the full 6-point rubric for the relevant corpus. It returns a holistic score (1-6) and a justification referencing specific rubric criteria.</p>
+              <p><strong>ETS version:</strong> Framed as a GRE "Analyse an Argument" task. Includes the ETS rubric and the argument prompt.</p>
+              <p><strong>PERSUADE version:</strong> Framed as a persuasive writing task. Includes the PERSUADE/ASAP rubric and the writing prompt.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Prompt 2: Feedback</summary>
+            <div class="details-content">
+              <p>The model receives the essay and prompt (but not the score it previously assigned). It returns three specific strengths and three areas for improvement, each with concrete textual references.</p>
+              <p><strong>ETS version:</strong> Asks for feedback on analytical reasoning.</p>
+              <p><strong>PERSUADE version:</strong> Asks for feedback on persuasive writing, calibrated to a middle/high school student audience.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Prompt 3: Next step</summary>
+            <div class="details-content">
+              <p>The model receives the essay and prompt. It returns a single, concrete learning task targeting the student's most pressing skill gap.</p>
+              <p><strong>ETS version:</strong> Targets analytical writing weaknesses.</p>
+              <p><strong>PERSUADE version:</strong> Targets persuasive writing weaknesses, appropriately challenging for the student's level.</p>
+            </div>
+          </details>
+
+          <h2 id="contamination">Contamination tests</h2>
+          <h3>Verbatim recall test (ETS only)</h3>
+          <p>Each model was given the first sentence of each ETS essay and asked to write, from memory, what it thought the rest of the essay said. The model's continuation was then compared to the actual remainder of the essay (everything after the first sentence) using Python's SequenceMatcher. This produces a similarity ratio between 0 and 1 based on the longest contiguous matching sequences of characters between the two texts. A score of 1.0 means the model reproduced the essay word-for-word; a score near 0 means the texts share almost nothing in common.</p>
+          <p>We classified similarity scores into three bands: 0.7 or above (high, likely memorised), 0.4–0.7 (moderate, partial recall), and below 0.4 (low, not memorised). These are researcher-defined thresholds, not established conventions. There is no standard rule of thumb for SequenceMatcher ratios in contamination testing comparable to, for example, Cohen's (1988) benchmarks for effect sizes. In practice, the threshold choice matters little here: both models scored well below 0.04 on average, an order of magnitude below even the most lenient cutoff.</p>
+
+          <h3>Score recall test (both corpora)</h3>
+          <p>Each model was given an essay and asked to guess the published score <em>without seeing the rubric</em>. This tests whether the model has memorised the score-essay association from training data.</p>
+          <p>The score recall prompts were tailored to each corpus to avoid introducing framing confounds. The ETS prompt stated that the essay "was scored by ETS expert raters" and asked for the ETS-assigned score. The PERSUADE prompt stated that the essay came from "the PERSUADE 2.0 corpus" and "was scored by trained human raters on a 1-6 scale." Neither prompt included the rubric.</p>
+          <p>If a model recalls ETS scores at a higher rate than PERSUADE scores, this is consistent with contamination: the ETS essays (with their published scores) are more likely to be in training data.</p>
+
+          <h2 id="metrics">Scoring and analysis</h2>
+          <p>Assessment accuracy was measured using:</p>
+          <ul>
+            <li><strong>Exact match:</strong> Model score equals human/ETS score.</li>
+            <li><strong>Within-one:</strong> Model score is within 1 point of human/ETS score. Standard in essay scoring research, where adjacent scores are considered acceptable agreement.</li>
+          </ul>
+          <p>Contamination was measured by comparing score recall rates across corpora. The <strong>contamination gap</strong> is the difference in exact score recall between ETS and PERSUADE essays, measured in percentage points.</p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Report</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="/studies/" target="_blank">All Reports</a></li>
+            <li><a href="https://github.com/trgallagher-research" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Report 2.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

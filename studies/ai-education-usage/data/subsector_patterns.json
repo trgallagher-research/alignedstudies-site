@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "title": "Collaboration Patterns by Education Subsector",
+    "source": "Anthropic Economic Index V4 (release_2026_01_15)",
+    "period": "Nov 13-20, 2025",
+    "notes": "Volume-weighted, renormalised"
+  },
+  "results": [
+    {
+      "subsector": "Edu Support",
+      "directive": 42.11,
+      "feedback_loop": 1.70,
+      "task_iteration": 45.73,
+      "validation": 1.83,
+      "learning": 8.63
+    },
+    {
+      "subsector": "K-12 Teachers",
+      "directive": 35.77,
+      "feedback_loop": 0.49,
+      "task_iteration": 23.49,
+      "validation": 3.37,
+      "learning": 36.89
+    },
+    {
+      "subsector": "Library",
+      "directive": 44.71,
+      "feedback_loop": 1.47,
+      "task_iteration": 26.04,
+      "validation": 3.38,
+      "learning": 24.40
+    },
+    {
+      "subsector": "Other Teachers",
+      "directive": 31.74,
+      "feedback_loop": 1.74,
+      "task_iteration": 26.28,
+      "validation": 7.61,
+      "learning": 32.64
+    },
+    {
+      "subsector": "Postsecondary",
+      "directive": 32.10,
+      "feedback_loop": 1.64,
+      "task_iteration": 34.02,
+      "validation": 9.82,
+      "learning": 22.42
+    }
+  ]
+}

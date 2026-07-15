@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methods — AlignED Report 4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/worked-example-fading/methods.html">
+</head>
+<body data-page="methods">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html" class="active">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>2. Methods</h1>
+        <p class="subtitle">Six models, three conditions, and a scoring rubric for both outputs and reasoning traces</p>
+      </div>
+
+      <div class="prose content-section">
+
+        <!-- Jump links -->
+        <div class="jump-links">
+          <h3>On this page</h3>
+          <ul>
+            <li><a href="#models">Models</a></li>
+            <li><a href="#conditions">Conditions</a></li>
+            <li><a href="#rubric">Scoring rubric</a></li>
+            <li><a href="#scoring-process">Scoring process</a></li>
+            <li><a href="#traces">Reasoning trace capture</a></li>
+            <li><a href="#limitations">Limitations</a></li>
+          </ul>
+        </div>
+
+        <h2 id="models">Models</h2>
+
+        <p>Six models with accessible reasoning traces were tested: three closed-source and three open-weight.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Provider</th>
+              <th>Type</th>
+              <th>Reasoning trace</th>
+              <th>Temperature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Claude Opus 4.6</td>
+              <td>Anthropic</td>
+              <td>Closed</td>
+              <td>Extended thinking (8K budget; API returns summarised thinking)</td>
+              <td>Not settable (blocked by extended thinking)</td>
+            </tr>
+            <tr>
+              <td>Gemini 3.1 Pro</td>
+              <td>Google</td>
+              <td>Closed</td>
+              <td>Thinking traces (8K budget; API returns full thinking)</td>
+              <td>1.0 (default; not modified)</td>
+            </tr>
+            <tr>
+              <td>Gemini 3 Flash</td>
+              <td>Google</td>
+              <td>Closed</td>
+              <td>Thinking traces (8K budget; API returns full thinking)</td>
+              <td>1.0 (default; not modified)</td>
+            </tr>
+            <tr>
+              <td>DeepSeek R1-0528</td>
+              <td>DeepSeek (via OpenRouter)</td>
+              <td>Open</td>
+              <td>Full unsummarised chain of thought</td>
+              <td>N/A (reasoning model)</td>
+            </tr>
+            <tr>
+              <td>Qwen3-235B-A22B</td>
+              <td>Alibaba (via OpenRouter)</td>
+              <td>Open</td>
+              <td>Full unsummarised chain of thought</td>
+              <td>N/A (reasoning model)</td>
+            </tr>
+            <tr>
+              <td>GPT-OSS-120B</td>
+              <td>OpenAI (via OpenRouter)</td>
+              <td>Open</td>
+              <td>Minimal traces returned (possible API limitation)</td>
+              <td>N/A (reasoning model)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note">
+          <strong>API provider note:</strong> The three open-weight models were accessed via OpenRouter, which provides a unified API for open-weight reasoning models. OpenRouter surfaces reasoning traces through the <code>reasoning</code> field. GPT-OSS-120B returned minimal or empty traces across all conditions, which may reflect an OpenRouter limitation rather than an absence of internal reasoning.
+        </div>
+
+        <h2 id="conditions">Three prompting conditions</h2>
+
+        <p>Each model received the same task under three conditions. The task: create a set of four worked examples teaching Year 8 students to solve two-step linear equations. The conditions differ only in the final instruction.</p>
+
+        <h3>Condition A: Baseline</h3>
+        <pre>You are an experienced mathematics teacher. Create a set of 4 worked examples teaching Year 8 students how to solve two-step linear equations (e.g., 3x + 5 = 20). Each worked example should present a problem and its full worked solution.</pre>
+
+        <h3>Condition B: General CLT</h3>
+        <pre>You are an experienced mathematics teacher. Create a set of 4 worked examples teaching Year 8 students how to solve two-step linear equations (e.g., 3x + 5 = 20). Each worked example should present a problem and its full worked solution. Apply cognitive load theory principles in your design.</pre>
+
+        <h3>Condition C: Specific fading</h3>
+        <pre>You are an experienced mathematics teacher. Create a set of 4 worked examples teaching Year 8 students how to solve two-step linear equations (e.g., 3x + 5 = 20). Apply the worked example fading effect from cognitive load theory: systematically remove solution steps across the sequence so that learners gradually take over more of the problem-solving process.</pre>
+
+        <p><strong>Design note:</strong> Conditions A and B use "set" rather than "sequence" to avoid priming CLT associations ("worked example sequence" is a CLT term of art). Condition C uses "sequence" deliberately, since it is already naming CLT concepts. Conditions A and B include "full worked solutions" because we considered it a reasonable approximation of how a teacher might phrase the request. This creates a competing instruction: the prompt asks for complete solutions, but CLT best practice says to fade. Condition C removes that competing instruction, which is why the comparison across conditions is informative.</p>
+
+        <h2 id="rubric">Scoring rubric</h2>
+
+        <p>Each response was scored on two dimensions:</p>
+
+        <h3>Dimension 1: Output structure (0&ndash;2)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Score</th>
+              <th>Label</th>
+              <th>Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>0</strong></td>
+              <td>Uniform</td>
+              <td>All four examples have the same structure. Every solution step is fully completed by the model. Examples may vary in difficulty but not in how much work the student does.</td>
+            </tr>
+            <tr>
+              <td><strong>1</strong></td>
+              <td>Some variation</td>
+              <td>Some structural variation (shorter explanations, different formatting). All solution steps are still completed by the model. No steps left for the student.</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td>Progressive scaffolding removal</td>
+              <td>Solution steps are progressively removed. At least one example is partially completed (steps left blank or for the student). The final example requires the student to complete most or all steps independently.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Key distinctions:</strong> Harder equations with all steps shown = 0 or 1, not scaffolding removal. Less narration but all steps present = 1, not scaffolding removal. Steps left for the student to complete = 2.</p>
+
+        <h3>Dimension 2: Reasoning trace content (0&ndash;2)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Score</th>
+              <th>Label</th>
+              <th>Criteria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>0</strong></td>
+              <td>Absent</td>
+              <td>Trace does not reference fading, scaffolding removal, or gradually shifting work to the learner.</td>
+            </tr>
+            <tr>
+              <td><strong>1</strong></td>
+              <td>Implicit logic</td>
+              <td>Trace references the underlying logic without formal CLT terminology (e.g., "gradually have them do more of the work").</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td>Explicit reference</td>
+              <td>Trace explicitly names fading, the worked example effect, the completion problem effect, cognitive load theory, or Sweller.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="scoring-process">Scoring process</h2>
+
+        <p>The original plan called for cross-model LLM scoring (each model's outputs scored by a different model). In practice, the pilot used a combination of LLM review agents and human verification:</p>
+
+        <ul>
+          <li>Claude outputs were scored by Opus 4.6 and Sonnet 4.6 review agents</li>
+          <li>Gemini outputs were scored by the same review agents</li>
+          <li>All scores were verified against the rubric by the author</li>
+        </ul>
+
+        <p>For a pilot of this size (n = 18), formal inter-rater reliability was not computed. A larger follow-up study would include multiple independent scorers and reliability metrics.</p>
+
+        <h2 id="traces">Reasoning trace capture</h2>
+
+        <p>All models were run with their reasoning/thinking features enabled. This produces a chain-of-thought trace that the model generates before producing its final output. These traces are generated text, not a direct window into model computation.</p>
+
+        <p><strong>An important asymmetry:</strong> Anthropic's API returns <em>summarised</em> thinking for Claude 4 models, not the full chain of thought. The summaries preserve key ideas but are shorter than what the model actually generated internally. Gemini's API returns full thinking traces. This means the Claude traces in this study are API-provided summaries, while the Gemini traces are complete. Both are still analytically useful for the scoring rubric, but the Claude traces may omit reasoning that occurred internally.</p>
+
+        <div class="note">
+          <strong>Interpretability disclaimer:</strong> Chain-of-thought traces are generated text, not transparent access to model internals. Claude's traces are additionally summarised by the API before being returned. A trace that references CLT may reflect patterns in training data rather than something analogous to human reasoning about pedagogy. We analyse traces as artefacts: evidence of what the model articulated during processing, not claims about internal understanding.
+        </div>
+
+        <h2 id="limitations">Limitations</h2>
+
+        <p>These limitations are foregrounded here, not buried in the Discussion.</p>
+
+        <ul>
+          <li><strong>Six models, one task, one principle.</strong> Findings describe these six models on this task at this point in time. The consistency across models strengthens the finding but does not generalise it to other CLT principles or educational tasks.</li>
+          <li><strong>One run per condition.</strong> Claude's extended thinking mode blocks the temperature parameter entirely. Gemini's thinking mode allows temperature but Google recommends keeping it at the default (1.0). The open-weight reasoning models do not support temperature control. No model was run multiple times, so outputs may vary across runs.</li>
+          <li><strong>No human baseline.</strong> We can score model outputs against the rubric, but we do not know how human teachers or instructional designers would perform on the same prompts. Without this comparison, we cannot say whether the models are better or worse than typical human practice.</li>
+          <li><strong>The prompt asks for "full worked solutions."</strong> Conditions A and B include this phrasing because we considered it a reasonable approximation of how a teacher might word the request. A model that complies literally may know about fading but prioritise following the prompt instruction. This is why the comparison across conditions matters: Condition C removes that competing instruction and asks for fading directly.</li>
+          <li><strong>Single-turn only.</strong> A teacher might follow up with "can you fade the scaffolding?" This study captures only the first-pass response.</li>
+          <li><strong>LLM judges share training biases.</strong> The scoring agents may share systematic biases with the models being scored. Human verification mitigates but does not eliminate this.</li>
+          <li><strong>Claude traces are summarised.</strong> Anthropic's API returns summarised thinking for Claude 4 models, not the full chain of thought. Gemini's API returns full thinking output. This asymmetry means Claude may have reasoned about fading in ways not visible in the returned trace. The scoring rubric was applied to what the API returned.</li>
+        </ul>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="appendices.html#citation">Citation</a></li>
+            <li><a href="/studies/">All Reports</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report-4" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Last updated: March 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4. Discussion — AlignED</title>
+  <meta name="description" content="What the Anthropic Economic Index education data tells us, what it does not, and implications for education policy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/ai-education-usage/discussion.html">
+</head>
+<body data-page="discussion">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html" class="active">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>4. Discussion</h1>
+      <p class="subtitle">What the data shows, what it does not, and what follows</p>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="prose">
+
+        <h2>What the data tells us</h2>
+
+        <p><strong>Education is a substantial use case for Claude.ai.</strong> At 15.2% of all task volume, education occupations represent one of the largest single occupation groups in the dataset. This is not a niche use case. Approximately 152,000 conversations in a single week were classified against education tasks.</p>
+
+        <p><strong>Students appear to be the primary users on this platform.</strong> Nearly 60% of education AI usage is classified as coursework. Professional work accounts for just 21%. The data from Claude.ai suggests students are likely the primary users of the platform for education tasks, though this assumes the "coursework" classification predominantly captures student activity rather than educator preparation.</p>
+
+        <p><strong>Usage is concentrated in a small number of high-volume tasks.</strong> The top five tasks account for 46% of all education conversation volume. The single most common task ("assist students with coursework outside class") alone accounts for 2.73% of total volume across all occupations. Aggregate patterns are shaped disproportionately by these high-traffic tasks.</p>
+
+        <p><strong>Multiple interaction styles exist, but directive and iterative dominate.</strong> Directive requests and task iteration together account for two-thirds of education interactions. Learning-classified interactions are present (23.7%) but are not the dominant mode.</p>
+
+        <p><strong>AI succeeds more often on education tasks.</strong> The 76.0% education success rate exceeds the 67.7% baseline. K-12 tasks succeed at 83.4%. This suggests that many education tasks are well within current AI capabilities.</p>
+
+        <h2>What the data does not tell us</h2>
+
+        <p><strong>Whether students are learning.</strong> This is the fundamental limitation. The data captures interaction patterns, not learning outcomes. A student who asks Claude to "write an essay about climate change" and a student who asks Claude to "explain the greenhouse effect so I can write my own essay" may produce very different learning outcomes, but both are classified as interactions with education tasks.</p>
+
+        <p><strong>Whether these patterns generalise beyond Claude.ai.</strong> Claude.ai has a specific market position, interface, and user base. ChatGPT likely serves a larger and different education population. Gemini is integrated into Google Workspace, which many schools use. The patterns here are specific to this platform.</p>
+
+        <p><strong>Whether patterns are stable across the academic year.</strong> November is assignment and exam season in many regions. A summer or mid-semester sample might show very different use case splits and interaction patterns.</p>
+
+        <p><strong>Whether the near-absence of feedback loops reflects actual usage or classifier limitations.</strong> Feedback loops require extended, adaptive exchanges. It is possible that education conversations that involve feedback are classified differently by Clio, or that the feedback loop category is defined in a way that excludes common educational feedback patterns.</p>
+
+        <p><strong>Whether geographic variations reflect genuine adoption differences or sampling artefacts.</strong> Without absolute conversation counts by country, the geographic findings are uninterpretable as measures of adoption. They show the education share of Claude.ai usage, conditional on people in that country already using Claude.ai.</p>
+
+        <h2>The interpretation gap</h2>
+
+        <p>The most significant analytical challenge in this data is the gap between interaction pattern and educational intent.</p>
+
+        <p>Consider the five collaboration patterns through an educational lens:</p>
+        <ul>
+          <li><strong>Directive.</strong> A student asking "explain X" is classified as directive. But explaining a concept to someone who asked for it is a foundational educational interaction. The category captures conversational structure (one-shot request and response), not whether the exchange serves a learning purpose.</li>
+          <li><strong>Task iteration.</strong> A student who submits a draft, receives feedback, revises, and resubmits is engaging in a write-revise-improve cycle. This is a core pedagogical process, widely encouraged in writing instruction. The Clio classifier captures the iterative structure but cannot distinguish between "I want this polished for submission" and "I want to understand how to improve my writing." Additionally, some iteration happens off-platform: a student might get feedback from Claude, revise in a word processor, and return with an updated draft. That revision work is invisible to Clio.</li>
+          <li><strong>Learning.</strong> This category comes closest to capturing educational intent, but its definition and accuracy are unknown. At 23.7% of education interactions, it is present but not dominant.</li>
+          <li><strong>Validation.</strong> A teacher checking whether AI-generated content is accurate, or a student verifying their own understanding against AI output, both fall here. The category is small (7.1%) but potentially valuable.</li>
+          <li><strong>Feedback loop.</strong> The near-absence of feedback loops (1.6%) is striking. Extended adaptive exchanges are what educational technologists typically envision when they describe "AI as tutor." This pattern is almost non-existent in the data.</li>
+        </ul>
+
+        <p>The bottom line: it would be a mistake to read "34.6% directive" as "34.6% not learning." Some directive interactions serve learning goals. Some task iteration is genuine pedagogical practice. The data tells us about conversational structure, not educational outcomes.</p>
+
+        <h2>Implications for education</h2>
+
+        <p>With these caveats firmly in place, several observations follow from the data.</p>
+
+        <p><strong>The volume of student Claude.ai use is significant.</strong> Regardless of interpretation, approximately 90,000 coursework-classified conversations occurred on a single platform in a single week. Any assessment or curriculum framework that assumes students are not using AI is working with an outdated picture.</p>
+
+        <p><strong>The dominant patterns do not resemble tutoring.</strong> The vision of AI as a personalised tutor that provides adaptive, extended feedback is not reflected in these Claude.ai patterns. Feedback loops are nearly absent. The dominant modes are directive requests and iterative task completion. If the goal is to shift AI usage toward more pedagogically productive patterns, the gap between aspiration and current practice on this platform is large.</p>
+
+        <p><strong>Assessment design matters more, not less.</strong> High AI success rates on education tasks (76%) mean that many traditional assessment formats can be completed effectively with AI assistance. Process-based assessment formats (reflective statements, viva voces, process journals, oral defences) become more important as a way to assess what students actually understand, rather than what they can produce.</p>
+
+        <p><strong>K-12 and postsecondary show different patterns.</strong> K-12 shows more learning-oriented interactions; postsecondary shows more task iteration and validation. This suggests that one-size-fits-all AI policies for education may miss important structural differences in how AI is used at different levels.</p>
+
+        <p><strong>Developer-built tools operate differently from student conversations.</strong> The stark difference between API (66% directive) and Claude.ai (35% directive) patterns suggests two distinct ecosystems for AI in education. Developer-built tools tend toward structured, directive interactions. Student conversations are more varied. Policy frameworks need to account for both.</p>
+
+        <h2>What was not included, and why</h2>
+
+        <p>Several analyses from the underlying data were excluded from this report:</p>
+        <ul>
+          <li><strong>V2-to-V4 trend comparison.</strong> The V2 and V4 datasets used different classification models, making temporal comparisons uninterpretable. The data verification confirmed this concern. The comparison has been dropped entirely.</li>
+          <li><strong>Autonomy scores.</strong> AI autonomy scores show very small variance across education tasks (mean 3.34 vs 3.38 for all tasks). The difference is not interpretively meaningful.</li>
+          <li><strong>Education years analysis.</strong> The finding that education tasks require education-level knowledge is circular and adds no interpretive value.</li>
+          <li><strong>Task complexity (human-only time).</strong> The time analysis was excluded because the <code>human_with_ai_time</code> metric likely measures calendar span rather than active work time, making time ratios unreliable.</li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="appendices.html#data-access">Data Access</a></li>
+            <li><a href="appendices.html#citation">Citation</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report-3" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Data from Anthropic Economic Index. Last updated: March 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

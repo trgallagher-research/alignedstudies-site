@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "corpus": "PERSUADE 2.0",
+    "total_essays": 12,
+    "score_range": "1-6",
+    "rubric": "PERSUADE/ASAP 6-point holistic"
+  },
+  "essays": [
+    { "id": "persuade_score1_a", "human_score": 1, "pro_score": 2, "flash_score": 1 },
+    { "id": "persuade_score1_b", "human_score": 1, "pro_score": 1, "flash_score": 1 },
+    { "id": "persuade_score2_a", "human_score": 2, "pro_score": 3, "flash_score": 3 },
+    { "id": "persuade_score2_b", "human_score": 2, "pro_score": 3, "flash_score": 3 },
+    { "id": "persuade_score3_a", "human_score": 3, "pro_score": 2, "flash_score": 2 },
+    { "id": "persuade_score3_b", "human_score": 3, "pro_score": 3, "flash_score": 3 },
+    { "id": "persuade_score4_a", "human_score": 4, "pro_score": 3, "flash_score": 3 },
+    { "id": "persuade_score4_b", "human_score": 4, "pro_score": 4, "flash_score": 4 },
+    { "id": "persuade_score5_a", "human_score": 5, "pro_score": 3, "flash_score": 3 },
+    { "id": "persuade_score5_b", "human_score": 5, "pro_score": 4, "flash_score": 4 },
+    { "id": "persuade_score6_a", "human_score": 6, "pro_score": 3, "flash_score": 4 },
+    { "id": "persuade_score6_b", "human_score": 6, "pro_score": 5, "flash_score": 5 }
+  ],
+  "summary": {
+    "pro": {
+      "exact_match": 3,
+      "within_one": 7,
+      "total": 12,
+      "exact_rate": 0.25,
+      "within_one_rate": 0.583
+    },
+    "flash": {
+      "exact_match": 5,
+      "within_one": 8,
+      "total": 12,
+      "exact_rate": 0.417,
+      "within_one_rate": 0.667
+    }
+  }
+}

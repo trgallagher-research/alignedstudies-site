@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "title": "Education Use Case Split",
+    "source": "Anthropic Economic Index V4 (release_2026_01_15)",
+    "period": "Nov 13-20, 2025"
+  },
+  "results": [
+    { "use_case": "Coursework", "all_tasks": 18.90, "education": 59.53 },
+    { "use_case": "Work", "all_tasks": 46.37, "education": 21.27 },
+    { "use_case": "Personal", "all_tasks": 34.73, "education": 19.20 }
+  ]
+}

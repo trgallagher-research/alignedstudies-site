@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlignED Report 4 — Do LLMs Fade Worked Examples?</title>
+  <meta name="description" content="A pilot study testing whether frontier LLMs apply the worked example fading effect from cognitive load theory. Six models, three conditions, eighteen reasoning traces.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/worked-example-fading/">
+</head>
+<body data-page="abstract">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html" class="active">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Title Block -->
+    <div class="cover-title">
+      <h1>Do LLMs Fade Worked Examples?</h1>
+      <p class="authors">Tim Gallagher <span class="pilot-badge">Pilot Study</span></p>
+      <p class="date">March 2026</p>
+    </div>
+    <div class="container">
+      <div style="border:1px solid #E8E4DF;background:#FEFDFB;border-radius:8px;padding:14px 18px;margin:18px 0 6px;font-family:Inter,-apple-system,sans-serif;font-size:14px;color:#4A5568;line-height:1.7;">
+        <strong>Status:</strong> Pilot (extends the two-model Report 4 pilot to six models)<br>
+        <strong>Models:</strong> Claude Opus 4.6, Gemini 3.1 Pro, Gemini 3 Flash, DeepSeek R1, Qwen3-235B, GPT-OSS-120B<br>
+        <strong>Data:</strong> 18 generated worked-example sequences across three prompting conditions, plus reasoning traces<br>
+        <strong>Limitation:</strong> One run per model per condition; all findings are descriptive.
+      </div>
+    </div>
+
+
+    <!-- Subtitle -->
+    <div class="container text-center mb-3">
+      <p class="text-muted" style="font-style: italic; font-size: 1.1rem;">A Pilot Study of Pedagogical Reasoning in Frontier AI Models</p>
+    </div>
+
+    <!-- Abstract -->
+    <div class="container">
+      <div class="abstract">
+        <h2>Abstract</h2>
+        <p>The worked example fading effect is one of the most robust findings in cognitive load theory: instructional sequences should begin with fully worked examples and progressively remove solution steps so learners take over the problem-solving process. If teachers use LLMs to generate worked examples, do those models apply fading?</p>
+        <p>This pilot study tested six models (three closed-source: Claude Opus 4.6, Gemini 3.1 Pro, Gemini 3 Flash; three open-weight: DeepSeek R1, Qwen3-235B, GPT-OSS-120B) across three prompting conditions: a baseline with no pedagogical instruction, general cognitive load theory instruction, and specific fading instruction. Both model outputs and reasoning traces (chain-of-thought) were collected and scored on two dimensions: whether the output implemented fading, and whether the trace referenced it.</p>
+        <p>The headline finding: all six models demonstrate knowledge of fading-related concepts in their reasoning traces when prompted with "apply cognitive load theory," but none applies fading in their output unless told specifically what it is. This knowledge-application gap has direct implications for teachers relying on AI-generated instructional materials.</p>
+        <p>This is a pilot study with six models, one run per condition, and no inferential statistics. All findings are descriptive. For the full list of AlignED reports, visit <a href="/studies/">AlignED Reports</a>.</p>
+      </div>
+    </div>
+
+    <!-- Key Metrics -->
+    <section>
+      <div class="container">
+        <h2 class="text-center" style="border-top: none; padding-top: 0; margin-top: 0;">At a glance</h2>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="metric-value">6</div>
+            <div class="metric-label">Models tested</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">3</div>
+            <div class="metric-label">Prompting conditions</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">18</div>
+            <div class="metric-label">Outputs scored</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">18</div>
+            <div class="metric-label">Reasoning traces analysed</div>
+          </div>
+        </div>
+
+        <!-- Key Finding Callout -->
+        <div class="note">
+          <strong>Key finding:</strong> All six models retrieved CLT-related knowledge in their reasoning traces when told to "apply cognitive load theory" (Condition B). None applied fading in their output without specific instruction (Condition C). The models have access to fading as a concept but do not select it from their repertoire of CLT principles unless the prompt names it directly.
+        </div>
+      </div>
+    </section>
+
+    <!-- Reading Guide & Nav Cards -->
+    <section>
+      <div class="container">
+        <div class="reading-guide">
+          <h3>Reading guide</h3>
+          <p>This site follows the structure of an academic paper. The Introduction explains why fading matters and frames the research question. Methods describes the prompts, models, and scoring rubric. Results presents the scores, charts, and key trace excerpts. Discussion draws out implications and states limitations. The Appendices contain all prompts, the full rubric, and complete model outputs and reasoning traces.</p>
+        </div>
+
+        <div class="nav-cards">
+          <a href="introduction.html" class="nav-card">
+            <h3>1. Introduction</h3>
+            <p>Why the fading effect matters when teachers use LLMs to create worked examples.</p>
+          </a>
+          <a href="methods.html" class="nav-card">
+            <h3>2. Methods</h3>
+            <p>Six models, three conditions, a scoring rubric, and reasoning trace capture.</p>
+          </a>
+          <a href="results.html" class="nav-card">
+            <h3>3. Results</h3>
+            <p>Output scores, trace scores, the knowledge-application gap, and key trace excerpts.</p>
+          </a>
+          <a href="discussion.html" class="nav-card">
+            <h3>4. Discussion</h3>
+            <p>What the pilot found, what it means for teachers, and what a larger study should test.</p>
+          </a>
+          <a href="appendices.html" class="nav-card">
+            <h3>Appendices</h3>
+            <p>Full prompts, scoring rubric, complete outputs, and all eighteen reasoning traces.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="appendices.html#citation">Citation</a></li>
+            <li><a href="/studies/">All Reports</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report-4" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Last updated: March 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,3283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendices — AlignED Report 4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/worked-example-fading/appendices.html">
+</head>
+<body data-page="appendices">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html" class="active">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header">
+        <h1>Appendices</h1>
+        <p class="subtitle">Full prompts, scoring rubric, complete reasoning traces, and model outputs</p>
+      </div>
+
+      <div class="prose content-section">
+
+        <!-- Jump links -->
+        <div class="jump-links">
+          <h3>On this page</h3>
+          <ul>
+            <li><a href="#prompts">A: Full prompts</a></li>
+            <li><a href="#rubric">B: Scoring rubric</a></li>
+            <li><a href="#traces">C: Reasoning traces</a></li>
+            <li><a href="#outputs">D: Model outputs</a></li>
+            <li><a href="#methodology">E: Methodology document</a></li>
+            <li><a href="#citation">Citation</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Appendix A: Prompts -->
+        <h2 id="prompts">Appendix A: Full prompts</h2>
+
+        <h3>Condition A: Baseline</h3>
+        <pre>You are an experienced mathematics teacher. Create a set of 4 worked examples teaching Year 8 students how to solve two-step linear equations (e.g., 3x + 5 = 20). Each worked example should present a problem and its full worked solution.</pre>
+
+        <h3>Condition B: General CLT</h3>
+        <pre>You are an experienced mathematics teacher. Create a set of 4 worked examples teaching Year 8 students how to solve two-step linear equations (e.g., 3x + 5 = 20). Each worked example should present a problem and its full worked solution. Apply cognitive load theory principles in your design.</pre>
+
+        <h3>Condition C: Specific fading</h3>
+        <pre>You are an experienced mathematics teacher. Create a set of 4 worked examples teaching Year 8 students how to solve two-step linear equations (e.g., 3x + 5 = 20). Apply the worked example fading effect from cognitive load theory: systematically remove solution steps across the sequence so that learners gradually take over more of the problem-solving process.</pre>
+
+        <p><strong>Design notes:</strong> Conditions A and B use "set" rather than "sequence" to avoid priming CLT associations ("worked example sequence" is a CLT term of art). Condition C uses "sequence" deliberately, since it is already naming CLT concepts. Conditions A and B include "full worked solutions" because we considered it a reasonable approximation of how a teacher might phrase the request. Condition C removes that phrasing and asks for fading directly. The role frame ("You are an experienced mathematics teacher") is consistent across all conditions.</p>
+
+        <!-- Appendix B: Rubric -->
+        <h2 id="rubric">Appendix B: Full scoring rubric</h2>
+
+        <h3>Dimension 1: Output structure (0&ndash;2)</h3>
+        <table>
+          <thead>
+            <tr><th>Score</th><th>Label</th><th>Criteria</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>0</strong></td>
+              <td>Uniform</td>
+              <td>All four examples have the same structure. Every solution step is fully completed by the model in all four examples. The examples may vary in difficulty but not in how much work the student does.</td>
+            </tr>
+            <tr>
+              <td><strong>1</strong></td>
+              <td>Some variation</td>
+              <td>There is some structural variation across examples (shorter explanations, different formatting). All solution steps are still completed by the model. No steps are left for the student to complete.</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td>Progressive scaffolding removal</td>
+              <td>Solution steps are progressively removed across the set. At least one example is partially completed (some steps left blank, marked with "?", or explicitly left for the student), and the final example requires the student to complete most or all steps independently.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Key distinctions:</strong></p>
+        <ul>
+          <li>Harder equations with all steps shown = 0 or 1, not scaffolding removal.</li>
+          <li>Less narration but all steps present = 1, not scaffolding removal.</li>
+          <li>Steps left for the student to complete = 2.</li>
+        </ul>
+
+        <h3>Dimension 2: Reasoning trace content (0&ndash;2)</h3>
+        <table>
+          <thead>
+            <tr><th>Score</th><th>Label</th><th>Criteria</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>0</strong></td>
+              <td>Absent</td>
+              <td>Trace does not reference fading, scaffolding removal, or the logic of gradually shifting work to the learner.</td>
+            </tr>
+            <tr>
+              <td><strong>1</strong></td>
+              <td>Implicit logic</td>
+              <td>Trace references the underlying logic without CLT terminology. Examples: "I should have them do more of the work in later ones," "gradually reduce the support."</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td>Explicit reference</td>
+              <td>Trace explicitly names: fading, the worked example effect, the completion problem effect, cognitive load theory, or Sweller.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Appendix C: Reasoning Traces -->
+        <h2 id="traces">Appendix C: Complete reasoning traces</h2>
+
+        <p>All eighteen reasoning traces are reproduced below as returned by each provider's API. The Gemini and open-weight model traces are full thinking output. The Claude traces are API-provided summaries of the model's internal reasoning, not the complete chain of thought (Anthropic's API summarises thinking for Claude 4 models). GPT-OSS-120B returned minimal or empty traces across all conditions. See the <a href="methods.html#traces">interpretability disclaimer</a> in the Methods section.</p>
+
+        <details>
+          <summary>Claude Opus 4.6 &mdash; Condition A (Baseline)</summary>
+          <div class="details-content">
+            <pre>I need to create 4 worked examples for Year 8 students on solving two-step linear equations. I'll make them progressively more challenging and cover different variations, including positive and negative numbers, and different operations.
+
+Let me create a clear, well-structured set of examples.
+
+Example 1: Basic (positive coefficients, positive constant)
+Example 2: Subtraction involved
+Example 3: Negative constant on the same side as the variable
+Example 4: Slightly more complex, maybe with a negative coefficient or larger numbers
+
+Let me write these out with clear, step-by-step solutions.</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Claude Opus 4.6 &mdash; Condition B (General CLT)</summary>
+          <div class="details-content">
+            <pre>The user wants me to create 4 worked examples for solving two-step linear equations for Year 8 students, applying cognitive load theory principles.
+
+Cognitive load theory principles relevant here:
+1. **Intrinsic load management** - sequence from simple to complex, don't introduce too many new elements at once
+2. **Extraneous load reduction** - clear, consistent formatting; avoid unnecessary information; use clear language
+3. **Germane load optimization** - use consistent solution structure so students can build schemas; highlight the underlying principle/pattern
+4. **Worked example effect** - provide complete, step-by-step solutions that students can study
+5. **Element interactivity** - start with low element interactivity and gradually increase</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Claude Opus 4.6 &mdash; Condition C (Specific fading)</summary>
+          <div class="details-content">
+            <pre>The user wants me to create 4 worked examples for solving two-step linear equations, applying the worked example fading effect from cognitive load theory.
+
+The worked example fading effect involves:
+1. First example: Complete worked example (all steps shown)
+2. Second example: Most steps shown, one step removed for students to complete
+3. Third example: More steps removed, students complete more
+4. Fourth example: Most/all steps removed, students solve independently (or nearly so)
+
+Let me create a logical progression for solving equations like 3x + 5 = 20.
+
+The general steps for solving a two-step linear equation are:
+1. Identify the equation
+</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Gemini 3.1 Pro &mdash; Condition A (Baseline)</summary>
+          <div class="details-content">
+            <pre>**My Plan for Crafting Two-Step Equation Examples**
+
+Right, let's get down to it. I need to create four worked examples for Year 8 students on solving two-step linear equations. My aim is to make it crystal clear, encouraging, and step-by-step, targeting those crucial 12-14-year-olds.
+
+First, I've got to ensure the pedagogical approach is spot on. For this age group, the balance method is the way to go—doing the same thing to both sides is intuitive and powerful. I'll make sure to explicitly state the core goal: to isolate that variable, getting 'x' (or whatever letter we're using) all by itself. I'll highlight the reverse order of operations – undoing addition/subtraction *before* multiplication/division.
+
+To cover a good range of examples, I'll vary the equations. Example one will be a straightforward addition and multiplication problem like *3x + 5 = 26*.  The second example will use subtraction, such as *4y - 7 = 13*. Example three will include division: *m/2 + 4 = 10*.
+
+Finally, to challenge them slightly and reinforce the understanding that equations work both ways, Example four will involve a negative coefficient or the variable on the right side. I thought about a few: maybe a negative coefficient example *15 - 2k = 3* or even an equation with the variable on the right like *22 = 5p - 3* and decided that the negative coefficient example is the perfect way to solidifying the basics.
+
+With these examples planned, I'll start drafting.  I'll begin each with a friendly introduction.  Each worked solution will be meticulously broken down:
+
+*   **Example 1:** Solve *3x + 5 = 26* (subtract 5, then divide by 3)
+*   **Example 2:** Solve *4y - 7 = 13* (add 7, then divide by 4)
+*   **Example 3:** Solve *m/2 + 4 = 10* (subtract 4, then multiply by 2).
+*   **Example 4:** Solve *15 - 2k = 3* (subtract 15, then divide by -2) or $22 = 5p - 3$. I will add 3, then divide by 5.
+
+I'll include a 'check' step in the first example to model good practice.
+
+Once the examples are drafted, I'll review them with a Year 8 lens. Is the language right? Are the steps clear and well-separated?  I'll use the proper terminology: 'variable', 'inverse operation', 'isolate'. I think I'll also add a little "Teacher Tip" to each one or maybe a general one at the beginning, just to give a little extra guidance.
+
+Finally, I'll tidy up the presentation with clear markdown formatting, using bolding and bullet points to make it easily readable, whether it's for a worksheet or whiteboard notes.</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Gemini 3.1 Pro &mdash; Condition B (General CLT)</summary>
+          <div class="details-content">
+            <pre>**My Thought Process for Designing Two-Step Equation Examples**
+
+Right, let's craft some effective worked examples for Year 8 students on solving two-step linear equations. My aim, as an experienced teacher, is to make these examples not just *solutions*, but solid learning experiences. I need to keep Cognitive Load Theory (CLT) at the forefront of my mind.
+
+First, I need to understand the request. It's a series of worked examples, solving equations like $3x + 5 = 20$. The target is Year 8 students, so I must start simple and use clear language. The format needs to be concise, step-by-step and should follow all CLT principles.
+
+To achieve this, I'll leverage CLT principles specifically: I'll lean heavily on the Worked Example Effect. This means providing *complete* solutions with annotations, like an expert teacher would do. This helps reduce their cognitive load. I'll also incorporate "fading" by starting with simpler equations and gradually increasing complexity, but maintaining a similar format. Split-attention is the enemy, so the explanations will be right alongside the math, not separated. I'll use bolding and clear layout to guide their attention, signaling key steps, and I'll keep the structure of each example *consistent*, so they learn the process, not just the format.
+
+I'll arrange the examples in increasing difficulty. Example 1 will be basic, positive integers, like $3x + 4 = 19$. Example 2 will introduce subtraction, still with positive integers (e.g., $4y - 7 = 13$). Example 3 will involve division, like $\frac{m}{2} + 5 = 11$, and finally, Example 4 will have either a negative outcome or a negative coefficient. I decided on a negative result to keep it accessible for Year 8 (e.g., $5p + 12 = 2$). I want to provide variety in the types of operations needed to show how the "inverse operation" concept applies regardless of the numbers involved.
+
+For drafting the examples, I'll use a clear, side-by-side format: the equation on one side, and a *brief* explanation or "Think Aloud" prompt next to it. For example 1, I'll start with "Solve $3x + 4 = 19$. Goal: Get *x* by itself." Then, I'll show Step 1, "Subtract 4: $3x = 15$", and Step 2, "Divide by 3: $x = 5$". I'll include a *quick* self-check to encourage that vital habit: "$3(5) + 4 = 19$. Good!" The other examples follow a similar structure.
+
+The layout is key. I'll use a table structure (Markdown works great) to keep the explanations directly beside the math. I'll also start with a "Teacher's Note" to introduce the overarching concept: "Reverse BIDMAS/BODMAS" and the rule of equality: "Whatever you do to one side, you must do to the other." The language will be simple and I'll consistently use "Inverse operation."
+
+I'll then review the draft against my constraints and intentions: experienced teacher tone – check, 4 worked examples – check, Year 8 level – perfectly aligned, and CLT principles applied – absolutely. Finally, I'll add an introduction and conclusion to set the context and ensure the markdown formatting is clean. It's about setting them up for success, so, let's keep it focussed and relevant.</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Gemini 3.1 Pro &mdash; Condition C (Specific fading)</summary>
+          <div class="details-content">
+            <pre>**My Thought Process: Designing a Worked Example Fading Sequence for Year 8 Algebra**
+
+Okay, so I'm putting together a worked example sequence for my Year 8s on solving two-step linear equations. We're using the worked example fading effect here, also known as backward fading, and this is based on cognitive load theory. I want to give them four examples to work through, gradually increasing their responsibility for the solution.
+
+First, I need to make sure I understand the core steps: identifying which operation to undo first (addition/subtraction), using inverse operations to isolate the variable, and checking the answer.
+
+I'm starting with a fully worked example ($4x + 7 = 23$). I'll show every step, explaining each one clearly. Next, for the second example ($5y - 3 = 22$), the students will do the very last step. I'll scaffold them by telling them to add 3 to both sides.
+
+For the third example ($2m + 9 = 21$), I'll fade out the last two steps. But I need to adjust this based on the *backward fading* principal. I'll provide the first step for them, then have them complete the execution. I need to make sure they're clear on how to isolate the variable. This will structure it like this:
+
+*   Eq: $2m + 9 = 21$
+*   Step 1: Subtract 9 from both sides. -> $2m = \_\_\_$ (Student fills in 12)
+*   Step 2: ____________ (Student writes: Divide both sides by 2)
+*   Final Answer: $m = \_\_\_$ (Student fills in 6)
+
+The fourth example ($6k - 5 = 19$) is the independent practice. I want to give them a clear prompt to use what they've learned, and I'll see how they go.
+
+The numbers should be friendly (integer solutions only). I'll use bolding, bullet points, and blank spaces to make it visually accessible.
+
+The fading should be: Example 1, 100% teacher. Example 2, 75% teacher, 25% student. Example 3, 25% teacher, 75% student. And Example 4: 0% teacher, 100% student. The worked example fading principle is adhered to.
+
+I'll write an introduction to set the context. I'll also add a brief note on the importance of checking answers because that's good practice. I'll make sure the layout clearly indicates where the student is supposed to write using underscore lines `_______`. I have to be mathematically accurate (using terms like "inverse operations").</pre>
+          </div>
+        </details>
+
+        <!-- Appendix C: Reasoning Traces -->
+
+<!-- Gemini 3 Flash — Condition A (Baseline) -->
+<details>
+  <summary>Gemini 3 Flash &mdash; Condition A (Baseline)</summary>
+  <div class="details-content">
+    <pre>**My Lesson Plan: Two-Step Linear Equations for Year 8**
+
+Alright, let's get this planned out. I'm aiming for a concise but solid lesson on solving two-step linear equations for my Year 8 students. They are typically around 12-13, and they need a clear foundation here. I need to make sure the examples are appropriately challenging but not overwhelming, building on their existing understanding.
+
+I'm thinking a structured approach is best. First, a quick introduction to refresh their memories – what *is* a two-step equation? Then, I'll hammer home the "Golden Rule": the balance principle. Everything I do to one side, I *must* do to the other. That's the cornerstone.
+
+Next, I need to choose four solid examples. I should present a varied range here; covering addition/subtraction, multiplication/division, and even a negative number or negative result scenario. I have the perfect selection in mind.
+
+*   **Example 1**: $2x + 7 = 15$ – A standard, foundational example. Steps will be subtracting 7, then dividing by 2.
+*   **Example 2**: $4x - 3 = 17$ – Here, we'll deal with subtraction and the positive result. Steps are adding 3, then dividing by 4.
+*   **Example 3**: $\frac{x}{3} + 5 = 9$ – This introduces the fraction form. Steps: subtracting 5, then multiplying by 3.
+*   **Example 4**: $3x + 11 = 5$ – This one brings in a negative result, ensuring they understand that $x$ can certainly be a negative. We'll show the step of subtracting 11, then dividing by 3.
+
+I want to use the "Inverse Operation" concept explicitly; spelling it out. We're undoing the operations to get $x$ alone. I'll make sure to consistently show the "working out" on the sides, demonstrating the step-by-step process.
+
+In the introduction, I'll aim for friendly language, setting a clear objective: we're isolating $x$! I will make sure the tone is encouraging and focused on logical steps.
+
+Let's see:
+
+*   **Example 1**: Starting with $2x + 4 = 12$, we'll subtract 4, then divide by 2, just to make sure they're clear.
+*   **Example 2**: $5m - 7 = 13$ will reinforce subtraction, so we will add 7, then divide by 5.
+*   **Example 3**: With $\frac{y}{4} + 2 = 5$, we'll subtract 2, then multiply by 4 – solidifying the fraction concept.
+*   **Example 4**:  Then with $3x + 10 = 1$ will ensure they understand handling negative results. I'll make sure they understand subtracting 10, then dividing by 3.
+
+I think this structure will provide a clear, logical, and encouraging lesson. It's concise but covers all the essential concepts and reinforces the key principles. I will make sure the language is Year 8 appropriate. I also have checked that there are 4 examples, and that the examples are fully worked, including the "working out" on the side of the equation. Excellent.
+</pre>
+  </div>
+</details>
+
+<!-- Gemini 3 Flash — Condition B (General CLT) -->
+<details>
+  <summary>Gemini 3 Flash &mdash; Condition B (General CLT)</summary>
+  <div class="details-content">
+    <pre>**My Lesson Plan: Two-Step Linear Equations for Year 8**
+
+Okay, so I'm putting together a lesson on solving two-step linear equations for my Year 8s. They're around 12-13 years old, so I need to be really mindful of their cognitive load. My goal is to get them comfortable with stuff like $3x + 5 = 20$.
+
+I'm thinking four worked examples with full solutions is the way to go, based on Cognitive Load Theory principles. The *worked example effect* is key; I'll give them the complete solution to reduce the mental effort they have to expend just figuring out the process. I want them to focus on *why* we do each step, not on figuring out what the step is.
+
+To minimise the *split-attention effect*, I'll integrate the text and the math visually. No jumping around! I also have to keep an eye on redundancy - no unnecessary repetition or extraneous information that might distract them. I'll make sure to start with easier questions and gradually increase the difficulty, applying *variability/scaffolding*, so the complexity grows organically. I'll include *self-explanation prompts* throughout to encourage students to think about why a step is taken, not just how.
+
+**Here's the plan:**
+
+*   **Example 1: The Standard Model (Addition/Multiplication)** I'll start with something basic: $2x + 4 = 14$. The focus here is on the inverse operations - subtract, then divide. I will be using clear labeling of the steps with "Goal" vs. "Action" columns.
+
+*   **Example 2: Dealing with Subtraction** Then, we'll move onto $5y - 7 = 13$, to reinforce the idea that the inverse of subtraction is addition. I'll maintain consistency in the format to help build their problem-solving schema.
+
+*   **Example 3: Division as the First Step's Inverse** Next, I'll introduce a slightly different structure: $\frac{w}{3} + 2 = 7$. It's still a two-step equation, but now, division is the first operation that we undo. I'll use visual cues like colour or bolding to make sure students can clearly see the operation being undone.
+
+*   **Example 4: Negative Results/Coefficients** Lastly, I'll present an equation like $4z + 10 = 2$, to introduce directed numbers and see what they have retained. I can start to fade the explicit steps at this point to encourage retrieval.
+
+I'm going to kick off each example with a brief statement of the goal. I'm also planning to use a "Do-Undo" mental model to try to reduce germane load. I'll present the steps in a dual-column layout (Calculation | Explanation) to avoid the split-attention effect.
+
+Initially, I had considered a negative *x* coefficient, but I think for Year 8, it's better to keep the coefficient positive but have a negative result in one of the examples. It's a slightly easier step-up without overloading their working memory. I'll also try to phrase things carefully, using phrases like "Balance the equation" to reinforce the underlying principle. I want to make sure they understand *why* we're doing what we're doing.
+</pre>
+  </div>
+</details>
+
+<!-- Gemini 3 Flash — Condition C (Specific fading) -->
+<details>
+  <summary>Gemini 3 Flash &mdash; Condition C (Specific fading)</summary>
+  <div class="details-content">
+    <pre>**My Plan for Teaching Two-Step Equations**
+
+Alright, let's see. I need to design a lesson on solving two-step linear equations – the Year 8 level, things like $3x + 5 = 20$. My approach will be centered around a worked example fading effect, leveraging Cognitive Load Theory. The goal is to gradually remove scaffolding, allowing students to independently solve the problems.
+
+I'll structure the lesson around four worked examples. The key is how I'll fade the support provided. First example: fully worked out – every step explicitly shown. Next, I'll remove the final step; the students have to do the final division to find the solution. The third example takes this a step further: it removes the intermediate step, so students will need to simplify to find the solution. Finally, the last example will be entirely independent practice.
+
+Each example focuses on the core two-step process: First, deal with the constant term using the inverse operation (addition or subtraction), and then deal with the coefficient using the inverse operation (multiplication or division). Of course, I'll always state the final answer.
+
+So, let's make this concrete. The first example will be $2x + 7 = 15$. I'll explicitly subtract 7 from both sides, show $2x = 8$, and then divide by 2 to arrive at $x = 4$. Next, for $3x - 4 = 11$, I'll add 4 to both sides and get $3x = 15$. The student needs to work out that last division by 3. Example 3, let's say $5x + 10 = 35$, the students will have to work out the simplification to $5x=25$ and the division. Lastly, they will be on their own with $4x - 6 = 18$, and I will be looking to see if they can remember the process.
+
+I'm aiming for clarity in presentation. I need to make use of clear "Operation" and "Equation" columns. And I'll be sure to keep the format consistent across all examples. Keeping the numbers manageable – integers – is paramount for Year 8, so I'll be careful there.
+
+Let's do a quick checklist: Four examples? Check. Appropriate for Year 8? Check. The fading aspect is there? Check. And I've kept a teacher's persona? Check. Good, I think this will be a solid lesson.
+</pre>
+  </div>
+</details>
+
+<!-- DeepSeek R1 — Condition A (Baseline) -->
+<details>
+  <summary>DeepSeek R1 &mdash; Condition A (Baseline)</summary>
+  <div class="details-content">
+    <pre>We are going to create four worked examples for solving two-step linear equations for Year 8 students.
+ Each example should be clear, with steps explained. We'll start with simple equations and gradually increase in complexity.</pre>
+  </div>
+</details>
+
+<!-- DeepSeek R1 — Condition B (General CLT) -->
+<details>
+  <summary>DeepSeek R1 &mdash; Condition B (General CLT)</summary>
+  <div class="details-content">
+    <pre>We are creating four worked examples for Year 8 students on solving two-step linear equations.
+ Cognitive Load Theory principles suggest that we should:
+ 1. Start with simple problems and gradually increase complexity.
+ 2. Break down each step clearly and explain the reasoning.
+ 3. Use consistent formats and procedures to reduce extraneous load.
+ 4. Avoid splitting attention by integrating text and steps.
+
+ We'll design four examples:
+
+ Example 1: Very basic two-step equation with positive integers and addition/subtraction only.
+ Example 2: Introduce multiplication/division step with positive integers.
+ Example 3: Include negative numbers or subtraction in the equation.
+ Example 4: Include fractions or decimals, or require simplification before solving.
+
+ However, note that Year 8 might not have covered negative numbers extensively? But they should be introduced.
+ Alternatively, we can do:
+
+ Example 1: Addition then multiplication (like 2x + 3 = 9)
+ Example 2: Subtraction then multiplication (like 3x - 4 = 11)
+ Example 3: Multiplication then subtraction (like 4x - 7 = 13) but also include a negative coefficient?
+    Actually, let's avoid negative coefficients at first. Instead, we can have a negative constant.
+ Example 4: With fractions (like (1/2)x + 5 = 9) or decimals (like 0.3x + 1 = 4).
+
+ But note: The example given is 3x+5=20. We'll start with that.
+
+ Let me outline:
+
+ Example 1: 3x + 5 = 20
+ Example 2: 5x - 3 = 17
+ Example 3: -2x + 7 = 15   [introducing negative coefficient?]
+    Alternatively, we can do an equation that requires distributing? But that's multi-step beyond two-step.
+
+ Alternatively, we can do:
+
+ Example 3: 4 - 2x = 10   [but note: this is subtraction first and then negative coefficient?]
+    Instead, let's do: 2x - 5 = -3   [introducing negative constant and negative solution?]
+
+ But let's stick to positive solutions first? Then introduce negative.
+
+ Alternatively, we can do:
+
+ Example 3: 2x + 7 = 1   (solution: x = -3)
+ Example 4: Fraction coefficient: (3/4)x - 2 = 4
+
+ However, note cognitive load: We want to build gradually.
+
+ Revised plan:
+
+ Example 1: Basic addition then multiplication (positive solution, positive coefficients and constants)
+ Example 2: Basic subtraction then multiplication (positive solution, positive coefficients and constants)
+ Example 3: Introduce negative solution (so the constant term after isolating the variable term might be negative)
+    OR introduce negative constant? Let's do: 5x + 8 = 3   -&gt; subtract 8: 5x = -5 -&gt; divide by 5: x = -1
+ Example 4: Fraction coefficient: (2/3)x + 4 = 10
+
+ But note: We haven't done division by a fraction? So we'll show multiplying by the reciprocal.
+
+ Alternatively, we can avoid fractions and do:
+
+ Example 4: With decimals: 0.5x - 1 = 3
+
+ However, fractions are important. So let's do:
+
+ Example 1: 3x + 5 = 20
+ Example 2: 2x - 7 = 5
+ Example 3: 4x + 10 = -6   (solution: x = -4)
+ Example 4: (1/3)x - 2 = 3
+
+ Now, let's write each example with full worked solution and explanations.
+
+ We'll use a consistent structure for each example:
+
+ Problem: ...
+ Step 1: Explain the goal (isolate the variable) and the two operations to undo.
+ Step 2: Undo the addition/subtraction (by doing the opposite operation to both sides).
+ Step 3: Undo the multiplication (by dividing both sides by the coefficient, or multiplying by reciprocal if fraction).
+
+ We'll write in clear, simple language.
+
+ Example 1: 3x + 5 = 20
+
+ Step 1: We need to isolate x. First, undo the addition of 5 by subtracting 5 from both sides.
+        3x + 5 - 5 = 20 - 5
+        This simplifies to: 3x = 15
+
+ Step 2: Now, undo the multiplication by 3. Since 3 is multiplied by x, we do the opposite operation: divide both sides by 3.
+        3x / 3 = 15 / 3
+        This gives: x = 5
+
+ Check: Plug back: 3*5 + 5 = 15+5=20. Correct.
+
+ Example 2: 2x - 7 = 5
+
+ Step 1: Undo the subtraction of 7 by adding 7 to both sides.
+        2x - 7 + 7 = 5 + 7
+        Simplify: 2x = 12
+
+ Step 2: Divide both sides by 2.
+        2x/2 = 12/2
+        x = 6
+
+ Check: 2*6 - 7 = 12-7=5. Correct.
+
+ Example 3: 4x + 10 = -6
+
+ Step 1: Undo the addition of 10 by subtracting 10 from both sides.
+        4x + 10 - 10 = -6 - 10
+        Simplify: 4x = -16
+
+ Step 2: Divide both sides by 4.
+        4x/4 = -16/4
+        x = -4
+
+ Check: 4*(-4) + 10 = -16+10 = -6. Correct.
+
+ Example 4: (1/3)x - 2 = 3
+
+ Step 1: Undo the subtraction of 2 by adding 2 to both sides.
+        (1/3)x - 2 + 2 = 3 + 2
+        Simplify: (1/3)x = 5
+
+ Step 2: Now, to isolate x, we need to undo the multiplication by 1/3. The opposite of multiplying by 1/3 is multiplying by 3 (the reciprocal).
+        Multiply both sides by 3:
+        3 * (1/3)x = 5 * 3
+        Simplify: (3/1)*(1/3)x = 15  -&gt; 1*x = 15 -&gt; x = 15
+
+        Alternatively, we can think: dividing by 3 is the same as multiplying by 1/3?
+        Actually, multiplying by the reciprocal: since we have (1/3)x, we multiply by 3/1.
+
+ Check: (1/3)*15 - 2 = 5 - 2 = 3. Correct.
+
+ However, note: In Example 4, we have a fraction. We can also write:
+
+        (1/3)x = 5
+        Then, we can multiply both sides by 3:
+        x = 5 * 3 = 15
+
+ We'll write it as:
+
+        Multiply both sides by 3: 3 * ( (1/3)x ) = 3 * 5
+        This gives: x = 15
+
+ Now, let's write them out in the required format.</pre>
+  </div>
+</details>
+
+<!-- DeepSeek R1 — Condition C (Specific fading) -->
+<details>
+  <summary>DeepSeek R1 &mdash; Condition C (Specific fading)</summary>
+  <div class="details-content">
+    <pre>We are going to create a set of 4 worked examples for solving two-step linear equations.
+ The goal is to use the worked example fading effect:
+   Example 1: Fully worked out with detailed steps and explanations.
+   Example 2: Some steps are still provided but with fewer explanations.
+   Example 3: Fewer steps are provided, and the student must complete more.
+   Example 4: Only the problem is given, and the student must solve it independently (but we will provide the answer for checking).
+
+ We'll use equations of the form ax + b = c.
+
+ Steps for solving:
+   1. Subtract the constant term (b) from both sides to isolate the term with the variable.
+   2. Then divide both sides by the coefficient (a) to solve for the variable.
+
+ Example 1: Fully worked with explanations.
+ Example 2: Worked with steps but less explanation.
+ Example 3: Only the main steps without explanations.
+ Example 4: Just the problem and the answer (with minimal steps).
+
+ Let's design the examples:</pre>
+  </div>
+</details>
+
+<!-- Qwen3-235B — Condition A (Baseline) -->
+<details>
+  <summary>Qwen3-235B &mdash; Condition A (Baseline)</summary>
+  <div class="details-content">
+    <pre>Okay, I need to create four worked examples for Year 8 students learning to solve two-step linear equations. Let me start by recalling what a two-step equation is. These equations require two operations to solve, typically involving a combination of addition/subtraction and multiplication/division. The goal is to isolate the variable, usually x, by undoing operations in the reverse order from the order of operations.
+
+First, I should think of different types of two-step equations. The basic form is ax + b = c, but also equations where the variable might be divided by a number, like x/ a + b = c. Also, some equations might have variables on the left or right side, and sometimes the coefficient might be negative. It's good to vary the examples so students can see different scenarios.
+
+For each example, I'll need to present the problem, then the step-by-step solution. The solutions should be detailed but clear, explaining each operation done to both sides of the equation.
+
+Starting with a straightforward equation. The first example could be 3x + 5 = 20. That's a classic one. To solve, subtract 5 from both sides first, then divide by 3. That's straightforward.
+
+Second example, maybe something like 2x - 4 = 10. Again, add 4 first, then divide by 2. But wait, maybe a different variation. Hmm, maybe something with multiplication and division? Or perhaps with a decimal? Maybe better to stick to whole numbers for clarity.
+
+Third example, perhaps with the variable on both sides? No, wait, two-step equations should only require two steps. If the variable appears only once, that's better. Maybe use division instead of multiplication. Like x / 4 + 3 = 7. Subtract 3, then multiply by 4.
+
+Fourth example, maybe a negative coefficient. Like -5x + 10 = 30. Subtract 10, then divide by -5. That shows negatives. Alternatively, subtracting instead of adding. Or maybe the constant term is negative. For example, 2x - (-5) = 10, but that might complicate. Alternatively, 5x + (-2) = 13. Hmm, perhaps not critical. Maybe better to vary the operations without necessarily introducing negative coefficients unless the example necessitates it.
+
+Also, possible denominators. For example, x over 3 plus a number equals another. So x/3 + 2 = 5.
+
+Wait, so here's my plan:
+
+1. 3x + 5 = 20 (standard subtraction then division)
+2. x/2 - 4 = 3 (addition then multiplication)
+3. 5x - 7 = 18 (add 7, then divide by 5, different numbers)
+4. -2x + 9 = 5 (subtract 9, divide by -2, shows negatives)
+
+Alternatively, maybe the fourth example could be a "two-step" that needs a division first and then addition. Wait, but often you reverse the operations in order, so if it's ax + b = c, you subtract first. If it's a (x + b) = c, then you divide first. But the latter would be a different structure. For Year 8, maybe focus on equations that require inverse operations in reverse order without parentheses complicating. So examples where in the equation, something is multiplied and then a number added. So each example should be solved by two steps: inverse of addition/subtraction first, then inverse of multiplication/division.
+
+Let me confirm that all examples I'm considering are two-step and not one-step or requiring simplifying sides first. So variables on one side only, no simplifying required before steps.
+
+Okay, let's draft each example:
+
+1. 3x + 5 = 20. Subtract 5, then divide by 3. x=5.
+
+2. x/4 + 2 = 10. Subtract 2, multiply by 4. x=32.
+
+3. 5x - 7 = 18. Add 7, divide by 5. x=5.
+
+Wait, maybe x=5 again. Hmm, but should maybe have different solutions. Maybe adjust.
+
+Third example could be 2x + 3 = 9. Subtract 3, divide by 2: x=3.
+
+Fourth example: -4x + 10 = 2. Subtract 10 (get -4x = -8), then divide by -4: x=2.
+
+Yes, that seems varied. Each example has two steps. Let me check:
+
+First equation: subtraction then division.
+
+Second: subtraction then multiplication (but in the second example as before, if x is divided).
+
+Third: addition then division.
+
+Fourth: subtraction then division (with negatives).
+
+Alternatively, maybe another structure. But these seem okay.
+
+Now, writing each example with problem, worked solution, and explanation. Need to ensure that the explanations are clear for Year 8 students. Emphasize doing the same to both sides, and reversing operations in the order opposite to BIDMAS/PEMDAS.
+
+Also, anticipate common mistakes. For example, in the x/4 equation, students might confuse multiplying by 4 as the first step, but actually you need to undo the addition or subtraction first. So the explanation should make that clear.
+
+Potential pitfall: dividing first when they should subtract first, or failing to keep the equation balanced by only doing operations to one side.
+
+Including a note about checking the answer by substituting back in could be helpful.
+
+Let me outline each example step by step. I'll start writing them out:
+
+Example 1:
+
+Problem: Solve 3x + 5 = 20.
+
+Solution:
+
+Step 1: Subtract 5 from both sides.
+
+3x + 5 - 5 = 20 - 5
+
+Simplifies to:
+
+3x = 15
+
+Step 2: Divide both sides by 3.
+
+3x / 3 = 15 / 3
+
+Simplifies to:
+
+x = 5
+
+Check: Substitute x = 5 into the original equation:
+
+3*(5) + 5 = 15 + 5 = 20, correct.
+
+Example 2:
+
+Problem: Solve x/4 - 2 = 7.
+
+Solution:
+
+Step 1: Add 2 to both sides.
+
+x/4 - 2 + 2 = 7 + 2
+
+Simplifies to:
+
+x/4 = 9
+
+Step 2: Multiply both sides by 4.
+
+(x/4)*4 = 9*4
+
+Simplifies to:
+
+x = 36
+
+Check: 36/4 -2 =9 -2=7, correct.
+
+Example 3:
+
+Problem: 5x - 7 = 13
+
+Solution:
+
+Step 1: Add 7 to both sides.
+
+5x -7 +7 =13 +7
+
+5x =20
+
+Divide both sides by 5: x=4.
+
+Check: 5*4 -7 =20 -7=13.
+
+Example 4:
+
+Problem: -2x + 5 = 13
+
+Wait: Wait, solving -2x +5 =13. To isolate the term:
+
+Subtract 5: -2x =8
+
+Divide by -2: x=-4
+
+Check: -2*(-4) +5=8 +5=13. Correct.
+
+Alternatively, maybe another equation. Let me see.
+
+Yes, each of these examples is two-step, with increasing complexity.
+
+I should check if denominators are integers or if fractions come up. Example 2: x is divided by 4, leading to multiplication by 4.
+
+The solutions are integers for simplicity. That's good for Year 8.
+
+Alternatively, in example 3, maybe 5x - 7 = 18, leading to 25/5=5. But previous example ends up with x=4. Either way. Maybe x=4 is okay.
+
+I think these four examples cover different operations: addition, subtraction in the first step; then division or multiplication. The fourth example has a negative coefficient.
+
+Each example is solved in two steps. The solutions are presented clearly.
+
+Need to make sure the explanations are clear, perhaps using keywords like "undo" or "reverse operations".
+
+Also, when writing the equations, use LaTeX formatting for mathematical notation.
+
+Now, putting this all together into a set of worked examples with full solutions.</pre>
+  </div>
+</details>
+
+<!-- Qwen3-235B — Condition B (General CLT) -->
+<details>
+  <summary>Qwen3-235B &mdash; Condition B (General CLT)</summary>
+  <div class="details-content">
+    <pre>Okay, so I need to create four worked examples for Year 8 students learning how to solve two-step linear equations. The user mentioned cognitive load theory, so I have to make sure the examples are designed to minimize unnecessary cognitive load. Let me start by recalling what cognitive load theory says. It's about managing the amount of information that learners have to process, right? There's intrinsic load (the inherent difficulty of the material), extraneous load (how the information is presented, which can be optimized), and germane load (processing that helps build schemas). The goal is to reduce extraneous load and support intrinsic and germane.
+
+So for worked examples, that means breaking down each step clearly, using clear and simple explanations, avoiding unnecessary information, and maybe using consistent formatting. Each step should be explicit but not overwhelming. Since they're two-step equations, the process should involve inverse operations in two steps, typically first subtraction/division then the other.
+
+First example: Let's start with a straightforward one. 3x + 5 = 20. This is a classic two-step equation. What I should do is first subtract 5 from both sides, then divide by 3. Need to show each step clearly. Maybe using bullet points or numbered steps. Also, perhaps color code the operations to indicate the inverse operations?
+
+Wait, but if I use colors, that might require tech, which maybe isn't in the scope here. Maybe instead bold the operations or label each step as inverse operation. Also, need to make sure that each example starts with a different operation (like one addition, one subtraction, one multiplication, one division) but no, two-step might involve any combination. Wait, two-step equations usually have two operations, so in reverse order of operations. So variables not on both sides.
+
+Okay, second example: Maybe one where the variable is divided by a number and then added. Like x/2 + 4 = 10. Subtract 4 first, then multiply by 2.
+
+Third example: Perhaps one with subtraction and multiplication. Maybe 5x - 3 = 17. Then add 3 first, then divide by 5.
+
+Fourth example: Maybe a real-world context? Wait, but the task says "problem and its full worked solution," so maybe keeping all examples algebraic? Alternatively, if time allows, maybe a word problem, but maybe better to keep consistent. Wait, the examples given in the question are like 3x + 5 =20, so algebraic equations.
+
+Wait, maybe vary the operations: first example addition and multiplication, second division and addition, third subtraction and multiplication, fourth multiplication and subtraction. But need to ensure the examples are systematically varying features to show different scenarios.
+
+Another thing: according to cognitive load, worked examples should start with simple and progress to more complex. Maybe start with integer coefficients and solutions, then maybe a fraction as a coefficient? But Year 8 in Australia or UK? Maybe fractions are acceptable. Alternatively, include one with decimal?
+
+Hmm, the examples should be suitable for Year 8. Let me check the curriculum. Typically, solving linear equations in Year 8 might involve integer coefficients and integer solutions. So probably best to stick with integers to keep it simple. So four examples with whole numbers.
+
+First example: 3x + 5 = 20
+
+Second: x/2 + 4 = 10
+
+Third: 5x - 3 = 17
+
+Fourth: maybe with subtraction on the left side, like 20 - 3x = 14. Wait, that could be a case where the order of steps is important. Wait, how to solve 20 - 3x = 14. Maybe subtract 20? Or first get rid of 20? Hmm. Not sure. Let me think. Alternatively, maybe 14 = 3x + 2, which would require subtracting 2 then dividing. That's also a two-step. But arranging the equation in reverse.
+
+Wait, in the examples given by the user, like 3x + 5 = 20. So standard. To vary the structure, maybe have the variable on the right side sometimes, or subtract first, or need to write both operations. Also, important to address possible misconceptions. For instance, in equations like 5 - 3x = 20, a student might incorrectly subtract 5 first. But the correct step is to subtract 5, but since it's positive here, you subtract 5 from both sides. Wait, 5 - 3x = 20 would lead to -3x = 15, then x = -5. Maybe that's too advanced? Maybe fourth example could be an equation with variables on both sides, but no, two-step equations typically only two operations, not variables on both sides.
+
+Wait, the user specified two-step linear equations. So variables on one side, two-step. So variables only on one side. So examples would be like: 3x + 5 = 20 (addition and multiplication), 2x - 8 = 6 (subtraction and multiplication), x/4 + 3 = 7 (division and addition), and maybe 10 = 2(x + 5). Wait, no, that would be distributing, which is a different skill. Alternatively, 10 = 5y - 5, so same as others.
+
+Alternatively, maybe have the same operations but different direction. Let's plan:
+
+Example 1: 3x + 5 = 14. Subtract 5, then divide by 3.
+
+Example 2: x/2 - 5 = 3. Add 5, then multiply by 2.
+
+Example 3: 8 = 4x + 4. Subtract 4 first, then divide by 4.
+
+Example 4: 7 = 2x - 3. Then add 3, divide by 2.
+
+Wait, but having equations with the equation set equal to a number, with operations on the variable term, and varying whether the variable is on the left or right. So mixing the side with the variables can help, but according to CLT, maybe start with all variables on the left first. However, if the examples later include variables on either side, that could be a way to gradually introduce variability.
+
+Alternatively, keep simplicity in the first three examples, then the fourth one have more complexity. Let's structure them.
+
+1. Example 1: 4x + 6 = 30 (addition then multiplication, straightforward).
+
+2. Example 2: x/3 - 5 = 8 (subtraction then division).
+
+3. Example 3: 18 = 5x + 3 (same as example 1 but equation flipped).
+
+4. Example 4: 7 = 2x - 7 (similar to earlier but requires adding then dividing)
+
+Wait, but need to check if all have integer solutions. Let me test example 3: 18 = 5x + 3. Subtract 3, 15 = 5x, divide by 5, x=3. Okay.
+
+Example 4: 7 = 2x - 7. Add 7 to both sides: 14 = 2x, x=7.
+
+Okay, that works.
+
+But maybe example 4 could be something like 25 = 10 - 5x? Wait, that would result in a negative, but maybe Year 8 can handle that. Let's see: 25 = 10 - 5x. Subtract 10: 15= -5x. Then x= -3. But maybe that's a useful case. But if we want to keep it positive, maybe not. Alternatively, stick with positive answers.
+
+But perhaps the fourth example can include a coefficient that's negative when moving step. Hmm. Alternatively, maybe better to pick another.
+
+Wait, the key is to have two-step equations, so each example should be solvable in two steps, with the operations clear.
+
+Now, in terms of presentation, each worked example should have:
+
+- Problem statement
+
+- Step-by-step solution with explanations.
+
+According to CLT, split complex information into parts. Use signaling to highlight key steps (like inverse operations, what to do first).
+
+In addition, integrate the text and the steps. Avoid unnecessary material. Maybe use self-explanation prompts in the examples? But the user didn't specify that.
+
+For each example:
+
+1. Original equation
+
+2. Step 1: Apply inverse operation to undo the constant term. Show new equation.
+
+3. Step 2: Apply inverse operation to undo the coefficient. Show solution.
+
+4. Check the solution by substituting back.
+
+Checking is important because it helps students verify their work and understand the process.
+
+Also, using consistent steps across examples. Let me think.
+
+Each worked example:
+
+- State the goal: solve for variable.
+
+- First inverse operation, showing the operation done to both sides.
+
+- Updated equation.
+
+- Second inverse operation.
+
+- Final solution.
+
+- Check.
+
+Okay, that structure. Let's outline the first example:
+
+Example 1: 4x + 6 = 30
+
+Step 1: Subtract 6 from both sides to isolate the term with x.
+
+4x + 6 - 6 = 30 - 6 -&gt; 4x = 24
+
+Step 2: Divide both sides by 4.
+
+4x / 4 = 24 / 4 -&gt; x = 6
+
+Check: 4*6 +6 = 24 +6 = 30. Correct.
+
+Second example: x/3 -5 = 8
+
+Add 5 to both sides: x/3 = 13. Multiply by 3: x = 39.
+
+Check.
+
+Third example: same as first but equation flipped. 18 = 2x + 4 (so they have to subtract 4 first, then divide by 2.)
+
+Wait 18=2x+4. Subtract 4: 14=2x. x=7.
+
+Check: 2*7 +4=14+4=18. Correct.
+
+Fourth example: 7=3x -5. Add 5 first: 12=3x. x=4.
+
+Check: 3*4 -5=12-5=7. Correct.
+
+This seems consistent.
+
+Now, varying the structure of the equations, but following similar steps.
+
+Each example also includes checking the solution. That provides a complete worked example.
+
+Another consideration: expertise reversal effect. As novices, the students need more scaffolding. So each step is explained. Using a consistent structure in each example so students can recognize the schema.
+
+Avoid splitting explanations into separate texts. Have each step in the solution process presented together.
+
+Now, putting it all together.
+
+Each worked example should have the problem, the steps with explanations, and the check. Using clear labels and consistent notation.
+
+Potential student misconceptions: forgetting to apply the inverse operation to both sides, incorrect order of operations (like dividing first instead of subtracting first), arithmetic errors. The examples should demonstrate the correct approach, so emphasizing order by explaining that we undo the constant before the coefficient.
+
+In the first example, explaining that since 4x +6 =30, to isolate x, we first remove the 6, then remove the 4.
+
+Another point: equations like x/2 -5 =8, which is the second example. The operation is division; its inverse is multiplication.
+
+Third and fourth examples have the variable term on the right side. For students, this might be a source of confusion. But in the worked examples, showing that the same steps apply regardless of the side. Which is good because it builds the general schema.
+
+I think that four examples would cover these variations, each introducing a slightly different aspect (different operations, variable on different sides, etc.) but keeping the method consistent.
+
+So final list:
+
+1. 3x + 5 = 20 (subtract 5, divide by 3, answer x=5)
+
+Wait wait, 3x +5 =20: subtract 5 gives 15, divide by 3, x=5. That's better. The user example was 3x +5=20. Maybe use that as example 1. So in that case:
+
+Example 1: 3x +5 = 20.
+
+Step 1: Subtract 5 -&gt; 3x=15
+
+Step 2: Divide by 3 -&gt;x=5.
+
+Check 3*5 +5=15+5=20. Correct.
+
+Example 2: x/2 +4 =10.
+
+Subtract 4 -&gt; x/2 =6.
+
+Multiply by 2-&gt;x=12.
+
+Check 12/2 +4=6+4=10. Correct.
+
+Example 3: 8 = 5x - 7.
+
+Add 7 to both sides: 15 =5x.
+
+Divide by 5: 3=x.
+
+Check: 5*3 -7=15-7=8. Correct.
+
+Example 4: 15 - 2x = 7.
+
+Subtract 15: -2x = -8
+
+Divide by -2: x=4.
+
+Check: 15-2*4=15-8=7. Correct.
+
+Wait, this fourth example introduces a bit more complexity where the subtraction is done first, leading to a negative coefficient. Alternatively, maybe subtract 15, but some students could get confused. Alternatively, first add 2x to both sides and subtract 7. Wait, but two-step equation should be solved in two steps, so:
+
+Original equation: 15 -2x =7.
+
+Step 1: Subtract 15 from both sides: -2x = -8.
+
+Step 2: Divide by -2: x=4.
+
+Alternatively, you can also rearrange first:
+
+15 -7 = 2x -&gt; 8=2x -&gt;x=4. But that's more advanced thinking.
+
+But following the step-by-step method for two-step equations: first, do the inverse of the constant (here, 15 is added, but since it's on the left with the variable term, to isolate the term with x, maybe subtract 15 or subtract 2x. Hmm, maybe better to do the standard approach.
+
+But if students are following the same steps: isolate the variable term. In 15 -2x =7. So the term with x is -2x. To isolate, subtract 15 both sides: -2x = 7 -15 -&gt; 8?
+
+Wait, original equation:
+
+Left side: 15 - 2x. If we do inverse operations, we first need to get rid of the 15. So subtract 15 from both sides:
+
+(15 -2x) -15 = 7 -15 -&gt; -2x = -8
+
+Then divide both sides by -2: x=4.
+
+Yes, that's the correct process.
+
+But maybe this example is a bit harder because of the negative coefficient. If we want to keep all examples with positive coefficients and positive answers, maybe another example, like 2x - 7 = 5.
+
+Solving: add 7 to both sides: 2x=12 -&gt;x=6. Check 2*6 -7=5.
+
+But maybe include a variety of examples including different operations.
+
+Alternatively, fourth example could be 20 = 3(x + 4). But that involves the distributive property, which is a different skill. Not two-step in the same way. So better stick with two operations.
+
+Alternatively, let's use 25 = 4x + 9. Subtract 9: 16=4x-&gt;x=4.
+
+But to have variable on left: 4x +9 =25. Wait, that's same as example 1.
+
+So back to the fourth example. Including one where the equation is 15 -2x=7. I think it's okay, as it teaches them to handle negative coefficients. The solution is still a nice integer.
+
+Therefore, the four examples:
+
+1. 3x + 5 = 20
+
+2. x/2 +4=10
+
+3. 8=5x -7
+
+4. 15 -2x=7
+
+These cover:
+
+- Multiplication and addition on left/right side.
+
+- Division and addition.
+
+- Multiplication and subtraction.
+
+- Multiplication and subtraction (with negative coefficient).
+
+Each with integer solutions.
+
+Now, structuring each worked example with clear steps, consistent labeling, and including the check.
+
+Applying the split-attention effect: integrating the explanations with the steps. Using minimal text by using bullet points or numbered steps.
+
+Alright, time to write them out with explanations.</pre>
+  </div>
+</details>
+
+<!-- Qwen3-235B — Condition C (Specific fading) -->
+<details>
+  <summary>Qwen3-235B &mdash; Condition C (Specific fading)</summary>
+  <div class="details-content">
+    <pre>Okay, I need to create four worked examples for Year 8 students learning to solve two-step linear equations, using the fading effect from cognitive load theory. Let me start by recalling what fading involves. Cognitive load theory suggests that novice learners should be presented with worked examples where steps are gradually removed (faded) so they slowly take over the problem-solving process. So, the first example should have all steps filled in, the second maybe one step missing, third more steps missing, and the fourth where they do it all themselves.
+
+First, I need to choose appropriate two-step equations. The standard form is like ax + b = c, where x is the variable. So equations that require two inverse operations. The key steps are typically subtracting the constant term first, then dividing by the coefficient. But sometimes if the equation is written differently (like 20 = 3x + 5), but maybe start with the standard.
+
+Let me outline the four examples:
+
+Example 1: Fully worked with all steps.
+Example 2: Prompt to indicate a step missing, maybe the student writes the second step.
+Example 3: More steps missing, maybe the student does both inverse operations but with some scaffolding.
+Example 4: Problem to solve with no supports.
+
+For each example, I should show the equation, then the solution steps. Let me pick equations with different numbers so students don't get stuck on one set but actually apply the method.
+
+Wait, but cognitive load theory would suggest that varying examples with consistent structure. Maybe keep the same structure but different coefficients.
+
+First, Example 1: 3x + 5 = 20. Show step-by-step: subtract 5 from both sides, then divide by 3.
+
+Second Example: Maybe 4y + 1 = 13. Here, fade a step. Maybe show the first step done, then have the student write the division.
+
+Third Example: Maybe 5z - 3 = 17. Here, the student might need to add 3 first, then divide by 5. Fading more steps here.
+
+Fourth Example: Maybe 6w + 2 = 20. Let the student figure it all.
+
+Wait, but how to structure the fading? Let me think again.
+
+First example: All steps provided. The problem, the equation, solution steps:
+
+3x + 5 = 20
+Step 1: Subtract 5 from both sides: 3x = 20 - 5 -&gt; 3x = 15
+Step 2: Divide both sides by 3: x = 15 / 3 -&gt; x = 5
+
+So that's the first example.
+
+Second example: Maybe 2y + 7 = 17. The solution process. Maybe in the worked example, the first step is done for the student, but then they need to perform the second step. So the example shows:
+
+Problem: 2y + 7 = 17
+Step 1: Subtract 7 from both sides: 2y = 17 - 7 -&gt; 2y = 10
+Step 2: [Student fills in "Divide both sides by 2"] x = 10 / 2 -&gt; y = 5
+
+Wait, but sometimes in fading, you might leave a prompt, like a blank space where the step is, so the student writes it.
+
+Third example: Maybe 5z - 1 = 19. The first step is provided, but the second operation needs a step written. Alternatively, in fading, maybe both steps are missing some parts. Wait, in example 3, the first example had both steps, second had one step missing, third should have maybe both steps partially missing. Let me check.
+
+Another approach: First example: all steps. Second example: solution steps provided but the justification or some part is missing. Third example: more steps are missing. Fourth: full problem only.
+
+Alternatively, the fading could be:
+
+E1: Full solution given.
+
+E2: Some steps left blank but the answer still filled in. Maybe the student fills in the missing step.
+
+E3: Missing steps and student must write the full steps, but equation is similar.
+
+E4: Problem alone.
+
+Wait, perhaps for example 2, after showing the problem, have a line where the first step is done, but then the student needs to do the second step. Then for example 3, the first step is left blank (so student writes that), and then maybe the student writes both steps. Or perhaps in E3, student writes both steps but is given some guidance or boxes.
+
+Alternatively, use a structured template where each step is presented but with certain parts missing. For example:
+
+Example 1:
+
+Problem: 3x + 5 = 20
+Step 1: Subtract ___ from both sides to isolate the term with x:
+3x + 5 - ___ = 20 - ___
+Simplify: 3x = ___
+Step 2: Divide both sides by ___:
+3x / ___ = ___ / ___
+Simplify: x = ___
+
+Example 2:
+
+Problem: 2y + 7 = 19
+Step 1: Subtract ___ from both sides:
+2y + 7 - ___ = 19 - ___
+Simplify: 2y = ___
+Step 2: Divide both sides by ___: x = ___
+
+Here, the student has to fill in the blanks. So fading here is replacing steps with fill-ins.
+
+But in the cognitive load theory fading effect, they might have examples where initially a step is shown, then in subsequent examples, that step is removed. For instance:
+
+Example 1 (worked in detail):
+
+3x + 5 = 20
+Subtract 5: 3x = 15
+Divide by 3: x = 5
+
+Example 2 (partial worked):
+
+Equation: 2y + 7 = 19
+Subtract 7: 2y = 12
+(Student sees the steps but maybe has to perform something or in the example, the subtract 7 is shown, then the division step is missing?)
+
+Alternatively, in the fading approach, each subsequent example removes an additional step, with the last problem requiring the student to solve it without any guidance. So:
+
+Example 1: Full solution provided.
+
+Example 2: The problem is given with the first step shown, then the rest blank for the student to complete.
+
+Example 3: The problem is given; students must figure out steps on their own, but with a similar structure as before.
+
+Example 4: New problem with no guidance.
+
+Wait, perhaps the fading should be incremental. Let me refer to an example of fading: the first problem is worked completely, the second problem has the first step worked, the rest is blank, the third problem has only the given information, etc. But in some cases, fading could involve removing steps across the examples.
+
+Another idea: Each example is the same problem type. Each example gradually removes a step.
+
+Example 1: Fully worked.
+
+Step-by-step:
+Problem: 3x + 5 = 20
+Step 1: Subtract 5 from both sides: 3x + 5 - 5 = 20 - 5
+Step 2: Simplify: 3x = 15
+Step 3: Divide both sides by 3: 3x / 3 = 15 / 3
+Step 4: Simplify: x = 5
+
+Example 2: Problem: 2y + 8 = 18
+Step 1: Subtract 8 from both sides:
+Step 2: 2y = 10
+Step 3: Divide by 2:
+Step 4: y = 5
+
+Here, steps 1 and 3 have the operation stated but not carried out. Hmm, or maybe in example 2, step 1 is done (e.g., subtract 8 written) but then student writes step 2?
+
+Alternatively, as fading proceeds, the steps that were previously completed in the prior example are now left empty. So:
+
+Example 1: All steps written.
+
+Example 2: The solution for the first operation is shown, then the student must write the division.
+
+But maybe a better way is:
+
+In the first example, all solution steps are provided.
+
+In the second example, the first solution step is provided, but the student fills in the next.
+
+In the third example, the student fills in both steps.
+
+In the fourth, the student solves it entirely independently.
+
+But since there are four examples, maybe each one fades a bit more.
+
+Alternatively, maybe four examples with increasing difficulty as well. But to keep focus on fading steps, each new example has one less step provided.
+
+Let me structure:
+
+Example 1: Solved equation with all steps (text + equations)
+
+Example 2: Solved equation with one step missing (maybe the final step)
+
+Example 3: Solved equation with initial steps missing (student must identify which operation to use)
+
+Example 4: Equation given. Let the student write all steps.
+
+But this needs to be adapted for each example.
+
+Alternatively, consider this:
+
+Example 1: 3x + 5 = 20
+Solution steps:
+1. Subtract 5: 3x = 15
+2. Divide by 3: x = 5
+All steps shown.
+
+Example 2: 4y - 3 = 13
+Solution steps:
+1. Add 3 to both sides: 4y = 16
+2. [blank space]
+Student fills in step 2.
+
+Example 3: 5z - 7 = 18
+Solution steps:
+1. [blank space]
+2. [blank space]
+But maybe some scaffolding like: "First operation: ___" and "Second operation: ___"
+
+Or, in text:
+
+Example 3: Solve 5z - 7 = 18.
+Solution:
+Step 1: ______ (Add 7 to both sides)
+5z - 7 + 7 = 18 + 7
+5z = 25
+Step 2: ______ (Divide both sides by 5)
+5z / 5 = 25 / 5
+z = 5
+
+But fading could be that in example 3, the steps like "Add 7" is left as a prompt but not the equation steps. Hmm.
+
+Alternatively, the fading could involve reducing the amount of explanation, so that later examples leave certain operations for the student.
+
+Given that, here's a possible sequence:
+
+Example 1: Fully worked with explanations.
+Problem: 3x + 5 = 20
+Step 1: Subtract 5 from both sides: 3x + 5 - 5 = 20 - 5 -&gt; 3x = 15
+Step 2: Divide both sides by 3: 3x/3 = 15/3 -&gt; x = 5
+
+Example 2: Worked example missing final solution steps.
+Problem: 4y + 1 = 17
+Step 1: Subtract 1 from both sides: 4y = 16
+Step 2: [Student divides by 4 and writes the solution]
+
+Example 3: Worked example missing first and second step operations.
+Problem: 2z - 3 = 11
+Step 1: [Student writes add 3]
+Step 2: [Student writes divide by 2]
+
+Example 4: Problem alone.
+Problem: 5w + 2 = 17
+Solve.
+
+But perhaps in Example 2, the student is not only told to divide but to perform both operations. Wait, but for fading, each step should fade one more. For instance:
+
+In Example 1, all steps are given.
+
+In Example 2, the final line is missing. So the student needs to do the last step.
+
+In Example 3, more steps are missing.
+
+In Example 4, all steps are missing.
+
+Alternatively, using templates with blanks.
+
+Alternatively, considering that sometimes the steps are presented as a single process. Let me outline for each example:
+
+Example 1: Fully worked with all steps. Let's use 3x + 5 = 20. The teacher would write:
+
+Start with the equation:
+3x + 5 = 20
+First, subtract 5 from both sides:
+3x + 5 - 5 = 20 - 5
+Simplify:
+3x = 15
+Then divide both sides by 3:
+3x / 3 = 15 / 3
+Simplify:
+x = 5
+
+Example 2: Solve 2y + 4 = 14. The worked example starts with:
+
+Equation:
+2y + 4 = 14
+First, subtract 4 from both sides:
+2y = 10
+Then, divide both sides by [student fills in 2 here], resulting in y = [student fills in 5 here]
+
+Example 3: Solve 5z - 2 = 28. The worked example starts with:
+
+Equation:
+5z - 2 = 28
+Step 1: [Student writes add 2 to both sides]
+Step 2: [Student writes divide by 5]
+Solution: z = ___
+
+Example 4: Solve 6a + 7 = 31. Student solves independently.
+
+This might fit fading: the first example gives all steps, the second removes some numbers, the third removes the steps themselves (asking student to recall the operations), and the fourth is a full solve.
+
+Alternatively, using a consistent structure where in each example, the solution has one more step missing.
+
+Now, translating this into actual worked examples for the user. The user requested four worked examples with systematic fading. Each example should have the problem, then the solution steps with some missing.
+
+So let's structure each example as:
+
+Example 1:
+Problem: 4x + 3 = 19
+Detailed solution with every step and explanation.
+
+Example 2:
+Problem: 5y - 4 = 11
+Solution starts with first step shown, then student completes the rest.
+
+Example 3:
+Problem: 2z + 7 = 15
+Solution steps start blank, student must identify both steps.
+
+Example 4:
+Problem: 7w - 6 = 22
+No steps provided, student solves entirely.
+
+But need to ensure that in the examples, the fading occurs step-wise. Maybe in example 2, the first operation is explained, and the student writes the rest. In example 3, the student writes both operations but maybe the problem is given with a solution template. And example 4 is all on their own.
+
+Another approach is to use the same equation type across the four examples, but that might not be engaging. Better to vary coefficients but keep structure same.
+
+Alternatively, to increase difficulty slightly while fading. But the main goal is fading steps, not problem complexity.
+
+Also, need to use language appropriate for Year 8 students, so clear, direct explanations.
+
+Potential equations:
+
+Example 1: 3x + 2 = 11
+Example 2: 4y - 3 = 9
+Example 3: 5z + 4 = 19
+Example 4: 6a - 5 = 7
+
+Starting with these. Now, let's create the four examples with fading.
+
+Example 1 (All steps given):
+
+Problem: Solve 3x + 2 = 11
+Step 1: Subtract 2 from both sides to isolate the term with x.
+3x + 2 - 2 = 11 - 2
+Simplifying both sides:
+3x = 9
+Step 2: Divide both sides by 3 to solve for x.
+3x / 3 = 9 / 3
+Simplify:
+x = 3
+
+Example 2 (First step shown, student completes second step):
+
+Problem: Solve 4y - 3 = 9
+Step 1: Add 3 to both sides:
+4y - 3 + 3 = 9 + 3
+Simplify: 4y = 12
+Step 2: [Student writes: Divide both sides by 4]
+4y / 4 = 12 / 4
+Result: [Student fills in] y = __
+
+Example 3 (Student writes both steps, but with scaffolding):
+
+Problem: Solve 5z + 4 = 19
+Step 1: [Student writes operation, e.g., subtract 4]
+5z + 4 - 4 = 19 - 4
+Simplifying: 5z = ___
+Step 2: [Student writes operation, divide by 5]
+5z / ___ = ___ / ___
+Sotion: z = ___
+
+Example 4 (No support):
+
+Problem: Solve 6a - 5 = 7
+[Blanks for student to solve independently]
+
+This seems appropriate. Each example fades more steps. For the teacher, clear progression from full guidance to independence.
+
+Need to check that the arithmetic is manageable for Year 8. All examples above have integer answers and operations without introducing fractions. That might be best for initial learning.
+
+In summary:
+
+Example 1: Fully worked.
+
+Example 2: First step partially done (operation is stated but student carries out the math), then second step is a blank for student to write both the operation and the result.
+
+Wait, in my Example 2 above, the Step 1 is shown as adding 3, then showing the simplified equation, so student needs to perform step 2.
+
+Wait, actually, in Example 2 as outlined, the first step is already completed (they add 3, simplified to 4y=12). Then student has to do step 2: divide by 4 and write y=3.
+
+Alternatively, if the first step is written but not simplified. Let me check standard approach for fading.
+
+According to cognitive load theory, the fading effect involves starting with a full worked example, then in subsequent examples, gradually omitting steps that the learner should perform. This helps transition from pure observation to active problem-solving.
+
+So Example 1: fully worked.
+
+Example 2: maybe same problem type, but omit the second step: student needs to do the divide.
+
+Example 3: omit the first and second step (student writes both).
+
+Example 4: problem alone.
+
+So applying this:
+
+Example 1:
+
+3x + 5 = 20
+Subtract 5: 3x = 15
+Divide by 3: x = 5
+
+Example 2:
+
+4y + 1 = 13
+Subtract 1: 4y = 12
+[Student writes: Divide by 4 and x=3]
+
+Example 3:
+
+5z - 7 = 18
+[Student writes: Add 7 -&gt; 5z = 25, then Divide by 5 -&gt; z=5]
+
+Example 4: 6a + 2 = 14 [Student solves independently]
+
+Alternatively, with full text for each example.
+
+Also need to make sure that the examples are progressively fading steps rather than just increasing the complexity.
+
+I think this structure makes sense. Now, writing up four examples with these features, using proper formatting and clear explanations. The key is that in each subsequent example, students are doing more steps on their own. Also, using different variables might be better (x, y, z, w) for variety, but not essential.
+
+Another consideration: should the operations vary between addition/subtraction and multiplication/division? For example, in Equation 1 it's add then divide, Equation 2 subtract then divide? Wait, no, two-step equations typically require inverse operations in reverse order. So if it's ax + b = c, subtract b then divide by a. If it's ax - b = c, add b then divide.
+
+So the strategy is consistent. So all examples follow same structure: first inverse for addition/subtraction, then multiply/divide.
+
+Thus, the four examples can follow this structure.
+
+Finalizing:
+
+Example 1: Fully worked.
+
+Problem: 3x + 5 = 20
+Solution: Subtract 5 from both sides: 3x = 15
+Divide both sides by 3: x = 5
+
+Example 2: First step shown, second missing.
+
+Problem: 2y + 3 = 9
+Solution: Step 1: Subtract 3: 2y = 6
+Step 2: [Student writes: Divide by 2, y = 3]
+
+Example 3: Both operations missing, but with steps indicated.
+
+Problem: 4z - 7 = 13
+Step 1: [Add 7 to both sides] 4z = 20
+Step 2: [Divide by 4] z = 5
+
+Example 4: Problem alone.
+
+Problem: 5w + 2 = 17
+Solve.
+
+I think this is a good flow. Each example fades another layer, ensuring the student takes over more responsibility while the supports are gradually removed.</pre>
+  </div>
+</details>
+
+<!-- GPT-OSS-120B — Condition A (Baseline) -->
+<details>
+  <summary>GPT-OSS-120B &mdash; Condition A (Baseline)</summary>
+  <div class="details-content">
+    <pre>We need to produce 4 worked examples for Year 8, two-step linear equations. Provide problem and solution steps.</pre>
+  </div>
+</details>
+
+<!-- GPT-OSS-120B — Condition B (General CLT) -->
+<details>
+  <summary>GPT-OSS-120B &mdash; Condition B (General CLT)</summary>
+  <div class="details-content">
+    <pre>Need to produce 4 worked examples with explanation, low cognitive load. Use step-by-step, highlight key info, use simple language.</pre>
+  </div>
+</details>
+
+<!-- GPT-OSS-120B — Condition C (Specific fading) -->
+<details>
+  <summary>GPT-OSS-120B &mdash; Condition C (Specific fading)</summary>
+  <div class="details-content">
+    <pre>[No reasoning trace returned by API]</pre>
+  </div>
+</details>
+
+
+        <!-- Appendix D: Model Outputs -->
+        <h2 id="outputs">Appendix D: Complete model outputs</h2>
+
+        <p>All eighteen model outputs are reproduced below. These are the final outputs (not reasoning traces) as returned by the API.</p>
+
+        <details>
+          <summary>Claude Opus 4.6 &mdash; Condition A (Baseline) &mdash; Output score: 0</summary>
+          <div class="details-content">
+            <pre># Solving Two-Step Linear Equations — Worked Examples
+
+## What's the Goal?
+
+To find the value of the unknown variable, we need to **isolate it** (get it on its own) by "undoing" the operations around it. We always **use inverse (opposite) operations** and do the **same thing to both sides** to keep the equation balanced.
+
+> **Remember:** Undo **addition or subtraction first**, then undo **multiplication or division**. (Think of it as reversing the order of operations.)
+
+---
+
+## Worked Example 1: A Straightforward Start
+
+**Solve: 3x + 5 = 20**
+
+**Step 1:** Identify what's happening to *x*.
+*x* is being **multiplied by 3**, then **5 is added**.
+
+**Step 2:** Undo the addition — subtract 5 from both sides.
+3x + 5 - 5 = 20 - 5
+3x = 15
+
+**Step 3:** Undo the multiplication — divide both sides by 3.
+3x/3 = 15/3
+x = 5
+
+**Step 4:** Check by substituting back into the original equation.
+3(5) + 5 = 15 + 5 = 20 ✓
+
+---
+
+## Worked Example 2: Subtraction in the Equation
+
+**Solve: 5x − 7 = 28**
+
+**Step 1:** Identify what's happening to *x*.
+*x* is being **multiplied by 5**, then **7 is subtracted**.
+
+**Step 2:** Undo the subtraction — add 7 to both sides.
+5x - 7 + 7 = 28 + 7
+5x = 35
+
+**Step 3:** Undo the multiplication — divide both sides by 5.
+5x/5 = 35/5
+x = 7
+
+**Step 4:** Check by substituting back into the original equation.
+5(7) - 7 = 35 - 7 = 28 ✓
+
+---
+
+## Worked Example 3: Division in the Equation
+
+**Solve: x/4 + 3 = 10**
+
+**Step 1:** Identify what's happening to *x*.
+*x* is being **divided by 4**, then **3 is added**.
+
+**Step 2:** Undo the addition — subtract 3 from both sides.
+x/4 + 3 - 3 = 10 - 3
+x/4 = 7
+
+**Step 3:** Undo the division — multiply both sides by 4.
+(x/4) × 4 = 7 × 4
+x = 28
+
+**Step 4:** Check by substituting back into the original equation.
+28/4 + 3 = 7 + 3 = 10 ✓
+
+---
+
+## Worked Example 4: A Negative Answer
+
+**Solve: 2x + 9 = 3**
+
+**Step 1:** Identify what's happening to *x*.
+*x* is being **multiplied by 2**, then **9 is added**.
+
+**Step 2:** Undo the addition — subtract 9 from both sides.
+2x + 9 - 9 = 3 - 9
+2x = -6
+
+**Step 3:** Undo the multiplication — divide both sides by 2.
+2x/2 = -6/2
+x = -3
+
+**Step 4:** Check by substituting back into the original equation.
+2(-3) + 9 = -6 + 9 = 3 ✓
+
+> **Note:** Don't be afraid of negative answers! As long as your check works out, you know you're correct.
+
+---
+
+## Key Takeaways
+
+| Step | What to do              | Why                          |
+|------|-------------------------|------------------------------|
+| 1    | Undo addition/sub first | Peels away the outer layer   |
+| 2    | Undo mult/div second    | Frees the variable completely|
+| 3    | Always check your answer| Catches any errors           |</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Claude Opus 4.6 &mdash; Condition B (General CLT) &mdash; Output score: 0</summary>
+          <div class="details-content">
+            <pre># Solving Two-Step Linear Equations: Worked Examples
+
+## Design Notes for Teachers
+
+> **Cognitive load principles applied:**
+> - **Consistent structure** across all four examples to build schema
+> - **One new element per example** to manage intrinsic load progressively
+> - **Integrated annotations** beside each mathematical step to prevent split-attention
+> - **Sub-goal labelling** ("Isolate the term" → "Solve for x") to help students chunk the procedure
+> - **Low extraneous load** through clean formatting and minimal unnecessary language
+
+---
+
+## The Big Idea (Present This First)
+
+Solving a two-step equation means **undoing** what has been done to *x*, in **reverse order**.
+
+| What was done to x              | How we undo it                                    |
+|---------------------------------|---------------------------------------------------|
+| Multiplied → then added/sub     | First undo the add/sub → Then undo the multiply   |
+
+---
+
+## Example 1: The Foundation
+> *All positive terms, whole-number answer — students focus purely on the two-step process*
+
+**Solve:** 3x + 5 = 20
+
+### Sub-goal A: Isolate the term with x
+3x + 5 = 20
+3x + 5 - 5 = 20 - 5  ← Subtract 5 from both sides to undo the +5
+3x = 15
+
+### Sub-goal B: Solve for x
+3x/3 = 15/3  ← Divide both sides by 3 to undo the ×3
+x = 5
+
+### Check ✓
+Substitute back: 3(5) + 5 = 15 + 5 = 20 ✓
+
+---
+
+## Example 2: Same Structure, New Numbers
+> *Identical equation type — reinforces the schema from Example 1*
+
+**Solve:** 5x + 7 = 32
+
+### Sub-goal A: Isolate the term with x
+5x + 7 = 32
+5x + 7 - 7 = 32 - 7  ← Subtract 7 from both sides
+5x = 25
+
+### Sub-goal B: Solve for x
+5x/5 = 25/5  ← Divide both sides by 5
+x = 5
+
+### Check ✓
+Substitute back: 5(5) + 7 = 25 + 7 = 32 ✓
+
+---
+
+## Example 3: Subtraction in the Equation
+> *ONE new element introduced: subtraction, so students must add to undo it*
+
+**Solve:** 4x - 3 = 17
+
+### Sub-goal A: Isolate the term with x
+4x - 3 = 17
+4x - 3 + 3 = 17 + 3  ← Add 3 to both sides to undo the -3
+4x = 20
+
+### Sub-goal B: Solve for x
+4x/4 = 20/4  ← Divide both sides by 4
+x = 5
+
+### Check ✓
+Substitute back: 4(5) - 3 = 20 - 3 = 17 ✓
+
+> **Key insight:** When the equation has -3, we undo it by doing the opposite → +3.
+
+---
+
+## Example 4: A Non-Whole-Number Answer
+> *ONE new element: the division doesn't come out evenly*
+
+**Solve:** 2x + 5 = 16
+
+### Sub-goal A: Isolate the term with x
+2x + 5 = 16
+2x + 5 - 5 = 16 - 5  ← Subtract 5 from both sides
+2x = 11
+
+### Sub-goal B: Solve for x
+2x/2 = 11/2  ← Divide both sides by 2
+x = 5.5
+
+> **Don't panic!** The process is exactly the same. A decimal or fraction answer is perfectly valid.
+
+### Check ✓
+Substitute back: 2(5.5) + 5 = 11 + 5 = 16 ✓
+
+---
+
+## Suggested Next Steps
+
+| Progression             | Purpose                                                    |
+|-------------------------|------------------------------------------------------------|
+| Completion problems     | Give Sub-goal A done; students finish Sub-goal B only      |
+|                         | (fading worked examples)                                   |
+| Paired practice         | Students solve similar problems after each worked example  |
+| Mixed set               | Combine all four types for identifying which operation first|</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Claude Opus 4.6 &mdash; Condition C (Specific fading) &mdash; Output score: 2</summary>
+          <div class="details-content">
+            <pre># Solving Two-Step Linear Equations: Faded Worked Examples
+
+## Overview for Teachers
+
+Below are four worked examples applying **worked example fading**. Across the sequence, solution steps are progressively removed (marked with ✏️ YOUR TURN), requiring students to take increasing ownership of the procedure.
+
+---
+
+## The Six-Step Framework
+
+| Step | Action                                                         |
+|------|----------------------------------------------------------------|
+| 1    | Write the equation and identify the two operations acting on x |
+| 2    | Use the inverse operation to undo addition or subtraction      |
+| 3    | Simplify both sides                                            |
+| 4    | Use the inverse operation to undo multiplication or division   |
+| 5    | Simplify to find the value of x                                |
+| 6    | Check by substituting back into the original equation          |
+
+---
+
+## Example 1 — Fully Worked (All steps provided)
+
+### Solve: 3x + 5 = 20
+
+Step 1 – Identify: x is multiplied by 3, then 5 is added. Undo in reverse order.
+Step 2 – Subtract 5 from both sides: 3x + 5 - 5 = 20 - 5
+Step 3 – Simplify: 3x = 15
+Step 4 – Divide both sides by 3: 3x/3 = 15/3
+Step 5 – Simplify: x = 5
+Step 6 – Check: 3(5) + 5 = 15 + 5 = 20 ✓
+
+---
+
+## Example 2 — Lightly Faded (Final two steps removed)
+
+### Solve: 2x + 7 = 15
+
+Step 1 – Identify: x is multiplied by 2, then 7 is added.
+Step 2 – Subtract 7 from both sides: 2x + 7 - 7 = 15 - 7
+Step 3 – Simplify: 2x = 8
+Step 4 – Divide both sides by 2: 2x/2 = 8/2
+
+✏️ YOUR TURN — Step 5: Simplify to find x.
+x = _____
+
+✏️ YOUR TURN — Step 6: Check by substituting your value back into 2x + 7 = 15.
+2(___) + 7 = ___ + 7 = ___
+Does it equal 15? ______
+
+---
+
+## Example 3 — Moderately Faded (Final four steps removed)
+
+### Solve: 4x − 3 = 25
+
+Step 1 – Identify: x is multiplied by 4, then 3 is subtracted.
+Step 2 – Add 3 to both sides: 4x - 3 + 3 = 25 + 3
+
+✏️ YOUR TURN — Step 3: Simplify both sides.
+4x = _____
+
+✏️ YOUR TURN — Step 4: What operation do you perform on both sides now? Do it.
+
+✏️ YOUR TURN — Step 5: Simplify to find x.
+x = _____
+
+✏️ YOUR TURN — Step 6: Check by substituting back into 4x − 3 = 25.
+
+---
+
+## Example 4 — Heavily Faded (Only Step 1 provided)
+
+### Solve: 5x + 8 = 33
+
+Step 1 – Identify: x is multiplied by 5, then 8 is added. Undo in reverse order.
+
+✏️ YOUR TURN — Step 2: Perform the correct inverse operation on both sides.
+
+✏️ YOUR TURN — Step 3: Simplify both sides.
+
+✏️ YOUR TURN — Step 4: Perform the next inverse operation on both sides.
+
+✏️ YOUR TURN — Step 5: Simplify to find x.
+x = _____
+
+✏️ YOUR TURN — Step 6: Check your answer.
+
+---
+
+## Summary of the Fading Sequence
+
+| Step                     | Ex 1    | Ex 2    | Ex 3      | Ex 4      |
+|--------------------------|---------|---------|-----------|-----------|
+| 1. Identify operations   | Given   | Given   | Given     | Given     |
+| 2. First inverse op      | Given   | Given   | Given     | Student   |
+| 3. Simplify              | Given   | Given   | Student   | Student   |
+| 4. Second inverse op     | Given   | Given   | Student   | Student   |
+| 5. Find x                | Given   | Student | Student   | Student   |
+| 6. Check solution        | Given   | Student | Student   | Student   |
+
+## Answer Key
+
+| Example   | Answer |
+|-----------|--------|
+| Example 1 | x = 5  |
+| Example 2 | x = 4  |
+| Example 3 | x = 7  |
+| Example 4 | x = 5  |
+
+## Teacher Notes
+
+- **Why fading works:** Full worked examples reduce cognitive load for novices
+  (Sweller &amp; Cooper, 1985). Fading gradually shifts the cognitive work from
+  the example to the learner (Renkl, Atkinson &amp; Maier, 2002).
+- **Step 1 is always provided** because identifying the structure is the
+  conceptual anchor.
+- **After Example 4**, students should be ready for fully independent practice.
+- **Differentiation tip:** If a student struggles at Example 3, return them to
+  Example 2 rather than jumping to Example 4.</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Gemini 3.1 Pro &mdash; Condition A (Baseline) &mdash; Output score: 0</summary>
+          <div class="details-content">
+            <pre>Hello there! As a mathematics teacher, I always tell my Year 8 students that solving algebra equations is exactly like untying a knot or working backwards through a puzzle.
+
+Our golden rule is the **Balance Method**: whatever you do to one side of the equals sign, you *must* do to the exact same thing to the other side. Our ultimate goal is always to **isolate the variable** (get the letter completely by itself).
+
+To do this, we use **inverse (opposite) operations**. We also work in reverse order of operations (reverse BIDMAS/BODMAS) — meaning we generally undo addition and subtraction *before* we undo multiplication and division.
+
+Here are 4 worked examples to show you exactly how it's done.
+
+---
+
+### Example 1: The standard addition equation
+**Problem:** Solve 3x + 5 = 26
+
+**Teacher's thought process:**
+I want 'x' by itself. Right now, x is being multiplied by 3, and then 5 is being added to it. To untie this knot, I need to get rid of the +5 first, and then the ×3.
+
+**Worked Solution:**
+* Step 1: Undo the addition. Subtract 5 from both sides.
+  3x + 5 - 5 = 26 - 5
+  3x = 21
+* Step 2: Undo the multiplication. Divide both sides by 3.
+  3x/3 = 21/3
+  x = 7
+
+* Check your answer: 3(7) + 5 = 21 + 5 = 26. It works!
+
+---
+
+### Example 2: Dealing with subtraction
+**Problem:** Solve 4y - 7 = 13
+
+**Worked Solution:**
+* Step 1: Undo the subtraction. Add 7 to both sides.
+  4y - 7 + 7 = 13 + 7
+  4y = 20
+* Step 2: Undo the multiplication. Divide both sides by 4.
+  4y/4 = 20/4
+  y = 5
+
+* Check your answer: 4(5) - 7 = 20 - 7 = 13. Perfect!
+
+---
+
+### Example 3: Equations with fractions (division)
+**Problem:** Solve m/2 + 4 = 10
+
+**Teacher's thought process:**
+Don't let the fraction panic you! A fraction bar just means "divide". So, 'm' is being divided by 2, and then 4 is added.
+
+**Worked Solution:**
+* Step 1: Undo the addition. Subtract 4 from both sides.
+  m/2 + 4 - 4 = 10 - 4
+  m/2 = 6
+* Step 2: Undo the division. Multiply both sides by 2.
+  (m/2) × 2 = 6 × 2
+  m = 12
+
+* Check your answer: 12/2 + 4 = 6 + 4 = 10. Spot on!
+
+---
+
+### Example 4: The variable is on the right side
+**Problem:** Solve 22 = 5p - 3
+
+**Teacher's thought process:**
+Students often freeze when the letter is on the right side. Don't worry! An equals sign is just a balance scale; it doesn't matter which side the letter is on.
+
+**Worked Solution:**
+* Step 1: Undo the subtraction. Add 3 to both sides.
+  22 + 3 = 5p - 3 + 3
+  25 = 5p
+* Step 2: Undo the multiplication. Divide both sides by 5.
+  25/5 = 5p/5
+  5 = p
+* Step 3: Rewrite for neatness.
+  p = 5
+
+* Check your answer: 5(5) - 3 = 25 - 3 = 22. Great job!</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Gemini 3.1 Pro &mdash; Condition B (General CLT) &mdash; Output score: 1</summary>
+          <div class="details-content">
+            <pre>As an experienced mathematics teacher, I have designed these four worked examples specifically for Year 8 students.
+
+To apply **Cognitive Load Theory (CLT)**, I have used the following principles:
+* **The Worked Example Effect:** Providing step-by-step expert models to free up working memory.
+* **The Split-Attention Effect:** Placing the explanatory text directly next to the mathematical steps (using a table format) so students don't have to look back and forth.
+* **Signaling/Cueing:** Using bold text and consistent phrasing to draw attention to the most important information (the inverse operations).
+* **Gradual Fading (Isolating Elements):** The examples gradually increase in complexity. We start with addition/multiplication, move to subtraction, introduce fractions (division), and finally include negative numbers.
+
+---
+
+### Teacher's Golden Rules for Solving Equations:
+1. **Goal:** Get the letter (the variable) completely by itself.
+2. **Balance:** Whatever you do to one side, you must do to the other.
+3. **Reverse BIDMAS:** Undo addition/subtraction first, then undo multiplication/division second.
+
+---
+
+### Example 1: The Basic Two-Step Equation
+**Problem:** Solve 3x + 4 = 19
+
+| Mathematical Steps              | Teacher's Explanation                              |
+|----------------------------------|----------------------------------------------------|
+| 3x + 4 = 19                     | Here is our starting equation. I want 'x' by itself.|
+| 3x + 4 - 4 = 19 - 4             | Step 1: Undo the addition. Subtract 4 from both sides.|
+| 3x = 15                         | New, simpler equation. '3x' means '3 multiplied by x'.|
+| 3x/3 = 15/3                     | Step 2: Undo the multiplication. Divide both sides by 3.|
+| x = 5                           | Final Answer.                                      |
+| Check: 3(5) + 4 = 15 + 4 = 19   | Replace x with 5. It works!                        |
+
+---
+
+### Example 2: Dealing with Subtraction
+**Problem:** Solve 5m - 7 = 23
+
+| Mathematical Steps              | Teacher's Explanation                              |
+|----------------------------------|----------------------------------------------------|
+| 5m - 7 = 23                     | I want 'm' by itself.                              |
+| 5m - 7 + 7 = 23 + 7             | Step 1: Undo the subtraction. Add 7 to both sides. |
+| 5m = 30                         | Now I have 5 multiplied by m equals 30.             |
+| 5m/5 = 30/5                     | Step 2: Undo the multiplication. Divide by 5.      |
+| m = 6                           | Final Answer.                                      |
+| Check: 5(6) - 7 = 30 - 7 = 23   | Replace m with 6. It works!                        |
+
+---
+
+### Example 3: Dealing with Fractions (Division)
+*Note: A fraction bar just means "divide".*
+**Problem:** Solve y/4 + 3 = 8
+
+| Mathematical Steps              | Teacher's Explanation                              |
+|----------------------------------|----------------------------------------------------|
+| y/4 + 3 = 8                     | I want 'y' by itself. The fraction bar means y ÷ 4.|
+| y/4 + 3 - 3 = 8 - 3             | Step 1: Undo the addition. Subtract 3.             |
+| y/4 = 5                         | Now I have y divided by 4 equals 5.                 |
+| (y/4) × 4 = 5 × 4               | Step 2: Undo the division. Multiply by 4.          |
+| y = 20                          | Final Answer.                                      |
+| Check: 20/4 + 3 = 5 + 3 = 8     | Replace y with 20. It works!                       |
+
+---
+
+### Example 4: Crossing into Negative Numbers
+**Problem:** Solve 2k + 15 = 3
+
+| Mathematical Steps              | Teacher's Explanation                              |
+|----------------------------------|----------------------------------------------------|
+| 2k + 15 = 3                     | I want 'k' by itself.                              |
+| 2k + 15 - 15 = 3 - 15           | Step 1: Undo the addition. Subtract 15.            |
+| 2k = -12                        | Careful: 3 - 15 gives a negative number (-12).     |
+| 2k/2 = -12/2                    | Step 2: Undo the multiplication. Divide by 2.      |
+| k = -6                          | Final Answer. (A negative ÷ a positive = negative).|
+| Check: 2(-6) + 15 = -12 + 15 = 3| Replace k with -6. It works!                       |</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Gemini 3.1 Pro &mdash; Condition C (Specific fading) &mdash; Output score: 2</summary>
+          <div class="details-content">
+            <pre>Hello! As an experienced mathematics teacher, I love using the **worked example fading effect**. It is a fantastic strategy from Cognitive Load Theory. By gradually removing steps (scaffolding), we prevent students from being overwhelmed by the whole process at once.
+
+Here is a sequence of 4 examples designed for Year 8 students learning to solve two-step linear equations. We will use the **backward fading** technique, where the final steps are removed first.
+
+---
+
+### Topic: Solving Two-Step Linear Equations
+**Goal:** Isolate the variable (get the letter by itself) by using inverse (opposite) operations.
+**Rule:** Whatever you do to one side of the equals sign, you must do to the exact same to the other side!
+
+---
+
+#### Example 1: Fully Worked Example (Study this carefully)
+**Solve for x: 4x + 7 = 23**
+
+Teacher's thought process: I need to get x by itself. First, I will undo the addition. Then, I will undo the multiplication.
+
+* Step 1: Subtract 7 from both sides to remove the constant.
+  4x + 7 - 7 = 23 - 7
+  4x = 16
+* Step 2: Divide both sides by 4 to isolate x.
+  4x/4 = 16/4
+* Final Answer:
+  x = 4
+
+(Check: 4 × 4 + 7 = 16 + 7 = 23. It works!)
+
+---
+
+#### Example 2: Partially Faded (You do the last step)
+**Solve for y: 5y - 3 = 22**
+
+* Step 1: Add 3 to both sides.
+  5y - 3 + 3 = 22 + 3
+  5y = 25
+* Step 2: Divide both sides by 5.
+  5y/5 = 25/5
+* Final Answer:
+  y = _______
+
+---
+
+#### Example 3: Mostly Faded (You do the last two steps)
+**Solve for m: 2m + 9 = 21**
+
+* Step 1: Subtract 9 from both sides.
+  2m = _______  (Write the new number on the right side)
+* Step 2: __________________________ (What do you divide by?)
+  2m/___  =  ___/___
+* Final Answer:
+  m = _______
+
+---
+
+#### Example 4: Fully Faded (Independent Practice)
+**Solve for k: 6k - 5 = 19**
+
+Teacher's thought process: You've got this! Apply the exact same pattern we used in the first three examples. Show all your working out.
+
+* Step 1: __________________________
+
+* Step 2: __________________________
+
+* Final Answer:
+  k = _______
+
+(Don't forget to check your answer by putting it back into the original equation!)
+
+---
+
+### Teacher Notes on Implementation:
+* **Spacing:** Ensure plenty of blank vertical space in Example 3 and Example 4.
+* **Monitoring:** By the time they reach Example 3, you will quickly see who has grasped the concept.
+* **Variability:** I alternated between addition (+7, +9) and subtraction (-3, -5) to ensure students don't blindly subtract in Step 1 every time.</pre>
+          </div>
+        </details>
+
+        <!-- Appendix D: Model Outputs -->
+
+<!-- Gemini 3 Flash — Condition A (Baseline) -->
+<details>
+  <summary>Gemini 3 Flash &mdash; Condition A (Baseline) &mdash; Output score: 1</summary>
+  <div class="details-content">
+    <pre>Hello class! Today we are going to master **two-step linear equations**.
+
+The goal of solving any equation is to find the value of the unknown letter (the variable) by getting it all by itself. We call this **isolating the variable**.
+
+To do this, we use **inverse operations** (doing the opposite) and we always follow the **Golden Rule of Algebra**: *Whatever you do to one side of the equation, you must do to the other to keep it balanced.*
+
+When solving two-step equations, we usually follow the order of operations in reverse. This means we usually "undo" the **Addition or Subtraction** first, and then "undo" the **Multiplication or Division**.
+
+---
+
+### Example 1: Basic Addition and Multiplication
+**Problem: Solve $3x + 5 = 17$**
+
+**Step 1: Undo the addition.**
+The opposite of adding 5 is subtracting 5. We must do this to both sides.
+$$3x + 5 - 5 = 17 - 5$$
+$$3x = 12$$
+
+**Step 2: Undo the multiplication.**
+$3x$ means $3$ times $x$. The opposite of multiplying by 3 is dividing by 3.
+$$\frac{3x}{3} = \frac{12}{3}$$
+$$x = 4$$
+
+**Check:** $3(4) + 5 \rightarrow 12 + 5 = 17$. Correct!
+
+---
+
+### Example 2: Dealing with Subtraction
+**Problem: Solve $5m - 8 = 22$**
+
+**Step 1: Undo the subtraction.**
+The opposite of subtracting 8 is adding 8. Do this to both sides.
+$$5m - 8 + 8 = 22 + 8$$
+$$5m = 30$$
+
+**Step 2: Undo the multiplication.**
+The opposite of multiplying by 5 is dividing by 5.
+$$\frac{5m}{5} = \frac{30}{5}$$
+$$m = 6$$
+
+**Check:** $5(6) - 8 \rightarrow 30 - 8 = 22$. Correct!
+
+---
+
+### Example 3: Equations with Division
+**Problem: Solve $\frac{y}{4} + 3 = 10$**
+
+**Step 1: Undo the addition.**
+First, we move the $+3$ by subtracting 3 from both sides.
+$$\frac{y}{4} + 3 - 3 = 10 - 3$$
+$$\frac{y}{4} = 7$$
+
+**Step 2: Undo the division.**
+The line in the fraction means "divide". The opposite of dividing by 4 is multiplying by 4.
+$$\frac{y}{4} \times 4 = 7 \times 4$$
+$$y = 28$$
+
+**Check:** $28 \div 4 + 3 \rightarrow 7 + 3 = 10$. Correct!
+
+---
+
+### Example 4: When the Answer is Negative
+**Problem: Solve $2k + 11 = 5$**
+
+**Step 1: Undo the addition.**
+Subtract 11 from both sides. (Be careful with your negative numbers here!)
+$$2k + 11 - 11 = 5 - 11$$
+$$2k = -6$$
+
+**Step 2: Undo the multiplication.**
+Divide both sides by 2.
+$$\frac{2k}{2} = \frac{-6}{2}$$
+$$k = -3$$
+
+**Check:** $2(-3) + 11 \rightarrow -6 + 11 = 5$. Correct!
+
+---
+
+### Teacher's Top Tips for Success:
+1.  **Draw a line:** Many students find it helpful to draw a vertical line down from the equals sign ($=$) to help keep the two sides separate and balanced.
+2.  **Show your working:** Always write down what you are doing to both sides (e.g., $- 5$ or $\div 2$). It helps you catch mistakes!
+3.  **The Check:** You can always know if you got the answer right by "plugging" your answer back into the original equation. If the left side equals the right side, you've got it!</pre>
+  </div>
+</details>
+
+<!-- Gemini 3 Flash — Condition B (General CLT) -->
+<details>
+  <summary>Gemini 3 Flash &mdash; Condition B (General CLT) &mdash; Output score: 1</summary>
+  <div class="details-content">
+    <pre>Hello! I am your mathematics teacher for today. We are going to master **two-step linear equations**.
+
+To help you learn efficiently, I have designed these examples using **Cognitive Load Theory**. This means I have broken the process down to focus your attention on the "why" and "how" without overwhelming your working memory.
+
+We will use the **"Balance Method."** Think of an equation like a see-saw: whatever you do to one side, you must do to the other to keep it level.
+
+---
+
+### Key Concept: The Reverse PEMDAS (Order of Operations)
+When solving equations, we usually undo operations in the **reverse** order they were applied.
+1.  **Undo Addition or Subtraction first.**
+2.  **Undo Multiplication or Division second.**
+
+---
+
+### Worked Example 1: Addition and Multiplication
+**Solve for $x$:**  $3x + 5 = 17$
+
+| Mathematical Step | Explanation / Reasoning |
+| :--- | :--- |
+| **Step 1:** $3x + 5 - 5 = 17 - 5$ | **Undo the +5.** The opposite of adding 5 is subtracting 5. We do this to both sides to keep the balance. |
+| **Step 2:** $3x = 12$ | **Simplify.** We are left with $3x$ on the left and 12 on the right. |
+| **Step 3:** $\frac{3x}{3} = \frac{12}{3}$ | **Undo the multiplication.** $3x$ means $3 \times x$. The opposite is dividing by 3. |
+| **Step 4:** $x = 4$ | **Final Answer.** |
+
+---
+
+### Worked Example 2: Subtraction and Multiplication
+**Solve for $y$:** $5y - 8 = 22$
+
+| Mathematical Step | Explanation / Reasoning |
+| :--- | :--- |
+| **Step 1:** $5y - 8 + 8 = 22 + 8$ | **Undo the -8.** The opposite of subtracting 8 is adding 8. We apply this to both sides. |
+| **Step 2:** $5y = 30$ | **Simplify.** The -8 and +8 cancel out, leaving $5y$. |
+| **Step 3:** $\frac{5y}{5} = \frac{30}{5}$ | **Undo the $\times 5$.** Divide both sides by 5 to isolate $y$. |
+| **Step 4:** $y = 6$ | **Final Answer.** |
+
+---
+
+### Worked Example 3: Division and Addition
+**Solve for $w$:** $\frac{w}{4} + 3 = 10$
+
+| Mathematical Step | Explanation / Reasoning |
+| :--- | :--- |
+| **Step 1:** $\frac{w}{4} + 3 - 3 = 10 - 3$ | **Undo the +3.** Subtract 3 from both sides. Always deal with the "hanging" constant first. |
+| **Step 2:** $\frac{w}{4} = 7$ | **Simplify.** Now $w$ is only being divided by 4. |
+| **Step 3:** $4 \times \frac{w}{4} = 7 \times 4$ | **Undo the $\div 4$.** The opposite of division is multiplication. Multiply both sides by 4. |
+| **Step 4:** $w = 28$ | **Final Answer.** |
+
+---
+
+### Worked Example 4: Dealing with Negatives
+**Solve for $a$:** $2a + 12 = 4$
+*Note: In this example, the result will be a negative number. The process remains exactly the same.*
+
+| Mathematical Step | Explanation / Reasoning |
+| :--- | :--- |
+| **Step 1:** $2a + 12 - 12 = 4 - 12$ | **Undo the +12.** Subtract 12 from both sides. |
+| **Step 2:** $2a = -8$ | **Simplify.** $4 - 12$ takes us into the negative numbers on a number line. |
+| **Step 3:** $\frac{2a}{2} = \frac{-8}{2}$ | **Undo the $\times 2$.** Divide both sides by 2. |
+| **Step 4:** $a = -4$ | **Final Answer.** (A negative divided by a positive is a negative). |
+
+---
+
+### Summary Checklist for Students
+To reduce the "load" on your brain when you try these yourself, ask these three questions in order:
+1.  **What is the "constant" (the number without a letter)?** Undo it using the opposite sign.
+2.  **What is the "coefficient" (the number attached to the letter)?** Undo it by dividing (or multiplying if it's a fraction).
+3.  **Did I do the same thing to both sides?** This ensures your "see-saw" is still balanced!</pre>
+  </div>
+</details>
+
+<!-- Gemini 3 Flash — Condition C (Specific fading) -->
+<details>
+  <summary>Gemini 3 Flash &mdash; Condition C (Specific fading) &mdash; Output score: 2</summary>
+  <div class="details-content">
+    <pre>Hello class! Today we are going to master **two-step linear equations**.
+
+Our goal is to get the variable (the letter) all by itself. We do this by "undoing" the operations in reverse order. Think of it like taking off your shoes and socks: you have to take off your shoes first (the constant) before you can take off your socks (the coefficient).
+
+We will use the **Balancing Method**. Whatever you do to one side of the equals sign, you must do to the other.
+
+Pay close attention to how I slowly remove the steps. By the fourth example, you'll be doing the whole thing yourself!
+
+---
+
+### Example 1: Fully Worked (I Do)
+**Solve: $3x + 5 = 17$**
+
+| Step | Action | Equation |
+| :--- | :--- | :--- |
+| **Start** | Write the equation | $3x + 5 = 17$ |
+| **1** | Subtract 5 from both sides | $3x + 5 - 5 = 17 - 5$ |
+| **2** | Simplify | $3x = 12$ |
+| **3** | Divide both sides by 3 | $\frac{3x}{3} = \frac{12}{3}$ |
+| **Finish** | State the final answer | **$x = 4$** |
+
+---
+
+### Example 2: Partially Faded (We Do)
+**Solve: $4x - 6 = 14$**
+
+| Step | Action | Equation |
+| :--- | :--- | :--- |
+| **Start** | Write the equation | $4x - 6 = 14$ |
+| **1** | Add 6 to both sides | $4x - 6 + 6 = 14 + 6$ |
+| **2** | Simplify | $4x = 20$ |
+| **3** | Divide both sides by 4 | $\dots\dots\dots\dots\dots$ |
+| **Finish** | State the final answer | **$x = $ \_\_\_\_** |
+
+---
+
+### Example 3: Substantially Faded (You Try)
+**Solve: $2x + 8 = 20$**
+
+| Step | Action | Equation |
+| :--- | :--- | :--- |
+| **Start** | Write the equation | $2x + 8 = 20$ |
+| **1** | Subtract 8 from both sides | $2x + 8 - 8 = 20 - 8$ |
+| **2** | Simplify | $\dots\dots\dots\dots\dots$ |
+| **3** | Divide both sides by 2 | $\dots\dots\dots\dots\dots$ |
+| **Finish** | State the final answer | **$x = $ \_\_\_\_** |
+
+---
+
+### Example 4: Independent Practice (You Do)
+**Solve: $5x - 7 = 18$**
+
+*Use the space below to show all your working steps, just like in Example 1.*
+
+| Action | Equation |
+| :--- | :--- |
+| **Write the equation** | $5x - 7 = 18$ |
+| **Step 1:** | |
+| **Step 2 (Simplify):** | |
+| **Step 3:** | |
+| **Final Answer:** | **$x = $ \_\_\_\_** |
+
+---
+
+### Teacher's Quick Check:
+1.  In Example 2, did you get **$x = 5$**?
+2.  In Example 3, did you get **$x = 6$**?
+3.  In Example 4, did you get **$x = 5$**?
+
+*(Hint for Example 4: You should have added 7 to both sides first, then divided by 5!)*</pre>
+  </div>
+</details>
+
+<!-- DeepSeek R1 — Condition A (Baseline) -->
+<details>
+  <summary>DeepSeek R1 &mdash; Condition A (Baseline) &mdash; Output score: 0</summary>
+  <div class="details-content">
+    <pre>### Worked Examples: Solving Two-Step Linear Equations
+**Learning Goal:** Solve equations that require two operations to isolate the variable (e.g., \( ax + b = c \) or \( \frac{x}{a} - b = c \)).
+
+---
+
+#### **Example 1**: Solve \( 3x + 4 = 16 \)
+**Step 1: Subtract to undo addition**
+The equation has "\( +4 \)". Subtract 4 from **both sides** to isolate the term with \( x \):
+\[
+3x + 4 - 4 = 16 - 4
+\]
+\[
+3x = 12
+\]
+
+**Step 2: Divide to undo multiplication**
+Now, \( 3x \) means "3 times \( x \)". Divide both sides by 3:
+\[
+\frac{3x}{3} = \frac{12}{3}
+\]
+\[
+x = 4
+\]
+
+**Check:** Substitute \( x = 4 \):
+\( 3(4) + 4 = 12 + 4 = 16 \) -- matches the original equation.
+**Answer:** \( \boxed{4} \)
+
+---
+
+#### **Example 2**: Solve \( 5x - 7 = 13 \)
+**Step 1: Add to undo subtraction**
+The equation has "\( -7 \)". Add 7 to **both sides** to isolate the \( x \)-term:
+\[
+5x - 7 + 7 = 13 + 7
+\]
+\[
+5x = 20
+\]
+
+**Step 2: Divide to undo multiplication**
+Divide both sides by 5:
+\[
+\frac{5x}{5} = \frac{20}{5}
+\]
+\[
+x = 4
+\]
+
+**Check:** Substitute \( x = 4 \):
+\( 5(4) - 7 = 20 - 7 = 13 \) -- correct!
+**Answer:** \( \boxed{4} \)
+
+---
+
+#### **Example 3**: Solve \( \frac{x}{2} + 3 = 9 \)
+**Step 1: Subtract to isolate the fractional term**
+Subtract 3 from both sides to undo "\( +3 \)":
+\[
+\frac{x}{2} + 3 - 3 = 9 - 3
+\]
+\[
+\frac{x}{2} = 6
+\]
+
+**Step 2: Multiply to undo division**
+Multiply both sides by 2 to solve for \( x \):
+\[
+2 \times \frac{x}{2} = 6 \times 2
+\]
+\[
+x = 12
+\]
+
+**Check:** \( \frac{12}{2} + 3 = 6 + 3 = 9 \) -- correct.
+**Answer:** \( \boxed{12} \)
+
+---
+
+#### **Example 4**: Solve \( -2x - 5 = -15 \)
+**Step 1: Add to undo subtraction**
+Add 5 to both sides:
+\[
+-2x - 5 + 5 = -15 + 5
+\]
+\[
+-2x = -10
+\]
+
+**Step 2: Divide by -2 to solve for \( x \)**
+Divide by -2 (remember: dividing negatives gives a positive):
+\[
+\frac{-2x}{-2} = \frac{-10}{-2}
+\]
+\[
+x = 5
+\]
+
+**Check:** \( -2(5) - 5 = -10 - 5 = -15 \) -- correct.
+**Answer:** \( \boxed{5} \)
+
+---
+
+**Key Tips:**
+- Always undo **addition/subtraction** first, then **multiplication/division**.
+- Perform the **same operation** on both sides to keep equality.
+- **Check your answer** by substituting into the original equation.
+- If the variable is multiplied by a **negative number** (e.g., \(-2x\)), dividing by a negative gives a positive solution.</pre>
+  </div>
+</details>
+
+<!-- DeepSeek R1 — Condition B (General CLT) -->
+<details>
+  <summary>DeepSeek R1 &mdash; Condition B (General CLT) &mdash; Output score: 0</summary>
+  <div class="details-content">
+    <pre>### Worked Examples: Solving Two-Step Linear Equations
+**Cognitive Load Theory Principles Applied:**
+- **Worked Example Effect:** Each example provides a complete solution with step-by-step reasoning.
+- **Split-Attention Principle:** Steps are integrated with explanations to avoid divided focus.
+- **Gradual Complexity:** Examples progress from simple to more challenging concepts.
+- **Consistent Structure:** All examples follow the same problem-solving sequence.
+
+---
+
+#### **Example 1: Basic Addition and Multiplication**
+**Problem:** Solve \(3x + 5 = 20\).
+
+**Solution:**
+1. **Undo addition:** Subtract 5 from both sides to isolate the variable term.
+   \[
+   \begin{align*}
+   3x + 5 - 5 &amp;= 20 - 5 \\
+   3x &amp;= 15
+   \end{align*}
+   \]
+   *Why?* Subtraction cancels the "+5".
+
+2. **Undo multiplication:** Divide both sides by 3 to solve for \(x\).
+   \[
+   \begin{align*}
+   \frac{3x}{3} &amp;= \frac{15}{3} \\
+   x &amp;= 5
+   \end{align*}
+   \]
+   *Why?* Division cancels the multiplication by 3.
+
+**Check:** Substitute \(x = 5\): \(3(5) + 5 = 15 + 5 = 20\).
+**Answer:** \(x = 5\)
+
+---
+
+#### **Example 2: Subtraction Followed by Multiplication**
+**Problem:** Solve \(2x - 7 = 5\).
+
+**Solution:**
+1. **Undo subtraction:** Add 7 to both sides to isolate the variable term.
+   \[
+   \begin{align*}
+   2x - 7 + 7 &amp;= 5 + 7 \\
+   2x &amp;= 12
+   \end{align*}
+   \]
+   *Why?* Addition cancels the "-7".
+
+2. **Undo multiplication:** Divide both sides by 2.
+   \[
+   \begin{align*}
+   \frac{2x}{2} &amp;= \frac{12}{2} \\
+   x &amp;= 6
+   \end{align*}
+   \]
+   *Why?* Division cancels the multiplication by 2.
+
+**Check:** Substitute \(x = 6\): \(2(6) - 7 = 12 - 7 = 5\).
+**Answer:** \(x = 6\)
+
+---
+
+#### **Example 3: Negative Constant Term**
+**Problem:** Solve \(4x + 10 = -6\).
+
+**Solution:**
+1. **Undo addition:** Subtract 10 from both sides.
+   \[
+   \begin{align*}
+   4x + 10 - 10 &amp;= -6 - 10 \\
+   4x &amp;= -16
+   \end{align*}
+   \]
+   *Why?* Subtraction cancels "+10". Note: \(-6 - 10 = -16\).
+
+2. **Undo multiplication:** Divide both sides by 4.
+   \[
+   \begin{align*}
+   \frac{4x}{4} &amp;= \frac{-16}{4} \\
+   x &amp;= -4
+   \end{align*}
+   \]
+   *Why?* Division cancels multiplication by 4.
+
+**Check:** Substitute \(x = -4\): \(4(-4) + 10 = -16 + 10 = -6\).
+**Answer:** \(x = -4\)
+
+---
+
+#### **Example 4: Fractional Coefficient**
+**Problem:** Solve \(\frac{1}{3}x - 2 = 3\).
+
+**Solution:**
+1. **Undo subtraction:** Add 2 to both sides.
+   \[
+   \begin{align*}
+   \frac{1}{3}x - 2 + 2 &amp;= 3 + 2 \\
+   \frac{1}{3}x &amp;= 5
+   \end{align*}
+   \]
+   *Why?* Addition cancels "-2".
+
+2. **Undo fraction multiplication:** Multiply both sides by 3 (the reciprocal of \(\frac{1}{3}\)).
+   \[
+   \begin{align*}
+   3 \times \frac{1}{3}x &amp;= 5 \times 3 \\
+   x &amp;= 15
+   \end{align*}
+   \]
+   *Why?* Multiplying by 3 cancels the \(\frac{1}{3}\).
+
+**Check:** Substitute \(x = 15\): \(\frac{1}{3}(15) - 2 = 5 - 2 = 3\).
+**Answer:** \(x = 15\)
+
+---
+
+### Key Strategy Recap
+1. **Identify operations** applied to the variable (e.g., addition/subtraction, multiplication/division).
+2. **Undo operations in reverse order** (usually addition/subtraction first, then multiplication/division).
+3. **Perform inverse operations** on both sides to maintain equality.
+4. **Check solutions** by substituting back into the original equation.
+
+**Next Steps:** Practice with equations like \(5x - 3 = 12\) or \(\frac{2}{5}x + 1 = 7\)!</pre>
+  </div>
+</details>
+
+<!-- DeepSeek R1 — Condition C (Specific fading) -->
+<details>
+  <summary>DeepSeek R1 &mdash; Condition C (Specific fading) &mdash; Output score: 2</summary>
+  <div class="details-content">
+    <pre>### Worked Examples: Solving Two-Step Linear Equations
+**Objective:** Solve equations of the form \(ax + b = c\) using inverse operations.
+
+---
+
+#### **Example 1: Full Solution**
+**Equation:** \(3x + 5 = 20\)
+**Step-by-Step Solution:**
+1. **Subtract 5 from both sides** to isolate the variable term:
+   \[
+   3x + 5 - 5 = 20 - 5
+   \]
+   \[
+   3x = 15
+   \]
+   *(Why?* We undo "+5" by subtracting 5.*)*
+
+2. **Divide both sides by 3** to solve for \(x\):
+   \[
+   \frac{3x}{3} = \frac{15}{3}
+   \]
+   \[
+   x = 5
+   \]
+   *(Why?* Dividing by 3 cancels the multiplication by 3.*)*
+
+**Answer:** \(x = 5\)
+
+---
+
+#### **Example 2: Partial Solution (Guided Steps)**
+**Equation:** \(4x - 7 = 13\)
+**Solution:**
+1. **Add 7 to both sides** to isolate \(4x\):
+   \[
+   4x - 7 + 7 = 13 + 7
+   \]
+   \[
+   4x = 20
+   \]
+
+2. **Divide both sides by 4**:
+   \[
+   \frac{4x}{\square} = \frac{20}{\square} \quad \rightarrow \quad x = \, ?
+   \]
+   *(Complete the division step.)*
+
+**Answer:** \(x = 5\) *(Verify by substituting into the original equation.)*
+
+---
+
+#### **Example 3: Minimal Solution (Fill in Steps)**
+**Equation:** \(6m + 3 = 27\)
+**Solution:**
+1. **Subtract \(\square\) from both sides**:
+   \[
+   6m + 3 - \square = 27 - \square \quad \rightarrow \quad 6m = \, ?
+   \]
+
+2. **Divide both sides by \(\square\)**:
+   \[
+   \frac{6m}{\square} = \frac{\square}{\square} \quad \rightarrow \quad m = \, ?
+   \]
+
+**Answer:** \(m = 4\) *(Show all steps independently.)*
+
+---
+
+#### **Example 4: Independent Practice**
+**Equation:** \(5y - 8 = 22\)
+**Solve this problem entirely on your own.**
+- **Step 1:** Undo subtraction by adding 8 to both sides.
+- **Step 2:** Undo multiplication by dividing both sides by 5.
+
+**Answer:** \(y = 6\) *(Check your solution by substituting \(y = 6\) into \(5y - 8\).)*
+
+---
+
+### Summary of Steps
+1. **Identify the operations** applied to the variable (e.g., multiplication/subtraction).
+2. **Undo addition/subtraction** by using the inverse operation on both sides.
+3. **Undo multiplication/division** by using the inverse operation on both sides.
+4. **Check your solution** by substituting it back into the original equation.
+
+**Next:** Practice with equations like \(2z + 11 = 31\) or \(7 - 3k = 22\).</pre>
+  </div>
+</details>
+
+<!-- Qwen3-235B — Condition A (Baseline) -->
+<details>
+  <summary>Qwen3-235B &mdash; Condition A (Baseline) &mdash; Output score: 0</summary>
+  <div class="details-content">
+    <pre>### Worked Examples: Solving Two-Step Linear Equations
+
+---
+
+#### **Example 1: Solving Equations with Multiplication and Addition**
+**Problem:** Solve $ 3x + 5 = 20 $
+
+**Step-by-Step Solution:**
+1. **Subtract 5** from both sides to undo addition:
+   $$
+   3x + 5 - 5 = 20 - 5
+   $$
+   Simplifies to:
+   $$
+   3x = 15
+   $$
+
+2. **Divide both sides by 3** to undo multiplication:
+   $$
+   \frac{3x}{3} = \frac{15}{3}
+   $$
+   Simplifies to:
+   $$
+   x = 5
+   $$
+
+**Check:** Substitute $ x = 5 $ into the original equation:
+$ 3(5) + 5 = 15 + 5 = 20 $
+
+---
+
+#### **Example 2: Solving Equations with Division and Subtraction**
+**Problem:** Solve $ \frac{x}{4} - 2 = 7 $
+
+**Step-by-Step Solution:**
+1. **Add 2** to both sides to undo subtraction:
+   $$
+   \frac{x}{4} - 2 + 2 = 7 + 2
+   $$
+   Simplifies to:
+   $$
+   \frac{x}{4} = 9
+   $$
+
+2. **Multiply both sides by 4** to undo division:
+   $$
+   4 \cdot \frac{x}{4} = 9 \cdot 4
+   $$
+   Simplifies to:
+   $$
+   x = 36
+   $$
+
+**Check:** Substitute $ x = 36 $ into the original equation:
+$ \frac{36}{4} - 2 = 9 - 2 = 7 $
+
+---
+
+#### **Example 3: Solving Equations with Multiplication and Subtraction**
+**Problem:** Solve $ 5x - 7 = 13 $
+
+**Step-by-Step Solution:**
+1. **Add 7** to both sides to undo subtraction:
+   $$
+   5x - 7 + 7 = 13 + 7
+   $$
+   Simplifies to:
+   $$
+   5x = 20
+   $$
+
+2. **Divide both sides by 5** to undo multiplication:
+   $$
+   \frac{5x}{5} = \frac{20}{5}
+   $$
+   Simplifies to:
+   $$
+   x = 4
+   $$
+
+**Check:** Substitute $ x = 4 $ into the original equation:
+$ 5(4) - 7 = 20 - 7 = 13 $
+
+---
+
+#### **Example 4: Solving Equations with Negative Coefficients**
+**Problem:** Solve $ -2x + 5 = 13 $
+
+**Step-by-Step Solution:**
+1. **Subtract 5** from both sides to undo addition:
+   $$
+   -2x + 5 - 5 = 13 - 5
+   $$
+   Simplifies to:
+   $$
+   -2x = 8
+   $$
+
+2. **Divide both sides by -2** to isolate $ x $:
+   $$
+   \frac{-2x}{-2} = \frac{8}{-2}
+   $$
+   Simplifies to:
+   $$
+   x = -4
+   $$
+
+**Check:** Substitute $ x = -4 $ into the original equation:
+$ -2(-4) + 5 = 8 + 5 = 13 $
+
+---
+
+### Key Takeaways for Students:
+1. Always perform **inverse operations** in the reverse order of BIDMAS/PEMDAS (undo addition/subtraction first, then multiplication/division).
+2. Keep the equation balanced by applying operations to **both sides**.
+3. **Substitute your solution** back into the original equation to verify correctness.
+
+Practice these steps regularly to build confidence in solving two-step equations!</pre>
+  </div>
+</details>
+
+<!-- Qwen3-235B — Condition B (General CLT) -->
+<details>
+  <summary>Qwen3-235B &mdash; Condition B (General CLT) &mdash; Output score: 0</summary>
+  <div class="details-content">
+    <pre>### **Worked Example 1: Solving $ 3x + 5 = 20 $**
+**Goal:** Solve for $ x $.
+
+**Steps:**
+1. **Undo the constant term (+5)**:
+   Subtract 5 from both sides:
+   $$
+   3x + 5 - 5 = 20 - 5
+   $$
+   Simplified:
+   $$
+   3x = 15
+   $$
+
+2. **Undo the coefficient (3)**:
+   Divide both sides by 3:
+   $$
+   \frac{3x}{3} = \frac{15}{3}
+   $$
+   Simplified:
+   $$
+   x = 5
+   $$
+
+**Check:**
+Substitute $ x = 5 $:
+$$
+3(5) + 5 = 15 + 5 = 20 \quad \text{(correct)}
+$$
+
+---
+
+### **Worked Example 2: Solving $ \frac{x}{2} + 4 = 10 $**
+**Goal:** Solve for $ x $.
+
+**Steps:**
+1. **Undo the constant term (+4)**:
+   Subtract 4 from both sides:
+   $$
+   \frac{x}{2} + 4 - 4 = 10 - 4
+   $$
+   Simplified:
+   $$
+   \frac{x}{2} = 6
+   $$
+
+2. **Undo the coefficient ($\div 2$)**:
+   Multiply both sides by 2:
+   $$
+   2 \cdot \frac{x}{2} = 6 \cdot 2
+   $$
+   Simplified:
+   $$
+   x = 12
+   $$
+
+**Check:**
+Substitute $ x = 12 $:
+$$
+\frac{12}{2} + 4 = 6 + 4 = 10 \quad \text{(correct)}
+$$
+
+---
+
+### **Worked Example 3: Solving $ 8 = 5x - 7 $**
+**Goal:** Solve for $ x $.
+
+**Steps:**
+1. **Undo the constant term (-7)**:
+   Add 7 to both sides:
+   $$
+   8 + 7 = 5x - 7 + 7
+   $$
+   Simplified:
+   $$
+   15 = 5x
+   $$
+
+2. **Undo the coefficient (5)**:
+   Divide both sides by 5:
+   $$
+   \frac{15}{5} = \frac{5x}{5}
+   $$
+   Simplified:
+   $$
+   3 = x \quad \text{or} \quad x = 3
+   $$
+
+**Check:**
+Substitute $ x = 3 $:
+$$
+5(3) - 7 = 15 - 7 = 8 \quad \text{(correct)}
+$$
+
+---
+
+### **Worked Example 4: Solving $ 15 - 2x = 7 $**
+**Goal:** Solve for $ x $.
+
+**Steps:**
+1. **Undo the constant term (+15)**:
+   Subtract 15 from both sides:
+   $$
+   15 - 2x - 15 = 7 - 15
+   $$
+   Simplified:
+   $$
+   -2x = -8
+   $$
+
+2. **Undo the coefficient (-2)**:
+   Divide both sides by -2:
+   $$
+   \frac{-2x}{-2} = \frac{-8}{-2}
+   $$
+   Simplified:
+   $$
+   x = 4
+   $$
+
+**Check:**
+Substitute $ x = 4 $:
+$$
+15 - 2(4) = 15 - 8 = 7 \quad \text{(correct)}
+$$
+
+---
+
+### **Design Notes for Cognitive Load Theory (CLT):**
+1. **Clear Step Labels**: Each example uses numbered steps to signal the sequence of inverse operations.
+2. **Consistent Structure**: Each problem is solved using the same two-step process: isolate the variable term first, then solve for the variable.
+3. **Integrated Explanations**: Steps are paired with immediate mathematical operations to avoid splitting attention.
+4. **Variation in Equations**: Variables appear on both sides of the equation (left/right) to reinforce that the method applies universally.
+5. **Integer Solutions**: Avoids fractions/decimals to reduce arithmetic complexity and maintain focus on the method.
+6. **Error Prevention**: Includes checks with substitutions to reinforce understanding and address misconceptions.</pre>
+  </div>
+</details>
+
+<!-- Qwen3-235B — Condition C (Specific fading) -->
+<details>
+  <summary>Qwen3-235B &mdash; Condition C (Specific fading) &mdash; Output score: 2</summary>
+  <div class="details-content">
+    <pre>### Worked Examples for Solving Two-Step Linear Equations
+**Goal**: To systematically reduce scaffolding so students gradually take over problem-solving.
+
+---
+
+#### **Example 1 (Full Support)**
+**Problem**: Solve $3x + 5 = 20$.
+**Solution Steps**:
+1. Subtract 5 from both sides to isolate the term with $x$:
+   $$
+   3x + 5 - 5 = 20 - 5 \quad \Rightarrow \quad 3x = 15
+   $$
+2. Divide both sides by 3 to solve for $x$:
+   $$
+   \frac{3x}{3} = \frac{15}{3} \quad \Rightarrow \quad x = 5
+   $$
+
+**Checklist for Students**:
+- Subtract the constant term first.
+- Then divide by the coefficient.
+
+---
+
+#### **Example 2 (Partially Faded)**
+**Problem**: Solve $2y + 3 = 9$.
+**Solution Steps**:
+1. Subtract 3 from both sides:
+   $$
+   2y + 3 - 3 = 9 - 3 \quad \Rightarrow \quad 2y = 6
+   $$
+2. Divide both sides by ___ to solve for $y$:
+   $$
+   \frac{2y}{\text{\_\_}} = \frac{6}{\text{\_\_}} \quad \Rightarrow \quad y = \text{\_\_}
+   $$
+
+**Hint**: The coefficient of $y$ is 2.
+**Your Turn**: Fill in the blanks above!
+
+---
+
+#### **Example 3 (Minimally Faded)**
+**Problem**: Solve $4z - 7 = 13$.
+**Solution Steps**:
+1. Add 7 to both sides:
+   $$
+   \text{\_\_\_\_\_\_\_\_\_\_\_\_\_} \quad \Rightarrow \quad 4z = \text{\_\_}
+   $$
+2. Divide both sides by ___:
+   $$
+   \frac{4z}{\text{\_\_}} = \frac{\text{\_\_}}{\text{\_\_}} \quad \Rightarrow \quad z = \text{\_\_}
+   $$
+
+**Hints**:
+- Step 1: Undo subtraction of 7.
+- Step 2: Divide by the coefficient of $z$.
+**Your Turn**: Complete the steps!
+
+---
+
+#### **Example 4 (No Support)**
+**Problem**: Solve $5w + 2 = 17$.
+**Your Task**: Write the full solution in your notebook.
+**Steps to Follow**:
+1. **Isolate the term with the variable** (Use inverse of addition/subtraction).
+2. **Solve for the variable** (Use inverse of multiplication/division).
+
+**Final Answer**: $w = \text{?\_}$
+
+---
+
+### Fading Strategy Overview
+- **Example 1**: All steps provided to model the process.
+- **Example 2**: Second operation left blank; students apply learned structure.
+- **Example 3**: Both operations left blank but scaffolded with symbolic prompts.
+- **Example 4**: Independent problem-solving with no guidance.
+
+This approach reduces cognitive load by gradually increasing student responsibility while reinforcing the consistent structure of two-step equations.</pre>
+  </div>
+</details>
+
+<!-- GPT-OSS-120B — Condition A (Baseline) -->
+<details>
+  <summary>GPT-OSS-120B &mdash; Condition A (Baseline) &mdash; Output score: 0</summary>
+  <div class="details-content">
+    <pre>## Two-Step Linear Equations
+A **two-step linear equation** is an equation that requires **two operations** (usually one of each: an addition/subtraction **and** a multiplication/division) to isolate the variable.
+
+The general pattern is
+
+\[
+ax \; \text{(or } a\! \times\! x\text{)} \;\; \bigl[\text{add/subtract }b\bigr] \;=\; c
+\]
+
+To solve it we:
+
+1. **Undo the addition/subtraction** (move the constant to the other side).
+2. **Undo the multiplication/division** (divide or multiply by the coefficient of \(x\)).
+
+Below are four worked examples that follow this method step-by-step.
+
+---
+
+## Example 1
+\[
+3x + 5 = 20
+\]
+
+### Solution
+
+| Step | What we do | Why |
+|------|------------|-----|
+| 1 | Subtract 5 from both sides: \(\;3x + 5 - 5 = 20 - 5\) | Removes the constant that is **added** to the term with \(x\). |
+|   | -&gt; \(3x = 15\) | |
+| 2 | Divide both sides by 3: \(\displaystyle \frac{3x}{3} = \frac{15}{3}\) | Removes the coefficient **3** that multiplies \(x\). |
+|   | -&gt; \(x = 5\) | **Answer** |
+
+---
+
+## Example 2
+\[
+\frac{1}{2}x - 4 = 10
+\]
+
+### Solution
+
+| Step | What we do | Why |
+|------|------------|-----|
+| 1 | Add 4 to both sides: \(\displaystyle \frac{1}{2}x - 4 + 4 = 10 + 4\) | Cancels the **subtracted** constant. |
+|   | -&gt; \(\displaystyle \frac{1}{2}x = 14\) | |
+| 2 | Multiply both sides by 2 (the reciprocal of \(\tfrac12\)): \(\displaystyle 2\!\times\!\frac{1}{2}x = 2\!\times\!14\) | Removes the **fractional coefficient**. |
+|   | -&gt; \(x = 28\) | **Answer** |
+
+---
+
+## Example 3
+\[
+7 - 2x = 1
+\]
+
+### Solution
+
+| Step | What we do | Why |
+|------|------------|-----|
+| 1 | Subtract 7 from both sides: \((7 - 2x) - 7 = 1 - 7\) | Isolates the term that contains \(x\). |
+|   | -&gt; \(-2x = -6\) | |
+| 2 | Divide both sides by \(-2\): \(\displaystyle \frac{-2x}{-2} = \frac{-6}{-2}\) | Gets rid of the **coefficient** \(-2\). |
+|   | -&gt; \(x = 3\) | **Answer** |
+
+---
+
+## Example 4
+\[
+4x + 9 = 3x - 2
+\]
+
+### Solution
+
+When the variable appears on **both sides**, first bring all the \(x\)-terms to one side and the constants to the other.
+
+| Step | What we do | Why |
+|------|------------|-----|
+| 1 | Subtract \(3x\) from **both** sides: \((4x - 3x) + 9 = (3x - 3x) - 2\) | Eliminates the \(x\) on the right. |
+|   | -&gt; \(x + 9 = -2\) | |
+| 2 | Subtract 9 from both sides: \(x + 9 - 9 = -2 - 9\) | Removes the constant on the left. |
+|   | -&gt; \(x = -11\) | **Answer** |
+
+---
+
+### Quick Checklist for Solving Two-Step Equations
+
+1. **Identify** whether the constant is added/subtracted and whether the variable is multiplied/divided.
+2. **Undo the addition/subtraction** first (move the constant to the opposite side).
+3. **Undo the multiplication/division** next (divide or multiply by the coefficient of the variable).
+4. **Check**: Substitute your answer back into the original equation to verify it works.
+
+Practice these steps, and the two-step linear equations will become routine!</pre>
+  </div>
+</details>
+
+<!-- GPT-OSS-120B — Condition B (General CLT) -->
+<details>
+  <summary>GPT-OSS-120B &mdash; Condition B (General CLT) &mdash; Output score: 1</summary>
+  <div class="details-content">
+    <pre>## Solving Two-Step Linear Equations -- Worked Examples
+*Target: Year 8 (Key Stage 3) -- one variable, two-step equations*
+
+Below are four complete worked examples. Each example follows the same **four-step structure** so that you can see exactly what to do, why you do it, and where to write each step. The layout is deliberately simple (few symbols on a line, colour-coded boxes) to keep the **cognitive load** low while you build a strong procedural habit.
+
+---
+
+### General 4-Step Template
+
+| Step | What you do | Why it works |
+|------|-------------|--------------|
+| **1. Identify the "extra" number** | Look for the term that is **added** or **subtracted** from the variable term (e.g., `+5` or `--3`). | This term does not belong to the variable part; we must remove it first. |
+| **2. Remove the extra number** | Use the opposite operation on **both sides** of the equation (subtract if it was added, add if it was subtracted). | Keeping the equation balanced preserves equality. |
+| **3. Isolate the variable coefficient** | Now you have something like `ax = b`. Divide (or multiply) both sides by `a` to get `x = b/a`. | This gives the value of the unknown. |
+| **4. Check** | Substitute the answer back into the original equation. | Confirms the solution and builds confidence. |
+
+---
+
+## Example 1
+**Problem:** `3x + 5 = 20`
+
+| Step | Work (write exactly as shown) | Explanation |
+|------|------------------------------|-------------|
+| 1 | **Identify the extra number** -&gt; `+5` is added to the `3x` term. | We must get rid of the `+5` first. |
+| 2 | **Subtract 5 from both sides**  `3x + 5 - 5 = 20 - 5`  `3x = 15` | Subtracting the same number from both sides keeps the equality true. |
+| 3 | **Divide by the coefficient of x** `3x / 3 = 15 / 3` `x = 5` | Division isolates `x`. |
+| 4 | **Check** Replace `x` by `5` in the original: `3*5 + 5 = 15 + 5 = 20` | The left-hand side equals the right-hand side, so `x = 5` is correct. |
+
+---
+
+## Example 2
+**Problem:** `-2x - 7 = 1`
+
+| Step | Work | Explanation |
+|------|------|-------------|
+| 1 | **Extra number** -&gt; `-7` (it is subtracted). | We need to "undo" the subtraction. |
+| 2 | **Add 7 to both sides** `-2x - 7 + 7 = 1 + 7` `-2x = 8` | Adding the opposite (+7) removes the `-7`. |
+| 3 | **Divide by the coefficient** (-2) `-2x / (-2) = 8 / (-2)` `x = -4` | Division gives the value of `x`. |
+| 4 | **Check** `-2(-4) - 7 = 8 - 7 = 1` | Works, so `x = -4`. |
+
+---
+
+## Example 3
+**Problem:** `4x - 3 = 9`
+
+| Step | Work | Explanation |
+|------|------|-------------|
+| 1 | **Extra number** -&gt; `-3`. | Remove the `-3`. |
+| 2 | **Add 3 to both sides** `4x - 3 + 3 = 9 + 3` `4x = 12` | Balance is kept. |
+| 3 | **Divide by 4** `4x / 4 = 12 / 4` `x = 3` | Isolate `x`. |
+| 4 | **Check** `4*3 - 3 = 12 - 3 = 9` | Correct solution. |
+
+---
+
+## Example 4
+**Problem:** `-5x + 2 = -13`
+
+| Step | Work | Explanation |
+|------|------|-------------|
+| 1 | **Extra number** -&gt; `+2`. | Must cancel the `+2`. |
+| 2 | **Subtract 2 from both sides** `-5x + 2 - 2 = -13 - 2` `-5x = -15` | Subtracting the same number keeps equality. |
+| 3 | **Divide by -5** `-5x / (-5) = -15 / (-5)` `x = 3` | Isolate `x`. |
+| 4 | **Check** `-5*3 + 2 = -15 + 2 = -13` | Solution verified. |
+
+---
+
+## How to Use These Worked Examples
+
+1. **Read the whole solution first** -- notice the consistent four-step pattern.
+2. **Practice**: copy the steps onto a fresh sheet, replace the numbers with the ones in the problem, and carry out each arithmetic operation carefully.
+3. **Gradual Release**: after you feel comfortable, try a new problem and **only** write the step you are unsure about. The earlier steps should become automatic.
+
+Remember: **keeping the equation balanced** (doing the same thing to both sides) is the central idea. Once the "extra" number is removed, the remaining single-term equation is solved by a simple division (or multiplication).
+
+Happy solving!</pre>
+  </div>
+</details>
+
+<!-- GPT-OSS-120B — Condition C (Specific fading) -->
+<details>
+  <summary>GPT-OSS-120B &mdash; Condition C (Specific fading) &mdash; Output score: 2</summary>
+  <div class="details-content">
+    <pre>**Year 8 -- Solving Two-Step Linear Equations**
+*(e.g. \(3x+5=20\)).*
+
+The "worked-example fading" technique means we start with a **complete** solution and then **remove** steps one by one. By the time you reach the fourth example you will be doing most of the work yourself.
+
+---
+
+## Example 1 -- **Full solution shown**
+
+Solve **\(3x+5 = 20\)**
+
+| Step | What we do | Why we do it |
+|------|------------|--------------|
+| 1  | Subtract 5 from **both sides**: \(3x+5-5 = 20-5\) | To get rid of the constant term on the left. |
+| 2  | Simplify: \(3x = 15\) | The equation is now **one-step** (only a multiplication). |
+| 3  | Divide both sides by 3: \(\displaystyle x =\frac{15}{3}\) | To isolate the variable. |
+| 4  | Simplify: \(x = 5\) | Final answer. |
+
+**Check**: \(3(5)+5 = 15+5 = 20\)
+
+---
+
+## Example 2 -- **One step hidden**
+
+Solve **\(4y-7 = 9\)**
+
+| Step | What we do (shown) | Why |
+|------|--------------------|-----|
+| 1  | Add 7 to both sides: \(4y-7+7 = 9+7\) | Removes the \(-7\). |
+| 2  | **(Hidden)** -- simplify the left side |  |
+| 3  | Divide by 4: \(\displaystyle y = \frac{16}{4}\) | Isolate \(y\). |
+| 4  | Simplify: \(y = 4\) | Final answer. |
+
+**What you fill in (Step 2):** \(4y = 16\)
+
+**Check:** \(4(4)-7 = 16-7 = 9\)
+
+---
+
+## Example 3 -- **Two steps hidden**
+
+Solve **\(2z + 8 = 26\)**
+
+| Step | Action | Reason |
+|------|--------|--------|
+| 1  | **(Hidden)** -- subtract 8 from both sides | Get rid of the constant on the left. |
+| 2  | **(Hidden)** -- simplify the left side |  |
+| 3  | Divide by 2: \(\displaystyle z = \frac{18}{2}\) | Isolate the variable. |
+| 4  | Simplify: \(z = 9\) | Final answer. |
+
+**What you must do:**
+
+1. Write the equation after subtracting 8: \(\;2z = 18\)
+2. Then finish the division as shown.
+
+**Check:** \(2(9)+8 = 18+8 = 26\)
+
+---
+
+## Example 4 -- **Only the starting point shown -- you finish it!**
+
+Solve **\(5w - 12 = 38\)**
+
+| Step | What you need to do |
+|------|---------------------|
+| 1  | **Add 12 to both sides** (write the new equation). |
+| 2  | **Simplify** so you have a single term with \(w\) on the left. |
+| 3  | **Divide** by 5 to isolate \(w\). |
+| 4  | **Simplify** to get the final value of \(w\). |
+| 5  | **Check** your answer by substituting back into the original equation. |
+
+**Your work might look like this:**
+
+1. \(5w - 12 + 12 = 38 + 12\) -&gt; \(5w = 50\)
+2. Divide by 5 -&gt; \(w = 10\)
+3. Check: \(5(10)-12 = 50-12 = 38\)
+
+---
+
+### How to use the fading sequence
+
+1. **Study Example 1** -- follow every algebraic move.
+2. **Do Example 2** -- fill in the hidden simplification (just one arithmetic step).
+3. **Do Example 3** -- fill in two missing steps; this forces you to decide which operation comes first.
+4. **Do Example 4** completely on your own, using the pattern you have learned.
+
+Repeating this pattern with new numbers (e.g., \(7x+3=45\), \(6y-9=33\), etc.) will cement the two-step solving process:
+
+1. **Undo the constant term** (add or subtract).
+2. **Undo the coefficient** (divide or multiply).
+
+Happy practicing!</pre>
+  </div>
+</details>
+
+
+        <!-- Appendix E: Methodology -->
+        <h2 id="methodology">Appendix E: Methodology document</h2>
+
+        <p>The full methodological plan, including hypotheses, data analysis plan, and implementation details, is available in the project repository as <code>REPORT_4_METHODOLOGY.md</code>.</p>
+
+        <p>Repository: <a href="https://github.com/trgallagher-research/AlignED-research-report-4" target="_blank">github.com/trgallagher-research/AlignED-research-report-4</a></p>
+
+        <!-- Citation -->
+        <h2 id="citation">Citation</h2>
+
+        <div class="citation">Gallagher, T. (2026). Do LLMs fade worked examples? A pilot study of pedagogical reasoning in frontier AI models. AlignED Report 4. https://alignedstudies.org/studies/worked-example-fading/</div>
+
+        <!-- Contact -->
+        <h2 id="contact">Contact</h2>
+
+        <p>For questions about this report or the AlignED benchmark series, contact Tim Gallagher via <a href="https://github.com/trgallagher-research" target="_blank">GitHub</a>.</p>
+
+        <p>This report is part of the <a href="/studies/">AlignED research report series</a>.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#citation">Citation</a></li>
+            <li><a href="/studies/">All Reports</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report-4" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Last updated: March 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

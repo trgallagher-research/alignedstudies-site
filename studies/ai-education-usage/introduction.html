@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. Introduction — AlignED</title>
+  <meta name="description" content="Introduction to the analysis of education-related AI usage patterns from the Anthropic Economic Index V4.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/ai-education-usage/introduction.html">
+</head>
+<body data-page="introduction">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html" class="active">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>1. Introduction</h1>
+      <p class="subtitle">Patterns from the Anthropic Economic Index</p>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="prose">
+
+        <h2>The data gap</h2>
+        <p>AI use in education is growing rapidly. The OECD's 2024 Teaching and Learning International Survey found that 41% of lower secondary teachers across participating countries had used AI for professional tasks. Student usage is likely higher, though reliable figures remain scarce.</p>
+        <p>Most discussions about AI in education rely on surveys, anecdotes, or small-scale studies. Large-scale data on what people actually do with AI tools in educational contexts is rare. We know AI is being used. We know far less about how.</p>
+
+        <h2>The Anthropic Economic Index</h2>
+        <p>In January 2026, Anthropic released the fourth version of its Economic Index, a dataset built from one million Claude.ai conversations sampled during a single week in November 2025 (13&ndash;20 November). A separate sample of one million first-party API transcripts was also released.</p>
+        <p>Anthropic's classification tool, Clio, maps each conversation to standardised occupational tasks from the O*NET database. For each matched task, Clio classifies the collaboration pattern (how the human and AI interact), estimates AI autonomy, records whether the task was completed successfully, and identifies the use case (coursework, work, or personal).</p>
+        <p>The full dataset is publicly available on <a href="https://huggingface.co/datasets/Anthropic/EconomicIndex" target="_blank">HuggingFace</a>.</p>
+
+        <h2>What this report does</h2>
+        <p>This report examines the subset of Claude.ai conversations classified under Standard Occupational Classification (SOC) Major Group 25: Educational Instruction and Library Occupations. That subset comprises 266 of the 3,170 total matched tasks, representing 15.2% of total conversation volume, and backed by 152,088 conversations.</p>
+        <p>The analysis is descriptive. It reports what the data shows about usage patterns, who is using AI for education tasks, how they interact with it, and where those interactions occur geographically. Charts and statistics summarise the data. Observations note what stands out.</p>
+
+        <h2>What this report does not claim</h2>
+        <p>This report does not claim to describe "AI in education" broadly. It describes Claude.ai education usage during one week in November 2025. Several boundaries apply:</p>
+        <ul>
+          <li><strong>One platform.</strong> Claude.ai is one of many AI tools used in education. ChatGPT, Gemini, Copilot, and others serve different user populations with different interfaces. Patterns observed here may not generalise.</li>
+          <li><strong>One week.</strong> November is late semester in the Northern Hemisphere and exam season in parts of the Southern Hemisphere. Usage patterns likely vary across the academic year.</li>
+          <li><strong>Classification, not observation.</strong> Clio's task mapping and collaboration pattern classification are automated. No published error rates exist for these classifiers. A conversation classified as "directive" may still serve learning goals.</li>
+          <li><strong>No learning outcomes.</strong> The data shows interaction patterns. It does not measure whether anyone learned anything. A student asking "explain photosynthesis" is classified as a directive interaction, but the student may be learning.</li>
+        </ul>
+
+        <p>The Methods section describes these limitations in detail. The Discussion section addresses the interpretation gap between interaction patterns and educational intent.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="appendices.html#data-access">Data Access</a></li>
+            <li><a href="appendices.html#citation">Citation</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report-3" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Data from Anthropic Economic Index. Last updated: March 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

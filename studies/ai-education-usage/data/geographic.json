@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "title": "Education Share of AI Usage by Country (Top 20)",
+    "source": "Anthropic Economic Index V4 (release_2026_01_15)",
+    "period": "Nov 13-20, 2025",
+    "notes": "Education tasks as percentage of all AI tasks per country. Absolute conversation counts not available. Small user bases may produce volatile percentages."
+  },
+  "results": [
+    { "country": "Indonesia", "code": "ID", "edu_pct": 37.08 },
+    { "country": "Ecuador", "code": "EC", "edu_pct": 28.62 },
+    { "country": "Peru", "code": "PE", "edu_pct": 27.50 },
+    { "country": "Iraq", "code": "IQ", "edu_pct": 24.43 },
+    { "country": "Dominican Republic", "code": "DO", "edu_pct": 23.01 },
+    { "country": "Ukraine", "code": "UA", "edu_pct": 19.71 },
+    { "country": "Uzbekistan", "code": "UZ", "edu_pct": 19.23 },
+    { "country": "Bolivia", "code": "BO", "edu_pct": 17.51 },
+    { "country": "Ivory Coast", "code": "CI", "edu_pct": 17.18 },
+    { "country": "Mexico", "code": "MX", "edu_pct": 17.06 },
+    { "country": "Algeria", "code": "DZ", "edu_pct": 17.05 },
+    { "country": "Colombia", "code": "CO", "edu_pct": 16.48 },
+    { "country": "Cameroon", "code": "CM", "edu_pct": 16.05 },
+    { "country": "Kenya", "code": "KE", "edu_pct": 15.13 },
+    { "country": "Philippines", "code": "PH", "edu_pct": 14.63 },
+    { "country": "France", "code": "FR", "edu_pct": 14.00 },
+    { "country": "United States", "code": "US", "edu_pct": 13.97 },
+    { "country": "Italy", "code": "IT", "edu_pct": 13.96 },
+    { "country": "South Korea", "code": "KR", "edu_pct": 13.36 },
+    { "country": "Morocco", "code": "MA", "edu_pct": 13.32 }
+  ]
+}

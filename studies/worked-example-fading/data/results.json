@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "report": "AlignED Report 4",
+    "title": "Do LLMs Fade Worked Examples?",
+    "date": "March 2026",
+    "models": [
+      {"id": "claude_opus_4_6", "label": "Claude Opus 4.6", "provider": "Anthropic", "type": "closed"},
+      {"id": "gemini_3_1_pro", "label": "Gemini 3.1 Pro", "provider": "Google", "type": "closed"},
+      {"id": "gemini_3_flash", "label": "Gemini 3 Flash", "provider": "Google", "type": "closed"},
+      {"id": "deepseek_r1_0528", "label": "DeepSeek R1", "provider": "DeepSeek", "type": "open"},
+      {"id": "qwen3_235b", "label": "Qwen3-235B", "provider": "Alibaba", "type": "open"},
+      {"id": "gpt_oss_120b", "label": "GPT-OSS-120B", "provider": "OpenAI", "type": "open"}
+    ],
+    "conditions": [
+      {"id": "A_baseline", "label": "A: Baseline"},
+      {"id": "B_general_clt", "label": "B: General CLT"},
+      {"id": "C_specific_fading", "label": "C: Specific fading"}
+    ]
+  },
+  "scores": [
+    {"model": "claude_opus_4_6", "condition": "A_baseline", "output_score": 0, "trace_score": 0},
+    {"model": "claude_opus_4_6", "condition": "B_general_clt", "output_score": 0, "trace_score": 2},
+    {"model": "claude_opus_4_6", "condition": "C_specific_fading", "output_score": 2, "trace_score": 1},
+    {"model": "gemini_3_1_pro", "condition": "A_baseline", "output_score": 0, "trace_score": 0},
+    {"model": "gemini_3_1_pro", "condition": "B_general_clt", "output_score": 1, "trace_score": 2},
+    {"model": "gemini_3_1_pro", "condition": "C_specific_fading", "output_score": 2, "trace_score": 2},
+    {"model": "gemini_3_flash", "condition": "A_baseline", "output_score": 1, "trace_score": 0},
+    {"model": "gemini_3_flash", "condition": "B_general_clt", "output_score": 1, "trace_score": 2},
+    {"model": "gemini_3_flash", "condition": "C_specific_fading", "output_score": 2, "trace_score": 2},
+    {"model": "deepseek_r1_0528", "condition": "A_baseline", "output_score": 0, "trace_score": 0},
+    {"model": "deepseek_r1_0528", "condition": "B_general_clt", "output_score": 0, "trace_score": 1},
+    {"model": "deepseek_r1_0528", "condition": "C_specific_fading", "output_score": 2, "trace_score": 2},
+    {"model": "qwen3_235b", "condition": "A_baseline", "output_score": 0, "trace_score": 0},
+    {"model": "qwen3_235b", "condition": "B_general_clt", "output_score": 0, "trace_score": 1},
+    {"model": "qwen3_235b", "condition": "C_specific_fading", "output_score": 2, "trace_score": 2},
+    {"model": "gpt_oss_120b", "condition": "A_baseline", "output_score": 0, "trace_score": 0},
+    {"model": "gpt_oss_120b", "condition": "B_general_clt", "output_score": 1, "trace_score": 1},
+    {"model": "gpt_oss_120b", "condition": "C_specific_fading", "output_score": 2, "trace_score": 0}
+  ]
+}

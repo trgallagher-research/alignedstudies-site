@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discussion — AlignED Report 2</title>
+  <meta name="description" content="What score recall tells us about assessment accuracy. Limitations and a proposed contamination testing framework.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/assessing-complex-competencies/discussion.html">
+</head>
+<body data-page="discussion">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html" class="active">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>4. Discussion</h1>
+        <p class="subtitle">Interpretation, limitations, and next steps</p>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="prose">
+
+          <!-- Jump Links -->
+          <div class="jump-links">
+            <h3>On this page</h3>
+            <ul>
+              <li><a href="#takeaways">Three takeaways</a></li>
+              <li><a href="#limitations">Limitations</a></li>
+              <li><a href="#framework">A proposed contamination testing framework</a></li>
+              <li><a href="#claims">What we claim and what we do not</a></li>
+              <li><a href="#future">Future directions</a></li>
+            </ul>
+          </div>
+
+          <h2 id="takeaways">Three takeaways</h2>
+
+          <h3>1. Score recall works as a contamination signal</h3>
+          <p>When asked to guess published scores without the rubric, both models recalled ETS scores at a higher rate than PERSUADE scores. The gap was 34 percentage points for Pro and 25 percentage points for Flash. This pattern is consistent with score memorisation from training data: the ETS essays and their scores are widely published and almost certainly present in the models' training corpora.</p>
+          <p>Score recall is a practical contamination test. It requires no access to training data, no access to model weights, and produces an interpretable signal. Any researcher can run it.</p>
+
+          <h3>2. The gap suggests inflated accuracy on known corpora</h3>
+          <p>Because the two corpora use different rubrics, raw scoring accuracy cannot be compared directly between them. The score recall test avoids this problem: it removes the rubric entirely and asks whether the model can guess the published score from the essay alone.</p>
+          <p>The fact that models recalled ETS scores at a higher rate than PERSUADE scores (without any rubric) suggests that at least some of the scoring accuracy on ETS essays may come from memorisation rather than rubric application. We cannot quantify how much, but the signal is present.</p>
+
+          <h3>3. Assessment capability may exist but is hard to separate from memorisation</h3>
+          <p>Both models produced detailed, rubric-aligned feedback with specific textual references. They identified concrete strengths and weaknesses in student writing. The next-step learning tasks targeted identifiable skill gaps. This is consistent with assessment capability beyond simple score retrieval.</p>
+          <p>But on scoring specifically, memorisation and competent assessment produce identical outputs. A model that recalls a score and a model that derives a score both return the same number. Separating these requires testing on corpora the model has not seen, which is what the PERSUADE comparison begins to do.</p>
+
+          <h2 id="limitations">Limitations</h2>
+          <ul>
+            <li><strong>Two models.</strong> Only Gemini 3.1 Pro and Gemini 3 Flash were tested. Contamination patterns may differ across model families, training data compositions, and model sizes.</li>
+            <li><strong>Small samples.</strong> Six ETS essays and twelve PERSUADE essays. The score recall gap is consistent across both models, but the sample sizes are too small for statistical significance testing.</li>
+            <li><strong>PERSUADE is not provably uncontaminated.</strong> The PERSUADE 2.0 corpus is publicly available. We assume lower contamination risk because it is less widely reproduced than ETS samples, but we cannot confirm it is absent from training data.</li>
+            <li><strong>Single genre.</strong> All essays are argumentative/persuasive writing. The contamination effect may differ for narrative, expository, or other genres.</li>
+            <li><strong>No rubric variation.</strong> Each corpus was scored with its own rubric. Testing with alternative or mismatched rubrics would help isolate whether models apply the given rubric or default to memorised scoring patterns.</li>
+            <li><strong>Single run.</strong> Temperature was set to 0 for reproducibility, so each essay was scored once per model. We did not test robustness across multiple runs or temperature settings.</li>
+          </ul>
+
+          <h2 id="framework">A proposed contamination testing framework</h2>
+          <p>Based on this proof-of-concept, we propose four steps for contamination testing in AI assessment research:</p>
+
+          <div class="card mt-3 mb-3">
+            <h4>Step 1: Run a score recall test</h4>
+            <p>Give the model an essay and ask it to guess the published score without the rubric. Compare recall rates across corpora with different contamination risks.</p>
+          </div>
+          <div class="card mt-3 mb-3">
+            <h4>Step 2: Run a verbatim recall test</h4>
+            <p>Give the model the first sentence and ask it to continue. Measure sequence similarity to the original (e.g., using Python's SequenceMatcher). This distinguishes text memorisation from score memorisation.</p>
+          </div>
+          <div class="card mt-3 mb-3">
+            <h4>Step 3: Include a lower-risk corpus</h4>
+            <p>Test on at least one corpus that is less likely to be in training data. Compare scoring accuracy and recall rates across corpora. If accuracy drops on the lower-risk corpus, contamination may explain the difference.</p>
+          </div>
+          <div class="card mt-3 mb-3">
+            <h4>Step 4: Report contamination results alongside accuracy</h4>
+            <p>Any paper reporting AI scoring accuracy should also report score recall rates. This allows readers to judge whether accuracy is genuine or inflated.</p>
+          </div>
+
+          <h2 id="claims">What we claim and what we do not</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>We claim</th>
+                <th>We do not claim</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Both models recalled ETS scores at a higher rate than PERSUADE scores. This pattern is consistent with data contamination.</td>
+                <td>We do not claim to have proven data contamination. Proof would require access to training data, which is not publicly available.</td>
+              </tr>
+              <tr>
+                <td>Score recall is a practical, accessible contamination test that any researcher can run.</td>
+                <td>We do not claim that score recall is a complete or sufficient test. Other contamination signals may exist.</td>
+              </tr>
+              <tr>
+                <td>Assessment accuracy on well-known corpora may be inflated by score memorisation.</td>
+                <td>We do not claim that LLMs cannot assess essays. Genuine capability and memorisation may coexist.</td>
+              </tr>
+              <tr>
+                <td>Contamination testing should be standard practice in AI assessment research.</td>
+                <td>We do not claim that existing research findings are invalid. We argue they are incomplete without contamination data.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="future">Future directions</h2>
+          <ul>
+            <li><strong>More models.</strong> Test Claude, GPT-4, Llama, Mistral, and other model families. Contamination patterns likely vary with training data composition.</li>
+            <li><strong>More essays.</strong> Scale up to 50-100 essays per corpus for statistical power. Include essays from multiple prompts and genres.</li>
+            <li><strong>Rubric variation.</strong> Test whether models produce different scores when given alternative rubrics for the same essay. If scores remain stable regardless of rubric, this is strong evidence of memorisation.</li>
+            <li><strong>Feedback evaluation.</strong> Systematically assess feedback quality using teacher judgement or student outcomes. If feedback is genuinely useful regardless of scoring contamination, this has practical implications.</li>
+            <li><strong>Temporal analysis.</strong> Compare score recall for essays published at different dates. Essays published before a model's training cutoff should show higher recall than those published after.</li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Report</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="/studies/" target="_blank">All Reports</a></li>
+            <li><a href="https://github.com/trgallagher-research" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Report 2.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

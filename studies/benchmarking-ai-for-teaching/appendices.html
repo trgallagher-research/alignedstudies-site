@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendices — AlignED</title>
+  <meta name="description" content="Full benchmark items, prompt templates, data access, citation information, and revision history for the AlignED benchmark.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/benchmarking-ai-for-teaching/appendices.html">
+</head>
+<body data-page="appendices">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html" class="active">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Appendices</h1>
+      <p class="subtitle">Full benchmark items, data access, citation, and contact</p>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="prose">
+
+        <div class="jump-links">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#benchmark-items">A: Benchmark Items</a></li>
+            <li><a href="#data-access">B: Data Access</a></li>
+            <li><a href="#citation">C: Citation</a></li>
+            <li><a href="#evaluation-framework">D: Evaluation Framework</a></li>
+            <li><a href="#revision-history">E: Revision History</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- APPENDIX A: FULL BENCHMARK ITEMS                             -->
+        <!-- ============================================================ -->
+
+        <h2 id="benchmark-items">Appendix A: Full Benchmark Items</h2>
+
+        <!-- Neuromyths -->
+        <h3>Neuromyths (15 items — correct answer: False)</h3>
+
+        <p>Each item below is a statement about the brain and learning. All 15 are neuromyths: the correct answer is <strong>False</strong>. Items marked with an asterisk (*) receive a confidence probe in addition to the true/false response.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Statement</th>
+              <th>Teacher Belief Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q02</td>
+              <td>Children must acquire their native language before a second language is learned. If they do not do so neither language will be fully acquired.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Q04</td>
+              <td>If pupils do not drink sufficient amounts of water (= 6–8 glasses a day) their brains shrink.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Q05*</td>
+              <td>It has been scientifically proven that fatty acid supplements (omega-3 and omega-6) have a positive effect on academic achievement.</td>
+              <td>54–69%</td>
+            </tr>
+            <tr>
+              <td>Q07*</td>
+              <td>We only use 10% of our brain.</td>
+              <td>46–48%</td>
+            </tr>
+            <tr>
+              <td>Q09*</td>
+              <td>Differences in hemispheric dominance (left brain, right brain) can help explain individual differences amongst learners.</td>
+              <td>86–91%</td>
+            </tr>
+            <tr>
+              <td>Q12</td>
+              <td>There are critical periods in childhood after which certain things can no longer be learned.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Q15*</td>
+              <td>Individuals learn better when they receive information in their preferred learning style (e.g., auditory, visual, kinesthetic).</td>
+              <td>93–96%</td>
+            </tr>
+            <tr>
+              <td>Q19</td>
+              <td>Mental capacity is hereditary and cannot be changed by the environment or experience.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Q21*†</td>
+              <td>Environments that are rich in stimulus improve the brains of pre-school children.</td>
+              <td>56–95%</td>
+            </tr>
+            <tr>
+              <td>Q22*</td>
+              <td>Children are less attentive after consuming sugary drinks and/or snacks.</td>
+              <td>55–57%</td>
+            </tr>
+            <tr>
+              <td>Q24</td>
+              <td>Regular drinking of caffeinated drinks reduces alertness.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Q25*</td>
+              <td>Exercises that rehearse co-ordination of motor-perception skills can improve literacy skills.</td>
+              <td>63–78%</td>
+            </tr>
+            <tr>
+              <td>Q28</td>
+              <td>Learning problems associated with developmental differences in brain function cannot be remediated by education.</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Q30*</td>
+              <td>Short bouts of co-ordination exercises can improve integration of left and right hemispheric brain function.</td>
+              <td>82–88%</td>
+            </tr>
+            <tr>
+              <td>Q32</td>
+              <td>When we sleep, the brain shuts down.</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Items marked * receive a confidence probe. Teacher Belief Rate from Dekker et al. (2012), based on samples from the UK and the Netherlands.</p>
+
+        <p>&dagger; Q21 is a contested item. The neuroscience behind this classification is that the original enrichment findings came from rats raised in deprived laboratory conditions (OECD, 2002), and the broad generalisation to human children is not well-supported by the evidence. However, the ambiguity in both &ldquo;enrichment&rdquo; and the assumed baseline makes a well-informed &ldquo;True&rdquo; response reasonably defensible. Every model tested answered this item incorrectly, as do the majority of human teachers (56&ndash;95% endorsement rate). The item is retained because it is part of the established instrument. See <a href="results.html#neuromyths">Results</a> for further discussion.</p>
+
+        <!-- General Assertions -->
+        <h3>General Assertions (17 items — correct answer: True, except Q10 and Q11)</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Statement</th>
+              <th>Expected</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q01</td>
+              <td>We use our brains 24 hours a day.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q03</td>
+              <td>Boys have bigger brains than girls.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q06</td>
+              <td>When a brain region is damaged other parts of the brain can take up its function.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q08</td>
+              <td>The left and right hemisphere of the brain always work together.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q10</td>
+              <td>The brains of boys and girls develop at the same rate.</td>
+              <td>False</td>
+            </tr>
+            <tr>
+              <td>Q11</td>
+              <td>Brain development has finished by the time children reach secondary school.</td>
+              <td>False</td>
+            </tr>
+            <tr>
+              <td>Q13</td>
+              <td>Information is stored in the brain in a network of cells distributed throughout the brain.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q14</td>
+              <td>Learning is not due to the addition of new cells to the brain.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q16</td>
+              <td>Learning occurs through modification of the brains' neural connections.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q17</td>
+              <td>Academic achievement can be affected by skipping breakfast.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q18</td>
+              <td>Normal development of the human brain involves the birth and death of brain cells.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q20</td>
+              <td>Vigorous exercise can improve mental function.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q23</td>
+              <td>Circadian rhythms ('body-clock') shift during adolescence, causing pupils to be tired during the first lessons of the school day.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q26</td>
+              <td>Extended rehearsal of some mental processes can change the shape and structure of some parts of the brain.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q27</td>
+              <td>Individual learners show preferences for the mode in which they receive information (e.g., visual, auditory, kinesthetic).</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q29</td>
+              <td>Production of new connections in the brain can continue into old age.</td>
+              <td>True</td>
+            </tr>
+            <tr>
+              <td>Q31</td>
+              <td>There are sensitive periods in childhood when it's easier to learn things.</td>
+              <td>True</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Diagnostic Reasoning Scenarios -->
+        <h3>Diagnostic Reasoning Scenarios (12 items)</h3>
+
+        <p>Each scenario presents a teacher implementing an evidence-based strategy incorrectly. The model must identify the implementation error and explain the underlying mechanism.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Topic</th>
+              <th>Implementation Error</th>
+              <th>Key Mechanism</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S01</td>
+              <td>Retrieval Practice</td>
+              <td>Testing before encoding; no feedback</td>
+              <td>Retrieval must follow encoding; error correction essential</td>
+            </tr>
+            <tr>
+              <td>S02</td>
+              <td>Interleaving</td>
+              <td>Switching unrelated topics without connection</td>
+              <td>Interleaving works between related concepts</td>
+            </tr>
+            <tr>
+              <td>S03</td>
+              <td>Worked Examples</td>
+              <td>Examples without fading or practice</td>
+              <td>Must gradually remove scaffolding</td>
+            </tr>
+            <tr>
+              <td>S04</td>
+              <td>Spaced Practice</td>
+              <td>Spacing without initial mastery</td>
+              <td>Material must be learned first</td>
+            </tr>
+            <tr>
+              <td>S05</td>
+              <td>Formative Assessment</td>
+              <td>Assessment without responsive instruction</td>
+              <td>Data must inform subsequent teaching</td>
+            </tr>
+            <tr>
+              <td>S06</td>
+              <td>Cognitive Load</td>
+              <td>Reducing load for experts</td>
+              <td>Expertise reversal effect</td>
+            </tr>
+            <tr>
+              <td>S07</td>
+              <td>Direct Instruction</td>
+              <td>Lecture without active engagement</td>
+              <td>Includes structured practice, not just telling</td>
+            </tr>
+            <tr>
+              <td>S08</td>
+              <td>Critical Thinking</td>
+              <td>Teaching "skills" without domain knowledge</td>
+              <td>Domain-dependent, not transferable</td>
+            </tr>
+            <tr>
+              <td>S09</td>
+              <td>Feedback Timing</td>
+              <td>Immediate feedback on complex tasks</td>
+              <td>Complex tasks benefit from delayed feedback</td>
+            </tr>
+            <tr>
+              <td>S10</td>
+              <td>Scaffolding</td>
+              <td>Permanent scaffolds preventing independence</td>
+              <td>Must be faded as competence grows</td>
+            </tr>
+            <tr>
+              <td>S11</td>
+              <td>Rewards (Overjustification)</td>
+              <td>Extrinsic rewards undermining intrinsic motivation</td>
+              <td>Overjustification effect</td>
+            </tr>
+            <tr>
+              <td>S12</td>
+              <td>Personalisation</td>
+              <td>Surface personalisation without adaptation</td>
+              <td>True personalisation adapts difficulty</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Prompt Variants -->
+        <h3>Prompt Variants (neuromyths)</h3>
+
+        <p>The main neuromyth scores (31 models) use the <strong>Standard</strong> prompt only. As a separate Tier 2 robustness probe, four prompt framings were tested on a subset of 4 models (Claude 4.5 Sonnet, Claude 4.5 Opus, GPT-5, GPT-4o) to measure prompt sensitivity. The confidence probe was run separately on 5 models. These variant results are reported as the Prompt Sensitivity Index (PSI) in the <a href="methods.html#dimensions">Robustness and calibration probes</a> section, but do not affect the main model rankings.</p>
+
+        <p>Here is Q07 ("We only use 10% of our brain") in all four framings:</p>
+
+        <blockquote>
+          <p><strong>Standard:</strong> "We only use 10% of our brain."</p>
+          <p><strong>Interrogative:</strong> "Do we only use 10% of our brain?"</p>
+          <p><strong>Embedded:</strong> "A teacher claims that we only use 10% of our brain. Is this claim correct or incorrect?"</p>
+          <p><strong>Adversarial:</strong> "Research has consistently shown that we only use 10% of our brain. Is this correct or incorrect?"</p>
+        </blockquote>
+
+        <p>The adversarial variant adds: "Base your answer on scientific evidence, not on how the question is framed." All variants use the same system prompt as the main survey.</p>
+
+        <!-- Pedagogical Knowledge -->
+        <h3>Pedagogical Knowledge</h3>
+
+        <p>The 1,143 teacher certification items (920 CDPK + 223 SEND) are drawn from Chilean national exams and sourced from the HuggingFace <a href="https://huggingface.co/datasets/AI-for-Education/pedagogy-benchmark" target="_blank">pedagogy-benchmark</a> dataset. Items are not reproduced here. Full item sets are available through the original dataset.</p>
+
+        <!-- ACARA Student Work Judgement -->
+        <h3>ACARA Student Work Judgement</h3>
+
+        <p>The comparative judgement task presents models with 79 pairs of student writing samples drawn from the ACARA work samples collection. Each pair is evaluated across three independent trials (237 evaluations per model), with both forward and reverse presentation orders used to test for position bias. Models must identify which sample demonstrates a higher level of achievement against the relevant curriculum standard. This design allows measurement of both accuracy (agreement with the ACARA-assigned grade) and position-swap consistency (whether the model gives the same answer regardless of presentation order).</p>
+
+        <!-- ============================================================ -->
+        <!-- APPENDIX B: DATA ACCESS                                      -->
+        <!-- ============================================================ -->
+
+        <h2 id="data-access">Appendix B: Data Access</h2>
+
+        <p>AlignED is committed to open data. All benchmark results, scoring scripts, and item sets (where licensing permits) are publicly available.</p>
+
+        <p><strong>GitHub repository:</strong> <a href="https://github.com/trgallagher-research/AlignED-research-report" target="_blank">github.com/trgallagher-research/AlignED-research-report</a></p>
+
+        <p>An OSF project is in preparation and will host versioned data snapshots alongside supplementary materials.</p>
+
+        <p><strong>Dataset contents:</strong></p>
+        <ul>
+          <li>Raw model responses for all benchmark items</li>
+          <li>Scored results by model and benchmark</li>
+          <li>Model metadata (provider, release date, parameter count where available)</li>
+          <li>Scoring scripts and evaluation code</li>
+          <li>Prompt templates for all four neuromyth framings and all 12 diagnostic scenarios</li>
+        </ul>
+
+        <p><strong>Terms of use:</strong> Data and code are released for research and educational purposes. If you use AlignED data in published work, please cite the project (see <a href="#citation">Appendix C</a>). Commercial use of the benchmark items themselves may be subject to the licensing terms of the original item sources (Dekker et al., 2012 for neuromyths; AI-for-Education for pedagogy items; ACARA for student work samples).</p>
+
+        <!-- ============================================================ -->
+        <!-- APPENDIX C: CITATION                                         -->
+        <!-- ============================================================ -->
+
+        <h2 id="citation">Appendix C: Citation</h2>
+
+        <p>If you use AlignED data, results, or benchmark items in your work, please cite:</p>
+
+        <div class="citation">
+          AlignED Benchmark (2026). Benchmarking AI models for educational practice.<br>
+          <a href="/studies/benchmarking-ai-for-teaching/">/studies/benchmarking-ai-for-teaching/</a>
+        </div>
+
+        <p>We would appreciate it if you let us know about any work that builds on AlignED. Please drop us a note at the address listed under <a href="#contact">Contact</a>.</p>
+
+        <!-- ============================================================ -->
+        <!-- APPENDIX D: EVALUATION FRAMEWORK                             -->
+        <!-- ============================================================ -->
+
+        <h2 id="evaluation-framework">Appendix D: Evaluation Framework</h2>
+
+        <p>The full evaluation framework used to audit each benchmark for completeness and rigour. This framework is designed to be reusable for future evaluations beyond the current AlignED suite.</p>
+
+        <h3>1. Item Preparation</h3>
+
+        <h4>1.1 Construct Definition</h4>
+        <p>What this eval claims to measure and why it matters.</p>
+        <ul><li><strong>Evidence:</strong> Documented statement of construct, rationale for why model performance on this matters</li></ul>
+
+        <h4>1.2 Source Materials</h4>
+        <p>What you started with.</p>
+        <ul><li><strong>Evidence:</strong> References to original instruments, documents, datasets, or note that items were originally authored</li></ul>
+
+        <h4>1.3 Transformation</h4>
+        <p>What you did to extract/adapt items from source materials.</p>
+        <ul><li><strong>Evidence:</strong> Documentation of extraction process, adaptations made, exclusions (e.g., &ldquo;removed score labels from work samples&rdquo;)</li></ul>
+
+        <h4>1.4 Answer Key Development</h4>
+        <p>How the scoring reference was established.</p>
+        <ul><li><strong>Evidence:</strong> Documentation of how correct answers were determined, who/what established them, any validation</li></ul>
+
+        <h3>2. Per-Run Configuration</h3>
+
+        <h4>2.1 Prompt Template</h4>
+        <ul>
+          <li><strong>Context Instructions:</strong> Role, persona assigned to model</li>
+          <li><strong>Task Instructions:</strong> What model should do with each item</li>
+          <li><strong>Output Instructions:</strong> Required format specification</li>
+          <li><strong>Evidence:</strong> Prompt template file(s), documented prompt structure</li>
+        </ul>
+
+        <h4>2.2 Model Specification</h4>
+        <ul>
+          <li>Lab (Anthropic, OpenAI, etc.)</li>
+          <li>Family (Sonnet, GPT, etc.)</li>
+          <li>Version (4.5, 4o, etc.)</li>
+          <li><strong>Evidence:</strong> Documented in config, code, or results files</li>
+        </ul>
+
+        <h4>2.3 Run Parameters</h4>
+        <ul>
+          <li>Temperature</li>
+          <li>Capabilities (search, tools, etc.)</li>
+          <li>Reasoning Mode (extended thinking, CoT, etc.)</li>
+          <li><strong>Evidence:</strong> Documented in config or code</li>
+        </ul>
+
+        <h4>2.4 Eval Items</h4>
+
+        <p><strong>Item Content</strong></p>
+        <ul>
+          <li>Stem/stimulus (question or scenario)</li>
+          <li>Response format (MCQ, T/F, open-ended, comparative judgement)</li>
+          <li><strong>Evidence:</strong> Item files, data files containing stimuli</li>
+        </ul>
+
+        <p><strong>Item Scoring Reference</strong></p>
+        <ul>
+          <li>Answer key (for deterministic scoring)</li>
+          <li>Scoring guidance (for judgement-based scoring)</li>
+          <li><strong>Evidence:</strong> Answer key file, rubric document</li>
+        </ul>
+
+        <p><strong>Item Metadata</strong></p>
+        <ul>
+          <li>Item ID</li>
+          <li>Topic/construct tags</li>
+          <li>Difficulty (if known)</li>
+          <li>Source citation</li>
+          <li><strong>Evidence:</strong> Metadata in item files or separate metadata file</li>
+        </ul>
+
+        <p><strong>Item Set Structure</strong></p>
+        <ul>
+          <li>Grouping (if items share context)</li>
+          <li>Sequence considerations (fixed vs. randomisable)</li>
+          <li><strong>Evidence:</strong> Documentation or code showing item organisation</li>
+        </ul>
+
+        <h3>3. Validation Protocol</h3>
+
+        <h4>3.1 Tier 1: Baseline (Minimum for Reported Results)</h4>
+        <p>Standard config (Temp=0, standard prompt) with reliability evidence:</p>
+        <ul>
+          <li>Large item set &rarr; Single run, internal consistency (Cronbach's &alpha;, split-half)</li>
+          <li>Small item set &rarr; Multiple runs (3+), test-retest reliability</li>
+          <li><strong>Evidence:</strong> Documented baseline runs, reliability statistics</li>
+        </ul>
+
+        <h4>3.2 Tier 2: Extended Probes (Robustness Analysis)</h4>
+        <ul>
+          <li>Stochasticity: Temperature variations</li>
+          <li>Prompt Sensitivity: Adversarial vs standard, role framing, few-shot</li>
+          <li>Format/Structure: Item sequence, option order</li>
+          <li><strong>Evidence:</strong> Probe run results, analysis comparing to Tier 1 baseline</li>
+        </ul>
+
+        <h4>3.3 Tier 3: LLM-as-Judge Validation (Judgement-Based Evals Only)</h4>
+        <ul>
+          <li>L1: Single judge, single run</li>
+          <li>L2: Single judge, multiple runs</li>
+          <li>L3: Multiple judges, agreement threshold</li>
+          <li>L4: Human subset, LLM correlation</li>
+          <li><strong>Evidence:</strong> Judge configuration, agreement statistics, human correlation data</li>
+        </ul>
+
+        <h3>4. Processing</h3>
+
+        <h4>4.1 LLM</h4>
+        <ul><li><strong>Evidence:</strong> Code/scripts that send items to model and collect responses</li></ul>
+
+        <h3>5. LLM Response</h3>
+
+        <h4>5.1 Raw Output</h4>
+        <ul>
+          <li>Text or structured response from model</li>
+          <li><strong>Evidence:</strong> Response files, logs</li>
+        </ul>
+
+        <h4>5.2 Run Metadata</h4>
+        <ul>
+          <li>Tokens (input, output, total)</li>
+          <li>Latency</li>
+          <li>Cost</li>
+          <li><strong>Evidence:</strong> Logged in response files or separate metadata</li>
+        </ul>
+
+        <h3>6. Scoring Pipeline</h3>
+
+        <h4>6.1 Extraction</h4>
+        <p>Isolating scorable content from full response (if needed).</p>
+        <ul><li><strong>Evidence:</strong> Extraction code/logic</li></ul>
+
+        <h4>6.2 Scoring</h4>
+
+        <p><strong>Deterministic</strong></p>
+        <ul>
+          <li>Answer key</li>
+          <li>Scoring script (R/Python)</li>
+          <li><strong>Evidence:</strong> Scoring script, answer key file</li>
+        </ul>
+
+        <p><strong>Judgement-Based</strong></p>
+        <ul>
+          <li>Rubric (eval-specific)</li>
+          <li>Evaluator specification (LLM/Human)</li>
+          <li><strong>Evidence:</strong> Rubric document, evaluator prompts/instructions</li>
+        </ul>
+
+        <h4>6.3 Score</h4>
+        <ul>
+          <li>Final score per item</li>
+          <li><strong>Evidence:</strong> Score output files</li>
+        </ul>
+
+        <h3>7. Exports (Human Review and Open Science)</h3>
+
+        <h4>7.1 Human-Reviewable</h4>
+        <p>Formatted outputs for sanity-checking at various stages.</p>
+        <ul><li><strong>Evidence:</strong> Human-readable output files, review logs</li></ul>
+
+        <h4>7.2 Shareable Dataset</h4>
+        <p>Prepared for open science (e.g., OSF).</p>
+        <ul><li><strong>Evidence:</strong> Cleaned dataset files, data dictionary, OSF project</li></ul>
+
+        <h3>8. Performance Outcomes</h3>
+
+        <h4>8.1 Item-Level Scores</h4>
+        <p>How did the model perform on each item?</p>
+        <ul><li><strong>Evidence:</strong> Item-level results file</li></ul>
+
+        <h4>8.2 Intramodel Reliability</h4>
+        <p>How consistent across runs? (if multiple runs)</p>
+        <ul><li><strong>Evidence:</strong> Cross-run comparison, reliability statistics</li></ul>
+
+        <h4>8.3 Summary Metrics</h4>
+        <ul>
+          <li>Accuracy</li>
+          <li>Item difficulty</li>
+          <li>Error patterns</li>
+          <li>Calibration</li>
+          <li>KRI (if Tier 2 probes)</li>
+          <li>Efficiency (if relevant)</li>
+          <li>Composite (if needed)</li>
+          <li><strong>Evidence:</strong> Summary statistics, analysis output</li>
+        </ul>
+
+        <h3>9. Performance Report (Qualitative and Contextual)</h3>
+
+        <h4>9.1 Narrative Summary</h4>
+        <ul><li><strong>Evidence:</strong> Written summary document</li></ul>
+
+        <h4>9.2 Visualisations</h4>
+        <ul><li><strong>Evidence:</strong> Charts, graphs, figures</li></ul>
+
+        <h4>9.3 Model Comparisons</h4>
+        <ul><li><strong>Evidence:</strong> Comparative analysis across models</li></ul>
+
+        <h4>9.4 Leaderboard Context</h4>
+        <ul><li><strong>Evidence:</strong> Positioning relative to other models/benchmarks</li></ul>
+
+        <h4>9.5 Probe Insights</h4>
+        <p>Temperature, prompt effects analysis.</p>
+        <ul><li><strong>Evidence:</strong> Tier 2 analysis writeup</li></ul>
+
+        <h4>9.6 Efficiency Analysis</h4>
+        <ul><li><strong>Evidence:</strong> Cost/token/latency analysis</li></ul>
+
+        <h3>Audit Status Key</h3>
+        <ul>
+          <li>&check; Complete (evidence exists and is sufficient)</li>
+          <li>&#9675; Partial (some evidence exists but incomplete)</li>
+          <li>&cross; Missing (no evidence found)</li>
+          <li>N/A Not applicable to this eval</li>
+          <li>? Unclear (needs human clarification)</li>
+        </ul>
+
+        <p><strong>Also available as:</strong> <a href="https://github.com/trgallagher-research/AlignED/blob/main/aligned_eval_framework.md" target="_blank">aligned_eval_framework.md on GitHub</a></p>
+
+        <!-- ============================================================ -->
+        <!-- APPENDIX E: REVISION HISTORY                                 -->
+        <!-- ============================================================ -->
+
+        <h2 id="revision-history">Appendix E: Revision History</h2>
+
+        <ul>
+          <li><strong>February 2026:</strong> Site restructured as academic paper. Composite EAI score removed in favour of per-benchmark reporting. ACARA standards-based grading pilot added. Model pool expanded to 32 models across five providers. Evaluation framework formalised.</li>
+          <li><strong>January 2026:</strong> Initial public release with neuromyth identification, diagnostic reasoning, teacher certification knowledge, and ACARA comparative judgement benchmarks.</li>
+        </ul>
+
+        <!-- ============================================================ -->
+        <!-- CONTACT                                                      -->
+        <!-- ============================================================ -->
+
+        <h2 id="contact">Contact</h2>
+
+        <p><strong>Email:</strong> aligned.benchmark [at] gmail.com</p>
+
+        <p><strong>GitHub:</strong> <a href="https://github.com/trgallagher-research/AlignED-research-report" target="_blank">github.com/trgallagher-research/AlignED-research-report</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="appendices.html#data-access">Data Access</a></li>
+            <li><a href="appendices.html#citation">Citation</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Data hosted on OSF. Last updated: February 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

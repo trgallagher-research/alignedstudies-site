@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "description": "Score recall and verbatim recall comparison across ETS and PERSUADE corpora"
+  },
+  "score_recall": {
+    "ets": {
+      "corpus": "ETS GRE Sample Essays",
+      "total_essays": 6,
+      "contamination_risk": "high",
+      "pro": {
+        "exact_match": 4,
+        "within_one": 6,
+        "exact_rate": 0.667,
+        "within_one_rate": 1.0
+      },
+      "flash": {
+        "exact_match": 4,
+        "within_one": 6,
+        "exact_rate": 0.667,
+        "within_one_rate": 1.0
+      }
+    },
+    "persuade": {
+      "corpus": "PERSUADE 2.0",
+      "total_essays": 12,
+      "contamination_risk": "lower",
+      "pro": {
+        "exact_match": 4,
+        "within_one": 11,
+        "exact_rate": 0.333,
+        "within_one_rate": 0.917
+      },
+      "flash": {
+        "exact_match": 5,
+        "within_one": 8,
+        "exact_rate": 0.417,
+        "within_one_rate": 0.667
+      }
+    }
+  },
+  "contamination_gap": {
+    "pro": {
+      "exact_gap_pp": 33.4,
+      "within_one_gap_pp": 8.3,
+      "note": "ETS exact 67% vs PERSUADE exact 33%"
+    },
+    "flash": {
+      "exact_gap_pp": 25.0,
+      "within_one_gap_pp": 33.3,
+      "note": "ETS exact 67% vs PERSUADE exact 42%"
+    }
+  },
+  "verbatim_recall": {
+    "pro": {
+      "average_similarity": 0.039,
+      "high_contamination_count": 0,
+      "total_essays": 6,
+      "verdict": "No verbatim memorisation detected"
+    },
+    "flash": {
+      "average_similarity": 0.03,
+      "high_contamination_count": 0,
+      "total_essays": 6,
+      "verdict": "No verbatim memorisation detected"
+    },
+    "note": "Both models recognised the ETS essays as known training data but could not reproduce the text verbatim. Average sequence similarity < 0.04."
+  }
+}

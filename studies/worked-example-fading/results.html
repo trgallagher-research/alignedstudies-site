@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results — AlignED Report 4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="canonical" href="https://alignedstudies.org/studies/worked-example-fading/results.html">
+</head>
+<body data-page="results">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html" class="active">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-wide">
+      <div class="page-header">
+        <h1>3. Results</h1>
+        <p class="subtitle">Output scores, trace scores, and the knowledge-application gap</p>
+      </div>
+
+      <!-- Jump links -->
+      <div class="jump-links mt-3">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#scores">Output and trace scores</a></li>
+          <li><a href="#concordance">Concordance table</a></li>
+          <li><a href="#condition-b">The Condition B finding</a></li>
+          <li><a href="#trace-excerpts">Key trace excerpts</a></li>
+        </ul>
+      </div>
+
+      <!-- Dumbbell Chart (pure HTML/CSS) -->
+      <div class="chart-section" id="scores">
+        <div class="chart-header">
+          <div class="chart-title">Output and trace scores by model and condition</div>
+          <div class="chart-subtitle">Each row shows two scores: whether the output implemented fading (blue) and whether the reasoning trace referenced it (terracotta). The connecting line shows the gap. Highlighted rows are Condition B, where the gap is largest.</div>
+        </div>
+
+        <!-- Legend -->
+        <div class="dumbbell-legend">
+          <div class="dumbbell-legend-item">
+            <span class="dumbbell-legend-dot" style="background: #3B6B9A;"></span>
+            Output score
+          </div>
+          <div class="dumbbell-legend-item">
+            <span class="dumbbell-legend-dot" style="background: #B67D5C;"></span>
+            Trace score
+          </div>
+          <div class="dumbbell-legend-item">
+            <span class="dumbbell-legend-line"></span>
+            Gap
+          </div>
+          <div class="dumbbell-legend-item">
+            <span class="dumbbell-legend-highlight"></span>
+            Condition B (highlighted)
+          </div>
+        </div>
+
+        <!-- The chart itself -->
+        <div class="dumbbell-chart">
+
+          <!-- X-axis header (score labels) -->
+          <div class="dumbbell-row dumbbell-axis-header">
+            <div class="dumbbell-label"></div>
+            <div class="dumbbell-track">
+              <span class="dumbbell-axis-tick" style="left: 0%;">0</span>
+              <span class="dumbbell-axis-tick" style="left: 50%;">1</span>
+              <span class="dumbbell-axis-tick" style="left: 100%;">2</span>
+            </div>
+          </div>
+
+          <!-- ========== CLOSED-SOURCE MODELS ========== -->
+
+          <!-- Claude Opus 4.6 -->
+          <div class="dumbbell-group-label">Claude Opus 4.6</div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">A: Baseline</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 0%;" title="Output: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 0%;" title="Trace: 0"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">0</span> / <span class="val-trace">0</span></div>
+          </div>
+
+          <div class="dumbbell-row dumbbell-row-highlight">
+            <div class="dumbbell-label">B: General CLT</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 100%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 0%;" title="Output: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 100%;" title="Trace: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">0</span> / <span class="val-trace">2</span></div>
+          </div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">C: Specific fading</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 50%; width: 50%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 50%;" title="Trace: 1"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 100%;" title="Output: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">2</span> / <span class="val-trace">1</span></div>
+          </div>
+
+          <div class="dumbbell-separator"></div>
+
+          <!-- Gemini 3.1 Pro -->
+          <div class="dumbbell-group-label">Gemini 3.1 Pro</div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">A: Baseline</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 0%;" title="Output: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 0%;" title="Trace: 0"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">0</span> / <span class="val-trace">0</span></div>
+          </div>
+
+          <div class="dumbbell-row dumbbell-row-highlight">
+            <div class="dumbbell-label">B: General CLT</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 50%; width: 50%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 50%;" title="Output: 1"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 100%;" title="Trace: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">1</span> / <span class="val-trace">2</span></div>
+          </div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">C: Specific fading</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 100%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 100%;" title="Output: 2"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 100%;" title="Trace: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">2</span> / <span class="val-trace">2</span></div>
+          </div>
+
+          <div class="dumbbell-separator"></div>
+
+          <!-- Gemini 3 Flash -->
+          <div class="dumbbell-group-label">Gemini 3 Flash</div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">A: Baseline</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 50%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 50%;" title="Output: 1"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 0%;" title="Trace: 0"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">1</span> / <span class="val-trace">0</span></div>
+          </div>
+
+          <div class="dumbbell-row dumbbell-row-highlight">
+            <div class="dumbbell-label">B: General CLT</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 50%; width: 50%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 50%;" title="Output: 1"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 100%;" title="Trace: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">1</span> / <span class="val-trace">2</span></div>
+          </div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">C: Specific fading</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 100%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 100%;" title="Output: 2"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 100%;" title="Trace: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">2</span> / <span class="val-trace">2</span></div>
+          </div>
+
+          <div class="dumbbell-separator"></div>
+
+          <!-- ========== OPEN-WEIGHT MODELS ========== -->
+
+          <!-- DeepSeek R1 -->
+          <div class="dumbbell-group-label">DeepSeek R1</div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">A: Baseline</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 0%;" title="Output: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 0%;" title="Trace: 0"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">0</span> / <span class="val-trace">0</span></div>
+          </div>
+
+          <div class="dumbbell-row dumbbell-row-highlight">
+            <div class="dumbbell-label">B: General CLT</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 50%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 0%;" title="Output: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 50%;" title="Trace: 1"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">0</span> / <span class="val-trace">1</span></div>
+          </div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">C: Specific fading</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 100%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 100%;" title="Output: 2"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 100%;" title="Trace: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">2</span> / <span class="val-trace">2</span></div>
+          </div>
+
+          <div class="dumbbell-separator"></div>
+
+          <!-- Qwen3-235B -->
+          <div class="dumbbell-group-label">Qwen3-235B</div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">A: Baseline</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 0%;" title="Output: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 0%;" title="Trace: 0"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">0</span> / <span class="val-trace">0</span></div>
+          </div>
+
+          <div class="dumbbell-row dumbbell-row-highlight">
+            <div class="dumbbell-label">B: General CLT</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 50%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 0%;" title="Output: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 50%;" title="Trace: 1"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">0</span> / <span class="val-trace">1</span></div>
+          </div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">C: Specific fading</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 100%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 100%;" title="Output: 2"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 100%;" title="Trace: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">2</span> / <span class="val-trace">2</span></div>
+          </div>
+
+          <div class="dumbbell-separator"></div>
+
+          <!-- GPT-OSS-120B -->
+          <div class="dumbbell-group-label">GPT-OSS-120B</div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">A: Baseline</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 0%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 0%;" title="Output: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 0%;" title="Trace: 0"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">0</span> / <span class="val-trace">0</span></div>
+          </div>
+
+          <div class="dumbbell-row dumbbell-row-highlight">
+            <div class="dumbbell-label">B: General CLT</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <div class="dumbbell-connector" style="left: 0%; width: 50%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 50%;" title="Output: 1"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 50%;" title="Trace: 1"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">1</span> / <span class="val-trace">1</span></div>
+          </div>
+
+          <div class="dumbbell-row">
+            <div class="dumbbell-label">C: Specific fading</div>
+            <div class="dumbbell-track">
+              <div class="dumbbell-gridline" style="left: 0%;"></div>
+              <div class="dumbbell-gridline" style="left: 50%;"></div>
+              <div class="dumbbell-gridline" style="left: 100%;"></div>
+              <!-- output=2, trace=0: line from 0% to 100% -->
+              <div class="dumbbell-connector" style="left: 0%; width: 100%;"></div>
+              <div class="dumbbell-dot dumbbell-dot-trace" style="left: 0%;" title="Trace: 0"></div>
+              <div class="dumbbell-dot dumbbell-dot-output" style="left: 100%;" title="Output: 2"></div>
+            </div>
+            <div class="dumbbell-values"><span class="val-output">2</span> / <span class="val-trace">0</span></div>
+          </div>
+
+          <!-- X-axis footer label -->
+          <div class="dumbbell-row dumbbell-axis-footer">
+            <div class="dumbbell-label"></div>
+            <div class="dumbbell-track-label">Score (0&ndash;2)</div>
+          </div>
+
+        </div>
+
+        <p class="text-muted mt-2" style="font-family: var(--font-sans); font-size: 0.8rem;">Single response per condition. Scores: 0 = absent/uniform, 1 = partial, 2 = full implementation or explicit reference. Values shown as output / trace.</p>
+        <div class="observations">
+          <strong>Observations:</strong>
+          <ul>
+            <li>In Condition A, all six models score 0 on the trace dimension. Five of six score 0 on the output. No model spontaneously applies or reasons about fading.</li>
+            <li>In Condition B, the connecting lines show the knowledge-application gap. Closed-source models (Claude, both Geminis) show trace scores of 2 with output scores of 0 or 1. Open-weight models (DeepSeek, Qwen3) show trace scores of 1 with output scores of 0. GPT-OSS is the only model where output and trace scores match (both 1).</li>
+            <li>In Condition C, all six models implement fading correctly (output = 2). Five of six trace scores reach 2. GPT-OSS is the exception: it fades correctly but returns no reasoning trace (trace = 0), likely due to OpenRouter not surfacing it for this model.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Concordance Table -->
+      <div class="section-divider" id="concordance">
+        <h2>Concordance table</h2>
+        <p>Exact scores for each model-condition pair</p>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Condition</th>
+            <th>Output (0&ndash;2)</th>
+            <th>Trace (0&ndash;2)</th>
+            <th>Pattern</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Claude -->
+          <tr>
+            <td>Claude Opus 4.6</td>
+            <td>A: Baseline</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Neither reasoned nor applied</td>
+          </tr>
+          <tr style="background: #FEF3C7;">
+            <td><strong>Claude Opus 4.6</strong></td>
+            <td><strong>B: General CLT</strong></td>
+            <td><strong>0</strong></td>
+            <td><strong>2</strong></td>
+            <td><strong>Reasoned but did not apply</strong></td>
+          </tr>
+          <tr>
+            <td>Claude Opus 4.6</td>
+            <td>C: Specific fading</td>
+            <td>2</td>
+            <td>1</td>
+            <td>Applied with procedural reasoning</td>
+          </tr>
+          <!-- Gemini 3.1 Pro -->
+          <tr>
+            <td>Gemini 3.1 Pro</td>
+            <td>A: Baseline</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Neither reasoned nor applied</td>
+          </tr>
+          <tr style="background: #FEF3C7;">
+            <td><strong>Gemini 3.1 Pro</strong></td>
+            <td><strong>B: General CLT</strong></td>
+            <td><strong>1</strong></td>
+            <td><strong>2</strong></td>
+            <td><strong>Reasoned but misapplied</strong></td>
+          </tr>
+          <tr>
+            <td>Gemini 3.1 Pro</td>
+            <td>C: Specific fading</td>
+            <td>2</td>
+            <td>2</td>
+            <td>Reasoned and applied correctly</td>
+          </tr>
+          <!-- Gemini 3 Flash -->
+          <tr>
+            <td>Gemini 3 Flash</td>
+            <td>A: Baseline</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Some variation, no reasoning</td>
+          </tr>
+          <tr style="background: #FEF3C7;">
+            <td><strong>Gemini 3 Flash</strong></td>
+            <td><strong>B: General CLT</strong></td>
+            <td><strong>1</strong></td>
+            <td><strong>2</strong></td>
+            <td><strong>Reasoned but did not apply</strong></td>
+          </tr>
+          <tr>
+            <td>Gemini 3 Flash</td>
+            <td>C: Specific fading</td>
+            <td>2</td>
+            <td>2</td>
+            <td>Reasoned and applied correctly</td>
+          </tr>
+          <!-- DeepSeek R1 -->
+          <tr>
+            <td>DeepSeek R1</td>
+            <td>A: Baseline</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Neither reasoned nor applied</td>
+          </tr>
+          <tr style="background: #FEF3C7;">
+            <td><strong>DeepSeek R1</strong></td>
+            <td><strong>B: General CLT</strong></td>
+            <td><strong>0</strong></td>
+            <td><strong>1</strong></td>
+            <td><strong>Implicit reasoning, no application</strong></td>
+          </tr>
+          <tr>
+            <td>DeepSeek R1</td>
+            <td>C: Specific fading</td>
+            <td>2</td>
+            <td>2</td>
+            <td>Reasoned and applied correctly</td>
+          </tr>
+          <!-- Qwen3 -->
+          <tr>
+            <td>Qwen3-235B</td>
+            <td>A: Baseline</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Neither reasoned nor applied</td>
+          </tr>
+          <tr style="background: #FEF3C7;">
+            <td><strong>Qwen3-235B</strong></td>
+            <td><strong>B: General CLT</strong></td>
+            <td><strong>0</strong></td>
+            <td><strong>1</strong></td>
+            <td><strong>Implicit reasoning, no application</strong></td>
+          </tr>
+          <tr>
+            <td>Qwen3-235B</td>
+            <td>C: Specific fading</td>
+            <td>2</td>
+            <td>2</td>
+            <td>Reasoned and applied correctly</td>
+          </tr>
+          <!-- GPT-OSS -->
+          <tr>
+            <td>GPT-OSS-120B</td>
+            <td>A: Baseline</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Neither reasoned nor applied</td>
+          </tr>
+          <tr style="background: #FEF3C7;">
+            <td><strong>GPT-OSS-120B</strong></td>
+            <td><strong>B: General CLT</strong></td>
+            <td><strong>1</strong></td>
+            <td><strong>1</strong></td>
+            <td><strong>Partial on both dimensions</strong></td>
+          </tr>
+          <tr>
+            <td>GPT-OSS-120B</td>
+            <td>C: Specific fading</td>
+            <td>2</td>
+            <td>0*</td>
+            <td>Applied correctly; no trace returned</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>* GPT-OSS-120B returned no reasoning trace for Condition C. This appears to be an API limitation (OpenRouter did not surface the trace for this call) rather than an absence of reasoning. The trace score is recorded as 0 but should be interpreted with this caveat.</p>
+
+      <p>The highlighted rows are the central finding. In Condition B, all six models show a gap between what they reason about and what they produce. The closed-source models retrieve formal CLT terminology (trace = 2) but still do not implement fading. The open-weight models show weaker CLT retrieval (trace = 1) and likewise produce no fading.</p>
+
+      <!-- Condition B Finding -->
+      <div class="section-divider" id="condition-b">
+        <h2>The Condition B finding</h2>
+        <p>The knowledge-application gap across six models</p>
+      </div>
+
+      <div class="note">
+        <strong>The headline finding:</strong> When told to "apply cognitive load theory," all six models retrieved CLT-related knowledge in their reasoning traces but none implemented fading in their outputs. The models have access to fading as a concept. None select it for application when the prompt does not name it specifically.
+      </div>
+
+      <p>The Condition B results divide cleanly by model type:</p>
+
+      <p><strong>Closed-source models (Claude, Gemini 3.1 Pro, Gemini 3 Flash)</strong> all scored trace = 2, explicitly naming CLT constructs including the worked example effect. Claude listed fading as a "suggested next step" rather than implementing it. Gemini 3.1 Pro named fading but redefined it as difficulty progression. Gemini 3 Flash planned to "fade the explicit steps" in its trace but did not follow through in the output.</p>
+
+      <p><strong>Open-weight models (DeepSeek R1, Qwen3-235B)</strong> both scored trace = 1, engaging with CLT concepts (intrinsic, extraneous, and germane load) without naming fading specifically. Neither implemented fading in the output.</p>
+
+      <p><strong>GPT-OSS-120B</strong> is a partial exception: both output and trace scored 1, with the trace mentioning "low cognitive load" and the output showing slight structural variation. Its traces were minimal throughout (111 chars for A, 130 for B, 0 for C), so the trace scores should be interpreted cautiously.</p>
+
+      <!-- Trace Excerpts -->
+      <div class="section-divider" id="trace-excerpts">
+        <h2>Key trace excerpts</h2>
+        <p>Selected passages from the reasoning traces, presented as generated artefacts</p>
+      </div>
+
+      <h3>Condition A traces: content coverage only</h3>
+
+      <blockquote>
+        <p>"I need to create 4 worked examples for Year 8 students on solving two-step linear equations. I'll make them progressively more challenging and cover different variations, including positive and negative numbers, and different operations."</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">Claude Opus 4.6, Condition A</p>
+      </blockquote>
+
+      <blockquote>
+        <p>"We are going to create four worked examples for solving two-step linear equations for Year 8 students. Each example should be clear, with steps explained. We'll start with simple equations and gradually increase in complexity."</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">DeepSeek R1, Condition A</p>
+      </blockquote>
+
+      <p>All six Condition A traces focus on content variety and difficulty sequencing. None mention how much the student should do, scaffolding, or any pedagogical framework. This pattern is unanimous.</p>
+
+      <h3>Condition B traces: CLT knowledge retrieved but fading not applied</h3>
+
+      <blockquote>
+        <p>"Cognitive load theory principles relevant here: 1. Intrinsic load management... 2. Extraneous load reduction... 3. Germane load optimization... 4. Worked example effect &mdash; provide complete, step-by-step solutions... 5. Element interactivity..."</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">Claude Opus 4.6, Condition B (lists fading as a "suggested next step" in the output, not as something to implement now)</p>
+      </blockquote>
+
+      <blockquote>
+        <p>"I'll lean heavily on the Worked Example Effect. This means providing complete solutions with annotations... I'll also incorporate 'fading' by starting with simpler equations and gradually increasing complexity, but maintaining a similar format."</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">Gemini 3.1 Pro, Condition B (equates "fading" with difficulty progression)</p>
+      </blockquote>
+
+      <blockquote>
+        <p>"The worked example effect is key; I'll give them the complete solution to reduce the mental effort they have to expend just figuring out the process... I can start to fade the explicit steps at this point to encourage retrieval."</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">Gemini 3 Flash, Condition B (plans fading in the trace but does not execute it in the output)</p>
+      </blockquote>
+
+      <blockquote>
+        <p>"It's about managing the amount of information that learners have to process, right? There's intrinsic load (the inherent difficulty of the material), extraneous load (how the information is presented, which can be optimized), and germane load (processing that helps build schemas)."</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">Qwen3-235B, Condition B (engages with CLT load types but does not mention fading)</p>
+      </blockquote>
+
+      <p>The closed-source models retrieve formal CLT terminology including explicit references to fading or the worked example effect, but misapply or defer it. The open-weight models engage with CLT at the level of load management (intrinsic, extraneous, germane) without reaching the specific principle of fading.</p>
+
+      <h3>Condition C traces: correct implementation when instructed</h3>
+
+      <blockquote>
+        <p>"The worked example fading effect involves: 1. First example: Complete worked example (all steps shown) 2. Second example: Most steps shown, one step removed 3. Third example: More steps removed, students complete more 4. Fourth example: Most/all steps removed, students solve independently"</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">Claude Opus 4.6, Condition C (API-summarised thinking; see <a href="methods.html#traces" style="color: var(--text-muted);">methods note</a>)</p>
+      </blockquote>
+
+      <blockquote>
+        <p>"We're using the worked example fading effect here, also known as backward fading, and this is based on cognitive load theory... The fading should be: Example 1, 100% teacher. Example 2, 75% teacher, 25% student. Example 3, 25% teacher, 75% student. And Example 4: 0% teacher, 100% student."</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">Gemini 3.1 Pro, Condition C</p>
+      </blockquote>
+
+      <blockquote>
+        <p>"According to cognitive load theory, the fading effect involves starting with a full worked example, then in subsequent examples, gradually omitting steps that the learner should perform. This helps transition from pure observation to active problem-solving."</p>
+        <p style="font-style: normal; font-size: 0.85rem; color: var(--text-muted);">Qwen3-235B, Condition C</p>
+      </blockquote>
+
+      <p>When told what fading is, all models that return traces plan and implement it correctly. Gemini 3.1 Pro's Condition C trace remains the most detailed pedagogical reasoning in the dataset: it names the specific variant (backward fading), plans percentage allocations, and produces a correctly faded sequence.</p>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="color: white;">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="appendices.html#citation">Citation</a></li>
+            <li><a href="/studies/">All Reports</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report-4" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Last updated: March 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

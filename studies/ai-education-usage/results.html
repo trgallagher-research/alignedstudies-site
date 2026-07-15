@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. Results — AlignED</title>
+  <meta name="description" content="Descriptive findings from 152,088 education-related Claude.ai conversations: usage patterns, interaction styles, subsector differences, and geographic distribution.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="canonical" href="https://alignedstudies.org/studies/ai-education-usage/results.html">
+</head>
+<body data-page="results">
+<div style="background:#F4F1EB;border-bottom:1px solid #E8E4DF;font-family:Inter,-apple-system,sans-serif;font-size:13px;padding:7px 24px;color:#6B7280;"><a href="/" style="color:#6B7280;text-decoration:none;font-weight:600;">AlignED Studies</a> &nbsp;&middot;&nbsp; <a href="/studies/" style="color:#6B7280;">All studies</a></div>
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">AlignED</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <a href="index.html">Abstract</a>
+        <a href="introduction.html">1. Introduction</a>
+        <a href="methods.html">2. Methods</a>
+        <a href="results.html" class="active">3. Results</a>
+        <a href="discussion.html">4. Discussion</a>
+        <a href="appendices.html">Appendices</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1>3. Results</h1>
+      <p class="subtitle">Descriptive patterns from 152,088 education conversations on Claude.ai</p>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container-wide">
+
+      <!-- Jump Links -->
+      <div class="jump-links">
+        <h3>In this section</h3>
+        <ul>
+          <li><a href="#use-case">3.1 Who uses Claude.ai for education?</a></li>
+          <li><a href="#collaboration">3.2 Interaction patterns</a></li>
+          <li><a href="#subsector">3.3 Patterns by subsector</a></li>
+          <li><a href="#success">3.4 Task success rates</a></li>
+          <li><a href="#geographic">3.5 Geographic distribution</a></li>
+          <li><a href="#consumer-api">3.6 Consumer vs developer usage</a></li>
+        </ul>
+      </div>
+
+      <!-- 3.1 Use Case Split -->
+      <div class="section-divider" id="use-case">
+        <h2>3.1 Who uses Claude.ai for education?</h2>
+        <p>Use case classification: coursework, work, or personal</p>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <p class="chart-title">Use case split: education vs all tasks</p>
+          <p class="chart-subtitle">Percentage of conversations by classified use case</p>
+        </div>
+        <div class="chart-container">
+          <canvas id="chart-use-case"></canvas>
+        </div>
+        <div class="observations">
+          <strong>Observations</strong>
+          <ul>
+            <li>Students appear to be the primary users: 59.5% of education Claude.ai usage is classified as coursework, compared with 18.9% across all tasks.</li>
+            <li>Professional work accounts for only 21.3% of education usage, versus 46.4% for all tasks.</li>
+            <li>Personal use accounts for a smaller share of education conversations (19.2%) than of all tasks (34.7%).</li>
+          </ul>
+        </div>
+        <div class="note">
+          <strong>Caveat.</strong> The "coursework" classification may include teachers preparing coursework materials for their students, not only students completing assignments. The Clio classifier does not distinguish between these use cases.
+        </div>
+      </div>
+
+      <!-- 3.2 Collaboration Patterns -->
+      <div class="section-divider" id="collaboration">
+        <h2>3.2 Interaction patterns</h2>
+        <p>How people interact with AI on education tasks compared with all tasks</p>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <p class="chart-title">Collaboration patterns: education vs all tasks</p>
+          <p class="chart-subtitle">Volume-weighted, renormalised (excluding not_classified and none)</p>
+        </div>
+        <div class="chart-container">
+          <canvas id="chart-collaboration"></canvas>
+        </div>
+        <div class="observations">
+          <strong>Observations</strong>
+          <ul>
+            <li>Directive (34.6%) and task iteration (33.0%) account for two-thirds of education interactions.</li>
+            <li>Learning-classified interactions are modestly higher for education (23.7%) than the baseline (20.7%).</li>
+            <li>Feedback loops are nearly absent in education (1.6%) compared with all tasks (13.8%). This is the largest single difference.</li>
+          </ul>
+        </div>
+        <div class="caution">
+          <strong>Interpretation caution.</strong> Interaction pattern does not equal pedagogical intent. A directive request ("explain photosynthesis") can serve learning goals. Task iteration (write, revise, improve) is a core learning process. These categories describe conversational structure, not educational outcomes. See <a href="discussion.html">Discussion</a> for a full treatment of this interpretation gap.
+        </div>
+      </div>
+
+      <!-- 3.3 Subsector Patterns -->
+      <div class="section-divider" id="subsector">
+        <h2>3.3 Patterns by education subsector</h2>
+        <p>Collaboration patterns across five education subsectors</p>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <p class="chart-title">Collaboration patterns by subsector</p>
+          <p class="chart-subtitle">Volume-weighted, renormalised. Five subsectors based on SOC 4-digit prefix.</p>
+        </div>
+        <div class="chart-container tall">
+          <canvas id="chart-subsector"></canvas>
+        </div>
+        <div class="observations">
+          <strong>Observations</strong>
+          <ul>
+            <li>K-12 teachers show the highest learning-classified interactions (36.9%), roughly 65% higher than the postsecondary figure (22.4%).</li>
+            <li>Postsecondary is dominated by task iteration (34.0%) and has the highest validation rate (9.8%).</li>
+            <li>Education support has the highest task iteration rate (45.7%) and a high directive rate (42.1%), with very low learning (8.6%).</li>
+            <li>Other Teachers show the second-highest learning rate (32.6%) and moderate validation (7.6%), suggesting a mix of teaching and assessment-related tasks.</li>
+            <li>Library occupations are the most directive (44.7%), likely reflecting reference and information retrieval tasks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3.4 Success Rates -->
+      <div class="section-divider" id="success">
+        <h2>3.4 Task success rates</h2>
+        <p>How often AI addressed the user's request, by subsector</p>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <p class="chart-title">Task success rates by subsector</p>
+          <p class="chart-subtitle">Volume-weighted. Overall education: 76.0%, all tasks: 67.7%.</p>
+        </div>
+        <div class="chart-container">
+          <canvas id="chart-success"></canvas>
+        </div>
+        <div class="observations">
+          <strong>Observations</strong>
+          <ul>
+            <li>Education tasks succeed at a higher rate (76.0%) than all tasks (67.7%).</li>
+            <li>K-12 tasks have the highest success rate (83.4%), possibly because they involve more structured, well-defined requests.</li>
+            <li>Library tasks have the lowest success rate (55.8%), consistent with the difficulty of information retrieval and archival tasks, as well as known LLM limitations regarding citation accuracy and lack of live database access.</li>
+          </ul>
+        </div>
+        <div class="note">
+          <strong>What "success" means.</strong> Success indicates that the AI addressed the user's request. For coursework tasks, high success rates mean AI effectively completes assignments. Whether this represents educational benefit depends on how the output is used.
+        </div>
+      </div>
+
+      <!-- 3.5 Geographic -->
+      <div class="section-divider" id="geographic">
+        <h2>3.5 Geographic distribution</h2>
+        <p>Education's share of Claude.ai usage by country (top 20)</p>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <p class="chart-title">Education as a share of all AI tasks, by country</p>
+          <p class="chart-subtitle">Top 20 countries. The global average is 15.2%.</p>
+        </div>
+        <div class="chart-container tall">
+          <canvas id="chart-geographic"></canvas>
+        </div>
+        <div class="observations">
+          <strong>Observations</strong>
+          <ul>
+            <li>Indonesia (37.1%), Ecuador (28.6%), and Peru (27.5%) show the highest education shares.</li>
+            <li>The United States (14.0%) is in the top 20. The United Kingdom (11.2%) and Australia (10.7%), outside the top 20, are below the 15.2% global average.</li>
+            <li>Countries with the highest education shares are predominantly in Latin America, Southeast Asia, and Africa.</li>
+          </ul>
+        </div>
+        <div class="caution">
+          <strong>Interpretation caution.</strong> Absolute conversation counts are not available per country. These percentages are computed from unknown base volumes. Countries with small Claude.ai user populations can produce volatile percentages. A country showing 37% education share may have a tiny number of total conversations. Geographic patterns may also reflect Claude.ai's market position and accessibility rather than genuine differences in education AI adoption.
+        </div>
+      </div>
+
+      <!-- 3.6 Consumer vs API -->
+      <div class="section-divider" id="consumer-api">
+        <h2>3.6 Consumer vs developer usage</h2>
+        <p>Claude.ai conversations vs API-based developer tools</p>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-header">
+          <p class="chart-title">Collaboration patterns: Claude.ai vs API</p>
+          <p class="chart-subtitle">Consumer conversations vs developer-built education tools</p>
+        </div>
+        <div class="chart-container">
+          <canvas id="chart-consumer-api"></canvas>
+        </div>
+        <div class="observations">
+          <strong>Observations</strong>
+          <ul>
+            <li>API-based education tools are overwhelmingly directive (66.2%), compared with 34.6% for Claude.ai.</li>
+            <li>Task iteration is rare in API usage (7.9%) but common in Claude.ai (33.0%).</li>
+            <li>Two distinct ecosystems exist: student-driven conversations (varied interaction styles) and developer-built tools (structured, directive interactions).</li>
+          </ul>
+        </div>
+        <div class="note">
+          <strong>Context.</strong> API usage represents developer-built applications that call Claude programmatically. The high directive rate suggests these tools are designed for specific, structured tasks rather than open-ended conversation. This is a design choice by developers, not necessarily a reflection of what end users want.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">AlignED</a>
+          <p>Benchmarking AI models for educational practice.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="introduction.html">Introduction</a></li>
+            <li><a href="methods.html">Methods</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="discussion.html">Discussion</a></li>
+            <li><a href="appendices.html">Appendices</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="appendices.html#data-access">Data Access</a></li>
+            <li><a href="appendices.html#citation">Citation</a></li>
+            <li><a href="https://github.com/trgallagher-research/AlignED-research-report-3" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 AlignED. Data from Anthropic Economic Index. Last updated: March 2026.</p>
+    </div>
+  </footer>
+
+  <script src="js/charts.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
