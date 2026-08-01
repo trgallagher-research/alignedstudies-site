@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Studies — AlignED Studies</title>
-<meta name="description" content="Research reports on AI in education: benchmarks of models on professional teaching tasks, assessment reliability, and how AI is actually used in education." />
+<meta name="description" content="Research on AI in education, organised as five questions: judging student work, professional teaching knowledge, free generation, actual use, and AI-assisted research methods." />
 <link rel="canonical" href="https://alignedstudies.org/studies/">
 <style>
   :root{
@@ -35,6 +35,18 @@
   .muted{color:var(--muted)}
   .upnext{border-style:dashed}
   .upnext ul{margin:0;padding-left:20px;color:var(--muted)}
+  .upnext li{margin:0 0 8px}
+  .upnext li:last-child{margin-bottom:0}
+  .upnext .chip{margin-left:6px}
+  .direction{margin:44px 0 0}
+  .direction:first-of-type{margin-top:8px}
+  .dirnum{font-family:var(--serif);font-size:14px;color:var(--muted);letter-spacing:.08em;margin:0 0 2px}
+  .dirq{font-size:25px;margin:0 0 8px}
+  .dirframe{color:var(--muted);margin:0 0 14px;max-width:56ch}
+  ul.work{padding-left:0;list-style:none;margin:0}
+  ul.work li{padding:10px 0;border-bottom:1px solid var(--line)}
+  ul.work li:last-child{border-bottom:0;padding-bottom:0}
+  ul.work strong{font-family:var(--serif);font-weight:600}
   footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
   footer a{color:var(--muted)}
 </style>
@@ -44,75 +56,175 @@
     <p class="kicker"><a href="/">AlignED Studies</a></p>
     <h1>Studies</h1>
     <p class="lede">
-      Research reports on AI in education. Each study states its status, the exact
-      models tested, the data used, and its main limitation up front. Pilots are
-      labelled as pilots.
+      The work is organised as five questions. Published reports sit under the
+      question they address, alongside work still in preparation. Each study states
+      its status, the exact models tested, the data used, and its main limitation
+      up front. Pilots are labelled as pilots.
     </p>
 
-    <div class="card">
-      <p class="meta">Report 1 &middot; February 2026 &middot; <span class="chip ok">Complete</span></p>
-      <h2><a href="/studies/benchmarking-ai-for-teaching/">Benchmarking AI Models for Educational Practice</a></h2>
-      <p class="muted">
-        Five evaluations across 32 models from five providers, covering neuromyth
-        identification, diagnostic reasoning, teacher certification knowledge, and
-        judgement of student work. No single model ranks first on every task, and
-        performance on one evaluation does not predict performance on another. On
-        standards-based grading the best chance-adjusted agreement with experts was
-        &kappa; = 0.25.
+    <section class="direction">
+      <p class="dirnum">Direction 01</p>
+      <h2 class="dirq">Can models judge student work?</h2>
+      <p class="dirframe">
+        Schools already use AI to grade and give feedback. These studies measure how
+        closely model judgements agree with expert judgement, and how the task format
+        changes that agreement.
       </p>
-      <a class="btn secondary" href="/studies/benchmarking-ai-for-teaching/">Read the study &rarr;</a>
-    </div>
 
-    <div class="card">
-      <p class="meta">Report 2 &middot; March 2026 &middot; <span class="chip">Pilot</span></p>
-      <h2><a href="/studies/assessing-complex-competencies/">Can LLMs Assess Complex Student Competencies?</a></h2>
-      <p class="muted">
-        Two Gemini models scored 18 student essays against rubrics matched to each
-        corpus, with expert scores as the reference. A contamination test found both
-        models could recall published scores for the well-known ETS corpus without
-        seeing the rubric. Assessment accuracy on public corpora may be inflated by
-        score memorisation, which argues for contamination testing as standard
-        practice.
+      <div class="card">
+        <p class="meta">Report 1 &middot; February 2026 &middot; <span class="chip ok">Complete</span></p>
+        <h2><a href="/studies/benchmarking-ai-for-teaching/">Benchmarking AI Models for Educational Practice</a></h2>
+        <p class="muted">
+          Five evaluations across 32 models from five providers. On judgement of
+          student work, models compared paired work accurately, but on
+          standards-based grading the best chance-adjusted agreement with experts
+          was &kappa; = 0.25. No single model ranks first on every task, and
+          performance on one evaluation does not predict performance on another.
+        </p>
+        <a class="btn secondary" href="/studies/benchmarking-ai-for-teaching/">Read the study &rarr;</a>
+      </div>
+
+      <div class="card">
+        <p class="meta">Report 2 &middot; March 2026 &middot; <span class="chip">Pilot</span></p>
+        <h2><a href="/studies/assessing-complex-competencies/">Can LLMs Assess Complex Student Competencies?</a></h2>
+        <p class="muted">
+          Two Gemini models scored 18 student essays against rubrics matched to each
+          corpus, with expert scores as the reference. A contamination test found both
+          models could recall published scores for the well-known ETS corpus without
+          seeing the rubric. Assessment accuracy on public corpora may be inflated by
+          score memorisation, which argues for contamination testing as standard
+          practice.
+        </p>
+        <a class="btn secondary" href="/studies/assessing-complex-competencies/">Read the study &rarr;</a>
+      </div>
+
+      <div class="card upnext">
+        <ul>
+          <li>Grading against official curriculum achievement standards, testing
+            whether model scores cluster at the middle of the scale and shift with
+            the position of the work in the prompt.
+            <span class="chip">In preparation</span></li>
+          <li>In a pilot, models identified none of the above-satisfactory work when
+            classifying it directly, yet compared pairs of the same work with high
+            accuracy. A follow-up tests whether comparative judgement protects LLM
+            evaluators from surface-level quality inflation.
+            <span class="chip">In preparation</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="direction">
+      <p class="dirnum">Direction 02</p>
+      <h2 class="dirq">Do models hold what teachers need to know?</h2>
+      <p class="dirframe">
+        Professional teaching knowledge differs from the school subjects most
+        benchmarks test. These evaluations draw on neuromyth research and teacher
+        certification exams.
       </p>
-      <a class="btn secondary" href="/studies/assessing-complex-competencies/">Read the study &rarr;</a>
-    </div>
 
-    <div class="card">
-      <p class="meta">Report 3 &middot; March 2026 &middot; <span class="chip ok">Complete</span></p>
-      <h2><a href="/studies/ai-education-usage/">AI and Education: What 152,000 Conversations Reveal</a></h2>
-      <p class="muted">
-        A descriptive analysis of the 152,088 education-related conversations in the
-        Anthropic Economic Index V4. Students are the primary users, with 59.5% of
-        education usage classified as coursework. Directive requests and task
-        iteration dominate, while feedback loops are nearly absent at 1.6% of
-        interactions.
+      <div class="card">
+        <p class="meta">Report 1 &middot; February 2026 &middot; <span class="chip ok">Complete</span></p>
+        <h2><a href="/studies/benchmarking-ai-for-teaching/">Benchmarking AI Models for Educational Practice</a></h2>
+        <p class="muted">
+          Report 1&rsquo;s knowledge evaluations cover 32 neuromyth items adapted from
+          Dekker et al. (2012), 12 diagnostic reasoning scenarios, and 1,143 teacher
+          certification items spanning general pedagogy and inclusive education. On
+          an eight-item confidence probe, no model expressed uncertainty, even when
+          answering incorrectly.
+        </p>
+        <p class="muted">Its judgement evaluations are listed under Direction 01.</p>
+      </div>
+    </section>
+
+    <section class="direction">
+      <p class="dirnum">Direction 03</p>
+      <h2 class="dirq">What do models produce when generating freely?</h2>
+      <p class="dirframe">
+        A model can state the evidence on a direct question and still not apply it
+        when generating. These studies compare what models produce with what the
+        evidence supports.
       </p>
-      <a class="btn secondary" href="/studies/ai-education-usage/">Read the study &rarr;</a>
-    </div>
 
-    <div class="card">
-      <p class="meta">Report 4.1 &middot; March 2026 &middot; <span class="chip">Pilot</span></p>
-      <h2><a href="/studies/worked-example-fading/">Do LLMs Fade Worked Examples?</a></h2>
-      <p class="muted">
-        Six models generated worked-example sequences under three prompting
-        conditions. All six reference fading in their reasoning traces when told to
-        apply cognitive load theory, yet none applies it in the actual output unless
-        the prompt spells out what fading is. Extends an earlier two-model pilot to
-        six models, including three open-weight models.
+      <div class="card">
+        <p class="meta">Report 4.1 &middot; March 2026 &middot; <span class="chip">Pilot</span></p>
+        <h2><a href="/studies/worked-example-fading/">Do LLMs Fade Worked Examples?</a></h2>
+        <p class="muted">
+          Six models generated worked-example sequences under three prompting
+          conditions. All six reference fading in their reasoning traces when told to
+          apply cognitive load theory, yet none applies it in the actual output unless
+          the prompt spells out what fading is. Extends an earlier two-model pilot to
+          six models, including three open-weight models.
+        </p>
+        <a class="btn secondary" href="/studies/worked-example-fading/">Read the study &rarr;</a>
+      </div>
+
+      <div class="card upnext">
+        <ul>
+          <li>Thirteen models generated teaching advice from 20 open prompts. Whether
+            the output sits closer to evidence-based or non-evidence-based practice
+            is measured by embedding distance to two reference corpora.
+            <span class="chip">Analysis underway</span></li>
+          <li>LLM responses and real teacher responses to the same moments in
+            recorded maths lessons, compared turn by turn.
+            <span class="chip">In preparation</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="direction">
+      <p class="dirnum">Direction 04</p>
+      <h2 class="dirq">How is AI actually being used in education?</h2>
+      <p class="dirframe">
+        Benchmarks test what models can do. Usage data shows what people do with them.
       </p>
-      <a class="btn secondary" href="/studies/worked-example-fading/">Read the study &rarr;</a>
-    </div>
 
-    <div class="card upnext">
-      <h2>In preparation</h2>
-      <p class="muted">Studies being finished or written up, in no particular order.</p>
-      <ul>
-        <li>LLM and human teacher responses compared on authentic classroom transcripts</li>
-        <li>Grading against official curriculum achievement standards, including central tendency and position bias</li>
-        <li>Whether comparative judgement protects LLM evaluators from surface-level quality inflation</li>
-        <li>What models produce when generating freely, measured against evidence-based practice</li>
-      </ul>
-    </div>
+      <div class="card">
+        <p class="meta">Report 3 &middot; March 2026 &middot; <span class="chip ok">Complete</span></p>
+        <h2><a href="/studies/ai-education-usage/">AI and Education: What 152,000 Conversations Reveal</a></h2>
+        <p class="muted">
+          A descriptive analysis of the 152,088 education-related conversations in the
+          Anthropic Economic Index V4. Students are the primary users, with 59.5% of
+          education usage classified as coursework. Directive requests and task
+          iteration dominate, while feedback loops are nearly absent at 1.6% of
+          interactions.
+        </p>
+        <a class="btn secondary" href="/studies/ai-education-usage/">Read the study &rarr;</a>
+      </div>
+    </section>
+
+    <section class="direction">
+      <p class="dirnum">Direction 05</p>
+      <h2 class="dirq">Can this research itself be done with AI?</h2>
+      <p class="dirframe">
+        Much of this research is done with AI assistance, so the trust question
+        applies to the methods as well. The tools below are built to keep their
+        reasoning traceable.
+      </p>
+
+      <div class="card">
+        <ul class="work">
+          <li><strong>Aligned Interviewer</strong> &nbsp;
+            AI-led qualitative interviews, synthesised against the researcher&rsquo;s own
+            framework. By invitation.</li>
+          <li><strong>Landscape Scanner</strong> &nbsp;
+            field scans where every claim traces to a verbatim source quote.
+            <a href="https://github.com/trgallagher-research/landscape-scanner">Source on GitHub</a></li>
+          <li><strong>Analytical thinking continuum</strong> &nbsp;
+            an empirically derived progression of analytical thinking, and a Socratic
+            interview built on it.</li>
+          <li><strong>Qual Research Suite</strong> &nbsp;
+            the engine shared by the above, being consolidated into one tool. In development.</li>
+        </ul>
+      </div>
+
+      <div class="card upnext">
+        <ul>
+          <li>A methods paper on deriving learning progressions from comparative
+            judgement, with held-out testing of the resulting level descriptors.
+            <span class="chip">In preparation</span></li>
+        </ul>
+      </div>
+    </section>
 
     <footer>
       Contact <a href="mailto:aligned.benchmark@gmail.com">aligned.benchmark@gmail.com</a>
